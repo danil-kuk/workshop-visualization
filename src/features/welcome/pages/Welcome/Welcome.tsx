@@ -1,7 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom"
 import { publicUrlPath } from "src/utils/publicUrlPath"
 
-import styles from './style.module.css'
+import styles from './style.module.scss'
 
 export const Welcome: React.FC = () => (
   <div>

@@ -10,7 +10,7 @@ export const welcomeRoutes: PartialRouteObject[] = [
     children: [
       {
         path: ':id',
-        element: <div>Test page</div>,
+        element: <div>Test child route content</div>,
       },
     ],
   },
