@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { API } from 'src/api/services/database'
+import { testAPI } from 'src/api/services/TestService'
 
 import { RootState } from '../store'
 
 export const fetchItem = createAsyncThunk(
   'database/fetchItem',
   async (id: string) => {
-    const response = await API.getItem(id)
+    const response = await testAPI.getItem(id)
 
     return response
   },

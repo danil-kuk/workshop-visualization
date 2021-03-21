@@ -5,6 +5,7 @@ import {
   DB_NAME, MONGO_CLIENT,
   PUBLIC_API_KEY,
 } from 'src/dbConfig'
+import { DatabaseItemBase } from 'src/models'
 
 const app = new Realm.App(APP_ID)
 
@@ -26,17 +27,13 @@ async function login() {
   return user
 }
 
-async function getItem(_id: string) {
+async function getItemById<T extends DatabaseItemBase>(_id: string): Promise<T | null> {
   const mongodb = await getMongoDB()
-  const col = mongodb.db(DB_NAME).collection(COLLECTION_NAME)
 
-  const res = await col.findOne({ _id })
+  const collection = mongodb.db(DB_NAME).collection<T>(COLLECTION_NAME)
+  const result = await collection.findOne({ _id })
 
-  if (res) {
-    return { name: res.name }
-  }
-
-  return null
+  return result
 }
 
-export const API = { getItem }
+export const database = { getItemById }

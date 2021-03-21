@@ -6,8 +6,6 @@ import { App } from 'src/App'
 
 import { store } from './store'
 
-import 'src/api/services/database'
-
 import './theme'
 
 ReactDOM.render(
