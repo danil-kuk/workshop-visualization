@@ -1,14 +1,21 @@
+import { useEffect } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
 import logo from 'src/assets/images/logo-for-light.svg'
 import { useAppDispatch, useAppSelector } from 'src/store/store'
 import { decrement, increment, selectCount } from 'src/store/counter/counterSlice'
+import { fetchItem, selectItem } from 'src/store/database/databaseSlice'
 
 import styles from './style.module.scss'
 
 export const Welcome: React.FC = () => {
   const dispatch = useAppDispatch()
   const conter = useAppSelector(selectCount)
+  const item = useAppSelector(selectItem)
+
+  useEffect(() => {
+    dispatch(fetchItem())
+  }, [])
 
   return (
     <div>
@@ -28,6 +35,7 @@ export const Welcome: React.FC = () => {
           Decrement
         </button>
       </div>
+      <h3>{item?.name}</h3>
       <div>
         <NavLink
           to={publicUrlPath('/welcome/1')}
