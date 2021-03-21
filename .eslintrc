@@ -80,6 +80,7 @@
       "warn",
       "as-needed"
     ],
+    "react-hooks/exhaustive-deps": 0,
     "consistent-return": 2,
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "padding-line-between-statements": [

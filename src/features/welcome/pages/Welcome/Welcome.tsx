@@ -25,7 +25,7 @@ export const Welcome: React.FC = () => {
           type="button"
           onClick={() => dispatch(decrement())}
         >
-          Reset
+          Decrement
         </button>
       </div>
       <div>
