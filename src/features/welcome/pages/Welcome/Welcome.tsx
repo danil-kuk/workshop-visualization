@@ -14,7 +14,7 @@ export const Welcome: React.FC = () => {
   const item = useAppSelector(selectItem)
 
   useEffect(() => {
-    dispatch(fetchItem())
+    dispatch(fetchItem('10059872'))
   }, [])
 
   return (
@@ -35,8 +35,18 @@ export const Welcome: React.FC = () => {
           Decrement
         </button>
       </div>
-      <h3>{item?.name}</h3>
       <div>
+        <div>
+          Item name: {item?.name}
+        </div>
+        <button
+          type="button"
+          onClick={() => dispatch(fetchItem('1003530'))}
+        >
+          Another
+        </button>
+      </div>
+      <div className={styles.block}>
         <NavLink
           to={publicUrlPath('/welcome/1')}
           activeClassName={styles.activeLink}

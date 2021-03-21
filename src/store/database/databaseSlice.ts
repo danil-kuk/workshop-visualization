@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { getItem } from 'src/api/services/database'
+import { API } from 'src/api/services/database'
 
 import { RootState } from '../store'
 
 export const fetchItem = createAsyncThunk(
   'database/fetchItem',
-  async () => {
-    const response = await getItem()
+  async (id: string) => {
+    const response = await API.getItem(id)
 
     return response
   },
@@ -28,5 +28,4 @@ export const databaseSlice = createSlice({
     }),
 })
 
-// Other code such as selectors can use the imported `RootState` type
 export const selectItem = (state: RootState) => state.database.item

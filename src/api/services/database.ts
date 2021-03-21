@@ -6,22 +6,31 @@ import {
   PUBLIC_API_KEY,
 } from 'src/dbConfig'
 
-const app: Realm.App = Realm.App.getApp(APP_ID)
-const mongodb = app.currentUser?.mongoClient(MONGO_CLIENT)
+const app = new Realm.App(APP_ID)
 
-login()
+async function getMongoDB() {
+  let user = app.currentUser
 
-export async function login() {
+  if (!user) {
+    user = await login()
+  }
+
+  return user.mongoClient(MONGO_CLIENT)
+}
+
+async function login() {
   const credentials = Realm.Credentials.apiKey(PUBLIC_API_KEY)
+
   const user = await app.logIn(credentials, false)
 
   return user
 }
 
-export async function getItem() {
-  const col = mongodb?.db(DB_NAME).collection(COLLECTION_NAME)
+async function getItem(_id: string) {
+  const mongodb = await getMongoDB()
+  const col = mongodb.db(DB_NAME).collection(COLLECTION_NAME)
 
-  const res = await col?.findOne({ '_id': '10059872' })
+  const res = await col.findOne({ _id })
 
   if (res) {
     return { name: res.name }
@@ -29,3 +38,5 @@ export async function getItem() {
 
   return null
 }
+
+export const API = { getItem }
