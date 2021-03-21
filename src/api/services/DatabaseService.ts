@@ -1,11 +1,11 @@
 import * as Realm from 'realm-web'
 import {
   APP_ID,
-  COLLECTION_NAME,
-  DB_NAME, MONGO_CLIENT,
+  MONGO_CLIENT,
   PUBLIC_API_KEY,
 } from 'src/dbConfig'
 import { DatabaseItemBase } from 'src/models'
+import { repeatAsyncRequestOnError } from 'src/utils/repeatAsyncRequestOnError'
 
 const app = new Realm.App(APP_ID)
 
@@ -27,13 +27,23 @@ async function login() {
   return user
 }
 
-async function getItemById<T extends DatabaseItemBase>(_id: string): Promise<T | null> {
+/**
+ * Get item from selected db and collection by id.
+ * @param dbName Database name.
+ * @param collectionName Collection name.
+ * @param _id Item id.
+ */
+async function getItemById<T extends DatabaseItemBase>(
+  dbName: string,
+  collectionName: string,
+  _id: string,
+): Promise<T | null> {
   const mongodb = await getMongoDB()
+  const collection = mongodb.db(dbName).collection<T>(collectionName)
 
-  const collection = mongodb.db(DB_NAME).collection<T>(COLLECTION_NAME)
   const result = await collection.findOne({ _id })
 
   return result
 }
 
-export const database = { getItemById }
+export const database = { getItemById: repeatAsyncRequestOnError(getItemById) }
