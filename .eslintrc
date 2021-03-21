@@ -21,6 +21,7 @@
     "react/react-in-jsx-scope": "off",
     "eol-last": "error",
     "object-property-newline": 2,
+    "quotes": ["warn", "single"],
     "semi": ["error", "never"],
     "eqeqeq": "error",
     "object-curly-newline": [
