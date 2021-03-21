@@ -81,6 +81,7 @@
       "as-needed"
     ],
     "consistent-return": 2,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
     "padding-line-between-statements": [
       "warn",
       {
