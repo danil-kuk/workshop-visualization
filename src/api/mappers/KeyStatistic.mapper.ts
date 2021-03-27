@@ -8,7 +8,7 @@ export const keyStatisticMapper: DtoToModelMapper<KeyStatisticModel, KeyStatisti
   fromDto: (dto) => ({
     studentsCount: dto.students_count,
     projectsCount: dto.projects_count,
-    teamsCount: dto.students_count,
+    teamsCount: dto.teams_count,
     curatorsCount: dto.curators_count,
     customersCount: dto.customers_count,
   }),
