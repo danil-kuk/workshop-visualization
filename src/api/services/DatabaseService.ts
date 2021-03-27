@@ -45,7 +45,7 @@ function getItemById<T extends DatabaseItemBase>(
 }
 
 /**
- * Get all items from selected db and collection.
+ * Get list of items from selected db and collection.
  * @param dbName Database name.
  * @param collectionName Collection name.
  * @param limit Max items to return.
@@ -58,6 +58,7 @@ async function getItems<T extends DatabaseItemBase>(
   const mongodb = getMongoDB()
   const collection = mongodb.db(dbName).collection<T>(collectionName)
 
+  // TODO (Danil K): Add filters support.
   return collection.find({}, { limit })
 }
 

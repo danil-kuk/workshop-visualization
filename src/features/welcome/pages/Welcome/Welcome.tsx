@@ -2,7 +2,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
 import logo from 'src/assets/images/logo-for-light.svg'
 import { useAppDispatch, useAppSelector } from 'src/store/store'
-import { decrement, increment, selectCount } from 'src/store/counter/counterSlice'
+import { decrement, increment, selectCount } from 'src/store/slices/counterSlice'
 
 import { KeyStatistic } from '../../components/KeyStatistic'
 
