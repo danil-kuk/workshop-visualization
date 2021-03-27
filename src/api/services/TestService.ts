@@ -17,4 +17,16 @@ async function getItem(id: string) {
   return { name: item.name }
 }
 
-export const testAPI = { getItem }
+async function getList() {
+  const items = await database.getItems<TestType>(DB_NAME, COLLECTION_NAME)
+
+  return items.map(item => ({
+    id: item._id,
+    name: item.name,
+  }))
+}
+
+export const testAPI = {
+  getItem,
+  getList,
+}

@@ -31,7 +31,7 @@ function login() {
  * @param collectionName Collection name.
  * @param _id Item id.
  */
-async function getItemById<T extends DatabaseItemBase>(
+function getItemById<T extends DatabaseItemBase>(
   dbName: string,
   collectionName: string,
   _id: string,
@@ -39,12 +39,28 @@ async function getItemById<T extends DatabaseItemBase>(
   const mongodb = getMongoDB()
   const collection = mongodb.db(dbName).collection<T>(collectionName)
 
-  const result = await collection.findOne({ _id })
+  return collection.findOne({ _id })
+}
 
-  return result
+/**
+ * Get all items from selected db and collection.
+ * @param dbName Database name.
+ * @param collectionName Collection name.
+ * @param limit Max items to return.
+ */
+async function getItems<T extends DatabaseItemBase>(
+  dbName: string,
+  collectionName: string,
+  limit = 10,
+): Promise<T[]> {
+  const mongodb = getMongoDB()
+  const collection = mongodb.db(dbName).collection<T>(collectionName)
+
+  return collection.find({}, { limit })
 }
 
 export const database = {
   login,
   getItemById,
+  getItems,
 }
