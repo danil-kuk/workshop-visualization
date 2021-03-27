@@ -1,7 +1,9 @@
-import { COLLECTION_NAME, DB_NAME } from 'src/dbConfig'
 import { DatabaseItemBase } from 'src/models'
 
 import { database } from './DatabaseService'
+
+const COLLECTION_NAME = 'listingsAndReviews'
+const DB_NAME = 'sample_airbnb'
 
 type TestType = DatabaseItemBase & { name: string }
 

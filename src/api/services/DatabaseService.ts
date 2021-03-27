@@ -1,30 +1,28 @@
 import * as Realm from 'realm-web'
+import { DatabaseItemBase } from 'src/models'
+
 import {
   APP_ID,
   MONGO_CLIENT,
   PUBLIC_API_KEY,
-} from 'src/dbConfig'
-import { DatabaseItemBase } from 'src/models'
-import { repeatAsyncRequestOnError } from 'src/utils/repeatAsyncRequestOnError'
+} from './DatabaseConfig'
 
 const app = new Realm.App(APP_ID)
 
-async function getMongoDB() {
-  let user = app.currentUser
+function getMongoDB() {
+  const mongodb = app.currentUser?.mongoClient(MONGO_CLIENT)
 
-  if (!user) {
-    user = await login()
+  if (!mongodb) {
+    throw Error('Database connection error! Unable to create MongoDB Client.')
   }
 
-  return user.mongoClient(MONGO_CLIENT)
+  return mongodb
 }
 
-async function login() {
+function login() {
   const credentials = Realm.Credentials.apiKey(PUBLIC_API_KEY)
 
-  const user = await app.logIn(credentials, false)
-
-  return user
+  return app.logIn(credentials, false)
 }
 
 /**
@@ -38,7 +36,7 @@ async function getItemById<T extends DatabaseItemBase>(
   collectionName: string,
   _id: string,
 ): Promise<T | null> {
-  const mongodb = await getMongoDB()
+  const mongodb = getMongoDB()
   const collection = mongodb.db(dbName).collection<T>(collectionName)
 
   const result = await collection.findOne({ _id })
@@ -46,4 +44,7 @@ async function getItemById<T extends DatabaseItemBase>(
   return result
 }
 
-export const database = { getItemById: repeatAsyncRequestOnError(getItemById) }
+export const database = {
+  login,
+  getItemById,
+}
