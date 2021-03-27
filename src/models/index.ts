@@ -1,1 +1,1 @@
-export * from './DatabaseItemBase'
+export * from './KeyStatisticModel'

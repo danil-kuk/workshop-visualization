@@ -1,4 +1,4 @@
-import { DatabaseItemBase } from 'src/models'
+import { DatabaseItemBase } from '../dtos/DatabaseItemBase'
 
 import { database } from './DatabaseService'
 

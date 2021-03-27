@@ -1,5 +1,7 @@
 import * as Realm from 'realm-web'
-import { DatabaseItemBase } from 'src/models'
+import { ObjectId } from 'bson'
+
+import { DatabaseItemBase } from '../dtos/DatabaseItemBase'
 
 import {
   APP_ID,
@@ -34,7 +36,7 @@ function login() {
 function getItemById<T extends DatabaseItemBase>(
   dbName: string,
   collectionName: string,
-  _id: string,
+  _id: string | ObjectId,
 ): Promise<T | null> {
   const mongodb = getMongoDB()
   const collection = mongodb.db(dbName).collection<T>(collectionName)

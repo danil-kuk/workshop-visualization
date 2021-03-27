@@ -3,11 +3,13 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 import { counterSlice } from './counter/counterSlice'
 import { databaseSlice } from './database/databaseSlice'
+import { dashboardSlice } from './slices/dashboard'
 
 export const store = configureStore({
   reducer: {
     counter: counterSlice.reducer,
     database: databaseSlice.reducer,
+    dashboard: dashboardSlice.reducer,
   },
 })
 
