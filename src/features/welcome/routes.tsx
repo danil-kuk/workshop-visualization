@@ -2,6 +2,7 @@ import { lazy } from 'react'
 import { PartialRouteObject } from 'react-router'
 
 const Welcome = lazy(() => import('./pages/Welcome'))
+const Counter = lazy(() => import('./components/Counter'))
 
 export const welcomeRoutes: PartialRouteObject[] = [
   {
@@ -9,8 +10,8 @@ export const welcomeRoutes: PartialRouteObject[] = [
     element: <Welcome />,
     children: [
       {
-        path: ':id',
-        element: <div>Test child route content</div>,
+        path: 'counter',
+        element: <Counter />,
       },
     ],
   },
