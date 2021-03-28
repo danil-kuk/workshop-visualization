@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/features/welcome/pages/Welcome/style.module.scss"],"names":[],"mappings":"AAAA,yBACE,SAAU,CACX,0BAGC,aAAc,CADhB,8BAII,WAAY","file":"3.286a9900.chunk.css","sourcesContent":[".activeLink {\n  color: red;\n}\n\n.logoWrapper {\n  margin: 20px 0;\n\n  img {\n    width: 300px;\n  }\n}"]}
