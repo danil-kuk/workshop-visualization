@@ -1,5 +1,5 @@
 .activeLink {
-  color: red;
+  color: var(--accent);
 }
 
 .logoWrapper {
@@ -8,10 +8,6 @@
   img {
     width: 300px;
   }
-}
-
-.buttonRow {
-  margin: 20px 0;
 }
 
 .block {
