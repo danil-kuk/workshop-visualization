@@ -21,6 +21,7 @@
     "react/react-in-jsx-scope": "off",
     "eol-last": "error",
     "object-property-newline": 2,
+    "quotes": ["warn", "single"],
     "semi": ["error", "never"],
     "eqeqeq": "error",
     "object-curly-newline": [
@@ -79,7 +80,9 @@
       "warn",
       "as-needed"
     ],
+    "react-hooks/exhaustive-deps": 0,
     "consistent-return": 2,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
     "padding-line-between-statements": [
       "warn",
       {
