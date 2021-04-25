@@ -1,18 +1,23 @@
 import { SECONDARY_COLOR, PRIMARY_COLOR, WHITE, BLACK, FONT_FAMILY } from '../ChartConstants'
 
 const GetGraphConfig = (isDarkMode: boolean) => ({
-  layout: {
-    hierarchical: false,
-  },
+  layout: { hierarchical: false },
   autoResize: true,
 
   edges: {
-    arrows: { from: false, middle: false, to: false },
+    arrows: {
+      from: false,
+      middle: false,
+      to: false,
+    },
     smooth: {
       enabled: true,
       type: 'continuous',
     },
-    color: { inherit: 'to', opacity: 0.5 },
+    color: {
+      inherit: 'to',
+      opacity: 0.5,
+    },
     chosen: {
       edge: function(values : any) {
         values.opacity = 1

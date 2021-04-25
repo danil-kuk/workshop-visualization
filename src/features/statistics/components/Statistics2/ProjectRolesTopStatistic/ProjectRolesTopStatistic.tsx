@@ -1,7 +1,7 @@
 import React from 'react'
 import { CodeRounded } from '@material-ui/icons'
 import { useProjectRolesTopStatistic } from 'src/features/statistics/components/Statistics2/hooks'
-import { AppLoadingSpinner } from 'src/features/statistics/components/AppLoadingSpinner'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
 import styles from '../style.module.scss'
 

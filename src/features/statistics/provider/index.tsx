@@ -21,6 +21,11 @@ export interface Provider {
 
 let provider: Provider
 
-if (process.env.ENABLE_FAKES == 'true') { provider = fakeProvider } else { provider = apiProvider }
+if (process.env.ENABLE_FAKES === 'true') {
+  provider = fakeProvider
+}
+else {
+  provider = apiProvider
+}
 
 export const { admin, statistic } = provider

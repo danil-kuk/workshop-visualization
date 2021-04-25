@@ -4,4 +4,7 @@ import { statistic } from 'src/features/statistics/provider'
 import { useStatistic } from './useStatistic'
 
 export const useProjectDistributionStatistic = (eventId: number) =>
-  useStatistic<BubbleChartModel>(() => statistic.getProjectDistributionStatistic(eventId), { name: '', value: 0 })
+  useStatistic<BubbleChartModel>(() => statistic.getProjectDistributionStatistic(eventId), {
+    name: '',
+    value: 0,
+  })

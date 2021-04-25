@@ -1,7 +1,7 @@
 import React from 'react'
 import { ResponsiveHeatMap } from '@nivo/heatmap'
 import { useAdminStatistics } from 'src/features/statistics/components/Statistics2/hooks'
-import { AppLoadingSpinner } from 'src/features/statistics/components/AppLoadingSpinner'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
 import { HEATMAP_COLORS, FONT_FAMILY, FONT_COLOR, HEATMAP_HEIGHT } from '../ChartConstants'
 
@@ -57,7 +57,12 @@ export const LifeScenariosAndKeyTechnologiesStatistic: React.FC<Props> = ({ type
         data={preparedData}
         keys={keys}
         indexBy='lifeScenario'
-        margin={{ top: 250, right: 0, bottom: 0, left: 170 }}
+        margin={{
+          top: 250,
+          right: 0,
+          bottom: 0,
+          left: 170,
+        }}
         forceSquare={true}
         colors={HEATMAP_COLORS}
         nanColor='var(--bg-secondary)'
@@ -84,18 +89,8 @@ export const LifeScenariosAndKeyTechnologiesStatistic: React.FC<Props> = ({ type
         theme={{
           fontFamily: FONT_FAMILY,
           fontSize: 14,
-          axis: {
-            ticks: {
-              text: {
-                fill: FONT_COLOR,
-              },
-            },
-          },
-          labels: {
-            text: {
-              fill: FONT_COLOR,
-            },
-          },
+          axis: { ticks: { text: { fill: FONT_COLOR } } },
+          labels: { text: { fill: FONT_COLOR } },
         }}
       />
     </div>

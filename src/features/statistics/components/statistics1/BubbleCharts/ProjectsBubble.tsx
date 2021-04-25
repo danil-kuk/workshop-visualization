@@ -2,7 +2,7 @@ import React from 'react'
 import { ResponsiveBubble } from '@nivo/circle-packing'
 
 import { FONT_FAMILY, BUBBLE_COLORS, HEIGHT } from '../ChartConstants'
-import { AppLoadingSpinner } from '../../AppLoadingSpinner'
+import { AppLoadingSpinner } from '../../../../../components/AppLoadingSpinner'
 import { useProjectDistributionStatistic } from '../hooks'
 import style from '../style.module.scss'
 
@@ -10,9 +10,7 @@ interface Props {
   eventId: number
 }
 
-export const ProjectsBubble : React.FC<Props> = ({
-  eventId,
-}) => {
+export const ProjectsBubble : React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useProjectDistributionStatistic(eventId)
 
   if (loading) {
@@ -36,20 +34,35 @@ export const ProjectsBubble : React.FC<Props> = ({
   return (
     <>
       <p className={style.description}>{description}</p>
-      <div style={{ height: HEIGHT, color: '#000' }}>
+      <div style={{
+        height: HEIGHT,
+        color: '#000',
+      }}
+      >
         <ResponsiveBubble
           root={data}
-          margin={{ top: 10, right: 20, bottom: 20, left: 20 }}
+          margin={{
+            top: 10,
+            right: 20,
+            bottom: 20,
+            left: 20,
+          }}
           identity='name'
           value='value'
           colors={BUBBLE_COLORS}
           padding={6}
           labelSkipRadius={4}
           label='value'
-          labelTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+          labelTextColor={{
+            from: 'color',
+            modifiers: [['darker', 2]],
+          }}
           borderWidth={2}
           borderColor={{ from: 'color' }}
-          fill={[{ match: { depth: 1 }, id: 'lines' }]}
+          fill={[{
+            match: { depth: 1 },
+            id: 'lines',
+          }]}
           animate={true}
           motionStiffness={300}
           motionDamping={40}

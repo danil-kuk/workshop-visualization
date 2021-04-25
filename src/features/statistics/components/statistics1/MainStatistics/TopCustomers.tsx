@@ -9,9 +9,7 @@ interface Props {
   eventId: number
 }
 
-export const TopCustomers : React.FC<Props> = ({
-  eventId,
-}) => {
+export const TopCustomers : React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useTopCostumersStatistic(eventId)
 
   if (loading) return <AppLoadingSpinner />

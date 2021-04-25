@@ -8,9 +8,7 @@ interface Props {
   eventId: number
 }
 
-export const KeyStatistic : React.FC<Props> = ({
-  eventId,
-}) => {
+export const KeyStatistic : React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useKeyStatistic(eventId)
 
   if (loading) return <AppLoadingSpinner />

@@ -3,7 +3,7 @@ import { ResponsiveBar } from '@nivo/bar'
 import { useProjectCompetenciesStatistic } from 'src/features/statistics/components/Statistics2/hooks'
 
 import { PRIMARY_COLOR, SECONDARY_COLOR, HEIGHT } from '../ChartConstants'
-import { AppLoadingSpinner } from '../../AppLoadingSpinner'
+import { AppLoadingSpinner } from '../../../../../components/AppLoadingSpinner'
 
 import { BarTheme, GetTooltip } from './BarConfig'
 

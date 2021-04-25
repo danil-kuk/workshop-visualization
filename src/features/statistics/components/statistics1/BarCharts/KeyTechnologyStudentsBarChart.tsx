@@ -6,16 +6,14 @@ import { AppCard } from 'src/features/statistics/components/AppCard'
 import cls from 'classnames'
 
 import { PRIMARY_COLOR, WHITE, FONT_FAMILY } from '../ChartConstants'
-import { AppLoadingSpinner } from '../../AppLoadingSpinner'
+import { AppLoadingSpinner } from '../../../../../components/AppLoadingSpinner'
 import style from '../style.module.scss'
 
 interface Props {
   eventId: number
 }
 
-export const KeyTechnologyStudentsBarChart : React.FC<Props> = ({
-  eventId,
-}) => {
+export const KeyTechnologyStudentsBarChart : React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useKeyTechnologyStudentsStatistic(eventId)
 
   if (loading) return <AppLoadingSpinner />
@@ -28,9 +26,7 @@ export const KeyTechnologyStudentsBarChart : React.FC<Props> = ({
     yField: 'keyTechnology',
     meta: { value: { alias: 'Количество студентов' } },
     color: PRIMARY_COLOR,
-    style: {
-      fontFamily: FONT_FAMILY,
-    },
+    style: { fontFamily: FONT_FAMILY },
     label: {
       position: 'left',
       style: {

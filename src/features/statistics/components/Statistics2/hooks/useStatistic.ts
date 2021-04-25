@@ -14,5 +14,8 @@ export const useStatistic = <ModelT>(statisticMethod : () => Promise<any>, initi
       })
   }, [setLoading, setData, statistic])
 
-  return { data, loading }
+  return {
+    data,
+    loading,
+  }
 }

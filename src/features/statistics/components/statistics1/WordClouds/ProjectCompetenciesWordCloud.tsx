@@ -1,9 +1,9 @@
 import React from 'react'
-import { useProjectCompetenciesStatistic } from 'src/features/statistics/components/statistics1/hooks'
 import { WordCloud } from '@ant-design/charts'
+import { useProjectCompetenciesStatistic } from 'src/features/statistics/components/statistics1/hooks'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
 import style from '../style.module.scss'
-import { AppLoadingSpinner } from '../../AppLoadingSpinner'
 import { HEIGHT } from '../ChartConstants'
 
 import { configBuilder } from './CloudConfig'
@@ -12,9 +12,7 @@ interface Props {
   eventId: number
 }
 
-export const ProjectCompetenciesWordCloud: React.FC<Props> = ({
-  eventId,
-}) => {
+export const ProjectCompetenciesWordCloud: React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useProjectCompetenciesStatistic(eventId)
 
   if (loading) {

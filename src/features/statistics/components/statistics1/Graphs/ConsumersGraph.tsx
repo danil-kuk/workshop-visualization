@@ -17,9 +17,7 @@ interface Props {
   eventId: number
 }
 
-export const ConsumersGraph : React.FC<Props> = ({
-  eventId,
-}) => {
+export const ConsumersGraph : React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useKeyTechnologyConsumersStatistic(eventId)
   const { value } = useDarkMode()
 
@@ -33,9 +31,20 @@ export const ConsumersGraph : React.FC<Props> = ({
 
   const preparedData : GraphModel = {
     nodes: data.nodes.map(node =>
-      ({ id: node.id, label: truncate(node.label, 40), title: `${node.label}, Проектов: ${node.value}`, group: node.group, value: node.value })),
+      ({
+        id: node.id,
+        label: truncate(node.label, 40),
+        title: `${node.label}, Проектов: ${node.value}`,
+        group: node.group,
+        value: node.value,
+      })),
     edges: data.edges.map(edge =>
-      ({ from: edge.from, to: edge.to, value: edge.value, title: `Проектов: ${edge.value}` })),
+      ({
+        from: edge.from,
+        to: edge.to,
+        value: edge.value,
+        title: `Проектов: ${edge.value}`,
+      })),
   }
 
   const description = `Граф отображает, к каким направлениям относятся проекты заказчиков.
