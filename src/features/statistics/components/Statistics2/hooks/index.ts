@@ -1,0 +1,7 @@
+export { useKeyStatistic } from './useKeyStatistic'
+export { useTopCostumersStatistic } from './useTopCostumersStatistic'
+export { useProjectRolesTopStatistic } from './useProjectRolesTopStatistic'
+export { useStudentCompetenciesStatistic } from './useStudentCompetenciesStatistic'
+export { useProjectCompetenciesStatistic } from './useProjectCompetenciesStatistic'
+export { useTeamsCountOnCompetenciesStatistic } from './useTeamsCountOnCompetenciesStatistic'
+export { useAdminStatistics } from './useAdminStatistics'

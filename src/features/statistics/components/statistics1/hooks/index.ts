@@ -1,0 +1,8 @@
+export { useProjectCompetenciesStatistic } from './useProjectCompetenciesStatistic'
+export { useStudentCompetenciesStatistic } from './useStudentCompetenciesStatistic'
+export { useKeyTechnologyStudentsStatistic } from './useKeyTechnologyStudentsStatistic'
+export { useKeyTechnologyCuratorsStatistic } from './useKeyTechnologyCuratorsStatistic'
+export { useKeyTechnologyConsumersStatistic } from './useKeyTechnologyConsumersStatistic'
+export { useProjectDistributionStatistic } from './useProjectDistributionStatistic'
+export { useKeyStatistic } from './useKeyStatistic'
+export { useTopCostumersStatistic } from './useTopCostumersStatistic'
