@@ -2,7 +2,7 @@ import React from 'react'
 import { useProjectCompetenciesStatistic } from 'src/features/statistics/components/statistics1/hooks'
 import { WordCloud } from '@ant-design/charts'
 
-import style from '../style.scss'
+import style from '../style.module.scss'
 import { AppLoadingSpinner } from '../../AppLoadingSpinner'
 import { HEIGHT } from '../ChartConstants'
 

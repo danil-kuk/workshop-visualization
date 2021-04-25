@@ -4,7 +4,7 @@ import { ResponsiveBubble } from '@nivo/circle-packing'
 import { FONT_FAMILY, BUBBLE_COLORS, HEIGHT } from '../ChartConstants'
 import { AppLoadingSpinner } from '../../AppLoadingSpinner'
 import { useProjectDistributionStatistic } from '../hooks'
-import style from '../style.scss'
+import style from '../style.module.scss'
 
 interface Props {
   eventId: number

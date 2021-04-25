@@ -7,7 +7,7 @@ import cls from 'classnames'
 
 import { PRIMARY_COLOR, WHITE, FONT_FAMILY } from '../ChartConstants'
 import { AppLoadingSpinner } from '../../AppLoadingSpinner'
-import style from '../style.scss'
+import style from '../style.module.scss'
 
 interface Props {
   eventId: number

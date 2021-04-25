@@ -2,15 +2,13 @@ import React from 'react'
 import { CircularProgress } from '@material-ui/core'
 import cls from 'classnames'
 
-import style from './style.scss'
+import style from './style.module.scss'
 
 interface Props {
   fullHeight?: boolean
 }
 
-export const AppLoadingSpinner: React.FC<Props> = ({
-  fullHeight,
-}) => (
+export const AppLoadingSpinner: React.FC<Props> = ({ fullHeight }) => (
   <div className={cls(style.loading, { [style.fullHeight]: fullHeight })}>
     <CircularProgress
       color='primary'

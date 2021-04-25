@@ -7,7 +7,7 @@ import useDarkMode from 'use-dark-mode'
 
 import { AppLoadingSpinner } from '../../AppLoadingSpinner'
 import { HEIGHT } from '../ChartConstants'
-import style from '../style.scss'
+import style from '../style.module.scss'
 
 import GetGraphConfig from './GraphConfig'
 

@@ -11,9 +11,7 @@ interface Props {
   eventId: number
 }
 
-export const ProjectCompetenciesStatistic: React.FC<Props> = ({
-  eventId,
-}) => {
+export const ProjectCompetenciesStatistic: React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useProjectCompetenciesStatistic(eventId)
 
   if (loading) {
@@ -27,7 +25,7 @@ export const ProjectCompetenciesStatistic: React.FC<Props> = ({
   const preparedData = data.sort((a, b) => a.value > b.value ? -1 : 1)
     .slice(0, 10)
     .map((item: any) => {
-      if (item.competencyType == 'SoftSkill') {
+      if (item.competencyType === 'SoftSkill') {
         item.valueColor = SECONDARY_COLOR
       } else {
         item.valueColor = PRIMARY_COLOR
@@ -41,14 +39,17 @@ export const ProjectCompetenciesStatistic: React.FC<Props> = ({
         data={preparedData}
         keys={['value']}
         indexBy='competency'
-        margin={{ top: 0, right: 160, bottom: 0, left: 0 }}
+        margin={{
+          top: 0,
+          right: 160,
+          bottom: 0,
+          left: 0,
+        }}
         padding={0.3}
         layout='horizontal'
         reverse={true}
         colors={({ id, data }: { id: string, data: any }) => data[`${id}Color`]}
-        axisRight={{
-          tickSize: 0,
-        }}
+        axisRight={{ tickSize: 0 }}
         enableGridX={true}
         enableGridY={false}
         labelTextColor={{ theme: 'labels.text.fill' }}

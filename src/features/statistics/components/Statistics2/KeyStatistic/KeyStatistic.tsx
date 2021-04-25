@@ -3,7 +3,7 @@ import { getWordForm } from 'src/features/statistics/utils/stringUtils'
 import { useKeyStatistic } from 'src/features/statistics/components/Statistics2/hooks'
 import { AppLoadingSpinner } from 'src/features/statistics/components/AppLoadingSpinner'
 
-import styles from '../style.scss'
+import styles from '../style.module.scss'
 
 interface Props {
   eventId: number

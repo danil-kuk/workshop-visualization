@@ -2,7 +2,7 @@ import React from 'react'
 import cls from 'classnames'
 import { Link } from 'react-router-dom'
 
-import style from './style.scss'
+import style from './style.module.scss'
 
 interface AppCardProps {
   header?: React.ReactNode

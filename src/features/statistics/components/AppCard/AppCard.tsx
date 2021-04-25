@@ -1,7 +1,7 @@
 import React from 'react'
 import cls from 'classnames'
 
-import style from './style.scss'
+import style from './style.module.scss'
 
 interface AppCardProps {
   header?: React.ReactNode

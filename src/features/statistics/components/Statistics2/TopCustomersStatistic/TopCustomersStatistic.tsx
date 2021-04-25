@@ -2,15 +2,13 @@ import React from 'react'
 import { AppLoadingSpinner } from 'src/features/statistics/components/AppLoadingSpinner'
 import { useTopCostumersStatistic } from 'src/features/statistics/components/Statistics2/hooks'
 
-import styles from '../style.scss'
+import styles from '../style.module.scss'
 
 interface Props {
   eventId: number
 }
 
-export const TopCustomersStatistic: React.FC<Props> = ({
-  eventId,
-}) => {
+export const TopCustomersStatistic: React.FC<Props> = ({ eventId }) => {
   const { data, loading } = useTopCostumersStatistic(eventId)
 
   if (loading) return <AppLoadingSpinner />
