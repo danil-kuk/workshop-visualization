@@ -10,11 +10,11 @@ export const fetchKeyStatistic = createAsyncThunk(
 )
 
 
-interface TestState {
+interface DashboardState {
   keyStatistic: KeyStatisticModel | null
 }
 
-const initialState: TestState = { keyStatistic: null }
+const initialState: DashboardState = { keyStatistic: null }
 
 export const dashboardSlice = createSlice({
   name: 'dashboard',
