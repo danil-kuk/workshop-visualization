@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/workshop-visualization/static/css/main.db43c505.chunk.css",
-    "main.js": "/workshop-visualization/static/js/main.ae063b00.chunk.js",
-    "main.js.map": "/workshop-visualization/static/js/main.ae063b00.chunk.js.map",
-    "runtime-main.js": "/workshop-visualization/static/js/runtime-main.cf141335.js",
-    "runtime-main.js.map": "/workshop-visualization/static/js/runtime-main.cf141335.js.map",
-    "static/js/2.8bc86e99.chunk.js": "/workshop-visualization/static/js/2.8bc86e99.chunk.js",
-    "static/js/2.8bc86e99.chunk.js.map": "/workshop-visualization/static/js/2.8bc86e99.chunk.js.map",
+    "main.js": "/workshop-visualization/static/js/main.481a9659.chunk.js",
+    "main.js.map": "/workshop-visualization/static/js/main.481a9659.chunk.js.map",
+    "runtime-main.js": "/workshop-visualization/static/js/runtime-main.ac193dbc.js",
+    "runtime-main.js.map": "/workshop-visualization/static/js/runtime-main.ac193dbc.js.map",
+    "static/js/2.c6080807.chunk.js": "/workshop-visualization/static/js/2.c6080807.chunk.js",
+    "static/js/2.c6080807.chunk.js.map": "/workshop-visualization/static/js/2.c6080807.chunk.js.map",
     "static/css/3.fd82b1ba.chunk.css": "/workshop-visualization/static/css/3.fd82b1ba.chunk.css",
-    "static/js/3.9799aee8.chunk.js": "/workshop-visualization/static/js/3.9799aee8.chunk.js",
-    "static/js/3.9799aee8.chunk.js.map": "/workshop-visualization/static/js/3.9799aee8.chunk.js.map",
+    "static/js/3.2a9fd1c2.chunk.js": "/workshop-visualization/static/js/3.2a9fd1c2.chunk.js",
+    "static/js/3.2a9fd1c2.chunk.js.map": "/workshop-visualization/static/js/3.2a9fd1c2.chunk.js.map",
     "static/css/4.0163aad4.chunk.css": "/workshop-visualization/static/css/4.0163aad4.chunk.css",
-    "static/js/4.b0fff9c6.chunk.js": "/workshop-visualization/static/js/4.b0fff9c6.chunk.js",
-    "static/js/4.b0fff9c6.chunk.js.map": "/workshop-visualization/static/js/4.b0fff9c6.chunk.js.map",
+    "static/js/4.5b5eefa7.chunk.js": "/workshop-visualization/static/js/4.5b5eefa7.chunk.js",
+    "static/js/4.5b5eefa7.chunk.js.map": "/workshop-visualization/static/js/4.5b5eefa7.chunk.js.map",
     "index.html": "/workshop-visualization/index.html",
     "static/css/3.fd82b1ba.chunk.css.map": "/workshop-visualization/static/css/3.fd82b1ba.chunk.css.map",
     "static/css/4.0163aad4.chunk.css.map": "/workshop-visualization/static/css/4.0163aad4.chunk.css.map",
     "static/css/main.db43c505.chunk.css.map": "/workshop-visualization/static/css/main.db43c505.chunk.css.map",
-    "static/js/2.8bc86e99.chunk.js.LICENSE.txt": "/workshop-visualization/static/js/2.8bc86e99.chunk.js.LICENSE.txt",
+    "static/js/2.c6080807.chunk.js.LICENSE.txt": "/workshop-visualization/static/js/2.c6080807.chunk.js.LICENSE.txt",
     "static/media/variables.scss": "/workshop-visualization/static/media/logo-for-light.88f218fc.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf141335.js",
-    "static/js/2.8bc86e99.chunk.js",
+    "static/js/runtime-main.ac193dbc.js",
+    "static/js/2.c6080807.chunk.js",
     "static/css/main.db43c505.chunk.css",
-    "static/js/main.ae063b00.chunk.js"
+    "static/js/main.481a9659.chunk.js"
   ]
 }
