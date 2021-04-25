@@ -62,8 +62,26 @@ async function getItems<T extends DatabaseItemBase>(
   return collection.find({}, { limit })
 }
 
+/**
+ * Get item from selected db and collection by event id.
+ * @param dbName Database name.
+ * @param collectionName Collection name.
+ * @param event_id Event id.
+ */
+export function getItemByEventId<T extends DatabaseItemBase>(
+  dbName: string,
+  collectionName: string,
+  event_id: number,
+): Promise<T | null> {
+  const mongodb = getMongoDB()
+  const collection = mongodb.db(dbName).collection<T>(collectionName)
+
+  return collection.findOne({ event_id })
+}
+
 export const database = {
   login,
   getItemById,
   getItems,
+  getItemByEventId,
 }

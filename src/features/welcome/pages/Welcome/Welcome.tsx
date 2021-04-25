@@ -1,26 +1,35 @@
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
 import logo from 'src/assets/images/logo-for-light.svg'
-
-import { KeyStatistic } from '../../components/KeyStatistic'
 
 import styles from './style.module.scss'
 
 export const Welcome: React.FC = () => (
   <div>
     <h1>Welcome page</h1>
-    <KeyStatistic />
     <div className={styles.block}>
       <NavLink
-        to={publicUrlPath('/welcome/counter')}
+        end
+        to={publicUrlPath('/welcome')}
         activeClassName={styles.activeLink}
       >
-        Counter
+        Main page
       </NavLink>
     </div>
-    <div>
-      <Link to={publicUrlPath('/empty')}>Link to empty url</Link>
-    </div>
+    <NavLink
+      to={publicUrlPath('/welcome/event/1')}
+      activeClassName={styles.activeLink}
+      end
+    >
+      1
+    </NavLink>
+    <NavLink
+      to={publicUrlPath('/welcome/event/2')}
+      activeClassName={styles.activeLink}
+      end
+    >
+      2
+    </NavLink>
     <div className={styles.logoWrapper}>
       <img
         src={logo}

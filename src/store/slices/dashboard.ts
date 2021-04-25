@@ -6,7 +6,7 @@ import { RootState } from '../store'
 
 export const fetchKeyStatistic = createAsyncThunk(
   'dashboard/fetchKeyStatistic',
-  dashboardAPI.getKeyStatistic,
+  (eventId: number) => dashboardAPI.getKeyStatistic(eventId),
 )
 
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRoutes } from 'react-router-dom'
 
 import { database } from './api/services/DatabaseService'
+import { AppLoadingSpinner } from './components/AppLoadingSpinner'
 import { RootRouter } from './routes'
 
 export const App: React.FC = () => {
@@ -19,5 +20,5 @@ export const App: React.FC = () => {
     <main>
       {routes}
     </main>
-  ) : null // TODO: Add loading spinner.
+  ) : <AppLoadingSpinner fullHeight />
 }
