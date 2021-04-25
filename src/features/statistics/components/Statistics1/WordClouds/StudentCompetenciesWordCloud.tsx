@@ -1,10 +1,10 @@
 import React from 'react'
 import { WordCloud } from '@ant-design/charts'
-import { useStudentCompetenciesStatistic } from 'src/features/statistics/components/statistics1/hooks'
+import { useStudentCompetenciesStatistic } from 'src/features/statistics/components/Statistics1/hooks'
 import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
-import style from '../style.module.scss'
 import { HEIGHT } from '../ChartConstants'
+import style from '../style.module.scss'
 
 import { configBuilder } from './CloudConfig'
 

@@ -1,4 +1,4 @@
-import { KeyStatisticModel } from 'src/features/statistics/models/statistic'
+import { KeyStatisticModel } from 'src/features/statistics/models'
 import { statistic } from 'src/features/statistics/provider'
 
 import { useStatistic } from './useStatistic'

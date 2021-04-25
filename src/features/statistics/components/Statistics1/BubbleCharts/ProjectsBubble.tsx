@@ -1,8 +1,8 @@
 import React from 'react'
 import { ResponsiveBubble } from '@nivo/circle-packing'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
 import { FONT_FAMILY, BUBBLE_COLORS, HEIGHT } from '../ChartConstants'
-import { AppLoadingSpinner } from '../../../../../components/AppLoadingSpinner'
 import { useProjectDistributionStatistic } from '../hooks'
 import style from '../style.module.scss'
 

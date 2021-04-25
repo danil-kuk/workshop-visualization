@@ -1,6 +1,5 @@
 import React from 'react'
 import { ResponsiveHeatMap } from '@nivo/heatmap'
-import { useAdminStatistics } from 'src/features/statistics/components/Statistics2/hooks'
 import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
 import { HEATMAP_COLORS, FONT_FAMILY, FONT_COLOR, HEATMAP_HEIGHT } from '../ChartConstants'
@@ -9,8 +8,10 @@ interface Props {
   type: 'studentsCount' | 'projectsCount'
 }
 
+// TODO: Repair this component.
 export const LifeScenariosAndKeyTechnologiesStatistic: React.FC<Props> = ({ type }) => {
-  const { data, loading } = useAdminStatistics()
+  const data: never[] = []
+  const loading = true
 
   if (loading) {
     return (
@@ -20,7 +21,7 @@ export const LifeScenariosAndKeyTechnologiesStatistic: React.FC<Props> = ({ type
     )
   }
 
-  const reducedObject = data.reduce(
+  const reducedObject = (data as any[]).reduce(
     (accum: any, item) => {
       if (item[type] > 0) {
         return {

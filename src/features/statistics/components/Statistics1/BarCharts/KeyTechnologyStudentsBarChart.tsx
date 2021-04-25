@@ -1,8 +1,8 @@
 import React from 'react'
 import { Bar } from '@ant-design/charts'
 import { BarConfig } from '@ant-design/charts/es/bar'
-import { useKeyTechnologyStudentsStatistic } from 'src/features/statistics/components/statistics1/hooks'
-import { AppCard } from 'src/features/statistics/components/AppCard'
+import { useKeyTechnologyStudentsStatistic } from 'src/features/statistics/components/Statistics1/hooks'
+import { AppCard } from 'src/components/AppCard'
 import cls from 'classnames'
 
 import { PRIMARY_COLOR, WHITE, FONT_FAMILY } from '../ChartConstants'

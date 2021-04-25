@@ -1,11 +1,11 @@
 import React from 'react'
 import Graph from 'react-graph-vis'
-import { useKeyTechnologyCuratorsStatistic } from 'src/features/statistics/components/statistics1/hooks'
-import { GraphModel } from 'src/features/statistics/models/statistic'
-import { truncate } from 'src/features/statistics/utils/stringUtils'
 import useDarkMode from 'use-dark-mode'
+import { useKeyTechnologyConsumersStatistic } from 'src/features/statistics/components/Statistics1/hooks'
+import { GraphModel } from 'src/features/statistics/models'
+import { truncate } from 'src/features/statistics/utils/stringUtils'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
-import { AppLoadingSpinner } from '../../AppLoadingSpinner'
 import { HEIGHT } from '../ChartConstants'
 import style from '../style.module.scss'
 
@@ -17,8 +17,8 @@ interface Props {
   eventId: number
 }
 
-export const CuratorsGraph : React.FC<Props> = ({ eventId }) => {
-  const { data, loading } = useKeyTechnologyCuratorsStatistic(eventId)
+export const ConsumersGraph : React.FC<Props> = ({ eventId }) => {
+  const { data, loading } = useKeyTechnologyConsumersStatistic(eventId)
   const { value } = useDarkMode()
 
   if (loading) {
@@ -47,11 +47,11 @@ export const CuratorsGraph : React.FC<Props> = ({ eventId }) => {
       })),
   }
 
-  const description = `Граф отображает, к каким направлениям относятся кураторы. Вершины
-    прямоугольной формы соответствуют ключевым технологиям проектов,
-    круглой — кураторам. Размер круглых вершин и ширина ребер
-    характеризуют количество проектов у того или иного куратора: чем крупнее
-    вершина и шире ребро графа, тем больше у куратора проектов.`
+  const description = `Граф отображает, к каким направлениям относятся проекты заказчиков.
+    Вершины прямоугольной формы соответствуют ключевым технологиям
+    проектов, круглой — заказчикам. Размер круглых вершин и ширина ребер
+    характеризуют количество проектов у того или иного заказчика: чем крупнее
+    вершина и шире ребро графа, тем больше у заказчика проектов.`
 
   return (
     <>

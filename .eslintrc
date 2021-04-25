@@ -60,7 +60,7 @@
     "react/jsx-first-prop-new-line": [
       1
     ],
-    "indent": [
+    "@typescript-eslint/indent": [
       "error",
       2,
       {

@@ -4,7 +4,7 @@ import {
   GraphModel, BubbleChartModel,
   KeyStatisticModel,
   TopCustomerModel,
-} from 'src/features/statistics/models/statistic'
+} from 'src/features/statistics/models'
 
 export const fakeProjectCompetenciesStatistic: CompetenceModel[] = [
   {

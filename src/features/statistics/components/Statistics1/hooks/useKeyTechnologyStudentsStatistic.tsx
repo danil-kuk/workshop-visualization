@@ -1,4 +1,4 @@
-import { KeyTechnologyStudentsModel } from 'src/features/statistics/models/statistic/KeyTechnologyStudentsModel'
+import { KeyTechnologyStudentsModel } from 'src/features/statistics/models'
 import { statistic } from 'src/features/statistics/provider'
 
 import { useStatistic } from './useStatistic'

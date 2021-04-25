@@ -1,6 +1,6 @@
 import React from 'react'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
-import { AppLoadingSpinner } from '../../AppLoadingSpinner'
 import { useKeyStatistic } from '../hooks'
 import style from '../style.module.scss'
 

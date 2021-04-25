@@ -2,9 +2,6 @@ import * as fakeProvider from './fake-provider'
 import * as apiProvider from './api-provider'
 
 export interface Provider {
-  admin: {
-    getStatistics(): Promise<any>
-  },
   statistic: {
     getProjectCompetenciesStatistic(eventId: number): Promise<any>
     getStudentCompetenciesStatistic(eventId: number): Promise<any>
@@ -28,4 +25,4 @@ else {
   provider = apiProvider
 }
 
-export const { admin, statistic } = provider
+export const { statistic } = provider
