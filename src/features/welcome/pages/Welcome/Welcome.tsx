@@ -17,10 +17,7 @@ export const Welcome: React.FC = () => {
   })
 
   const eventsLinks = eventsList.map(item => (
-    <div
-      key={item.id}
-      className={styles.block}
-    >
+    <div key={item.id}>
       <NavLink
         to={publicUrlPath(`/welcome/event/${item.id}`)}
         activeClassName={styles.activeLink}
