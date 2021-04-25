@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRoutes } from 'react-router-dom'
 
 import { database } from './api/services/DatabaseService'
+import { AppHeader } from './components/AppHeader'
 import { AppLoadingSpinner } from './components/AppLoadingSpinner'
 import { RootRouter } from './routes'
 
@@ -16,9 +17,16 @@ export const App: React.FC = () => {
       .catch((error) => console.error('Database connection error', error))
   }, [])
 
-  return auth ? (
-    <main>
-      {routes}
-    </main>
-  ) : <AppLoadingSpinner fullHeight />
+  if (!auth) {
+    return <AppLoadingSpinner fullHeight />
+  }
+
+  return (
+    <>
+      <AppHeader />
+      <main>
+        {routes}
+      </main>
+    </>
+  )
 }
