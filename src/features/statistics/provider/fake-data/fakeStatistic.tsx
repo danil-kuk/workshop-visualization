@@ -4,7 +4,7 @@ import {
   GraphModel, BubbleChartModel,
   KeyStatisticModel,
   TopCustomerModel,
-} from 'src/features/statistics/models/statistic'
+} from 'src/features/statistics/models'
 
 export const fakeProjectCompetenciesStatistic: CompetenceModel[] = [
   {
@@ -2612,204 +2612,1022 @@ export const fakeKeyTechnologyStudentsStatistic : KeyTechnologyStudentsModel[] =
 
 export const fakeKeyTechnologyCuratorsStatistic : GraphModel = {
   nodes: [
-    { id: 1, label: '3D-моделирование', group: 'keyTech', value: 6 },
-    { id: 2, label: 'Application', group: 'keyTech', value: 6 },
-    { id: 3, label: 'AR/VR', group: 'keyTech', value: 3 },
-    { id: 4, label: 'GameDev', group: 'keyTech', value: 19 },
-    { id: 5, label: 'Machine Learning', group: 'keyTech', value: 20 },
-    { id: 6, label: 'Mobile', group: 'keyTech', value: 11 },
-    { id: 7, label: 'SMM', group: 'keyTech', value: 2 },
-    { id: 8, label: 'Web/SMM', group: 'keyTech', value: 8 },
-    { id: 9, label: 'Web-разработка', group: 'keyTech', value: 14 },
-    { id: 10, label: 'Информационные системы', group: 'keyTech', value: 13 },
-    { id: 11, label: 'Математическое моделирование', group: 'keyTech', value: 25 },
-    { id: 14, label: 'Робототехника', group: 'keyTech', value: 2 },
-    { id: 15, label: 'Чат-бот', group: 'keyTech', value: 2 },
+    {
+      id: 1,
+      label: '3D-моделирование',
+      group: 'keyTech',
+      value: 6,
+    },
+    {
+      id: 2,
+      label: 'Application',
+      group: 'keyTech',
+      value: 6,
+    },
+    {
+      id: 3,
+      label: 'AR/VR',
+      group: 'keyTech',
+      value: 3,
+    },
+    {
+      id: 4,
+      label: 'GameDev',
+      group: 'keyTech',
+      value: 19,
+    },
+    {
+      id: 5,
+      label: 'Machine Learning',
+      group: 'keyTech',
+      value: 20,
+    },
+    {
+      id: 6,
+      label: 'Mobile',
+      group: 'keyTech',
+      value: 11,
+    },
+    {
+      id: 7,
+      label: 'SMM',
+      group: 'keyTech',
+      value: 2,
+    },
+    {
+      id: 8,
+      label: 'Web/SMM',
+      group: 'keyTech',
+      value: 8,
+    },
+    {
+      id: 9,
+      label: 'Web-разработка',
+      group: 'keyTech',
+      value: 14,
+    },
+    {
+      id: 10,
+      label: 'Информационные системы',
+      group: 'keyTech',
+      value: 13,
+    },
+    {
+      id: 11,
+      label: 'Математическое моделирование',
+      group: 'keyTech',
+      value: 25,
+    },
+    {
+      id: 14,
+      label: 'Робототехника',
+      group: 'keyTech',
+      value: 2,
+    },
+    {
+      id: 15,
+      label: 'Чат-бот',
+      group: 'keyTech',
+      value: 2,
+    },
 
-    { id: 16, label: 'Акулич Сергей Андреевич', group: 'curator', value: 4 },
-    { id: 17, label: 'Блохин Олег Анатольевич', group: 'curator', value: 2 },
-    { id: 18, label: 'Ботов Михаил Алексеевич', group: 'curator', value: 14 },
-    { id: 19, label: 'Васькин Павел Ильич', group: 'curator', value: 2 },
-    { id: 20, label: 'Евсегнеев Олег Анатольевич', group: 'curator', value: 4 },
-    { id: 21, label: 'Изотов Илья Николаевич', group: 'curator', value: 2 },
-    { id: 22, label: 'Комаров Денис Евгеньевич', group: 'curator', value: 2 },
-    { id: 23, label: 'Комоцкий Евгений Игоревич', group: 'curator', value: 3 },
-    { id: 24, label: 'Куклин Илья Эдуардович', group: 'curator', value: 9 },
-    { id: 25, label: 'Лимановская Оксана Викторовна', group: 'curator', value: 15 },
-    { id: 26, label: 'Протасов Денис Николаевич', group: 'curator', value: 5 },
-    { id: 27, label: 'Сальников Виктор Борисович', group: 'curator', value: 2 },
-    { id: 28, label: 'Стародубцев Илья Сергеевич', group: 'curator', value: 4 },
-    { id: 29, label: 'Ушенин Константин Сергеевич', group: 'curator', value: 5 },
-    { id: 30, label: 'Хлебников Николай Александрович', group: 'curator', value: 3 },
-    { id: 31, label: 'Чикова Ольга Анатольевна', group: 'curator', value: 3 },
-    { id: 32, label: 'Шадрин Денис Борисович', group: 'curator', value: 8 },
-    { id: 33, label: 'Шестеров Михаил Андреевич', group: 'curator', value: 24 },
-    { id: 34, label: 'Шибаев Вячеслав Алексеевич', group: 'curator', value: 2 },
+    {
+      id: 16,
+      label: 'Акулич Сергей Андреевич',
+      group: 'curator',
+      value: 4,
+    },
+    {
+      id: 17,
+      label: 'Блохин Олег Анатольевич',
+      group: 'curator',
+      value: 2,
+    },
+    {
+      id: 18,
+      label: 'Ботов Михаил Алексеевич',
+      group: 'curator',
+      value: 14,
+    },
+    {
+      id: 19,
+      label: 'Васькин Павел Ильич',
+      group: 'curator',
+      value: 2,
+    },
+    {
+      id: 20,
+      label: 'Евсегнеев Олег Анатольевич',
+      group: 'curator',
+      value: 4,
+    },
+    {
+      id: 21,
+      label: 'Изотов Илья Николаевич',
+      group: 'curator',
+      value: 2,
+    },
+    {
+      id: 22,
+      label: 'Комаров Денис Евгеньевич',
+      group: 'curator',
+      value: 2,
+    },
+    {
+      id: 23,
+      label: 'Комоцкий Евгений Игоревич',
+      group: 'curator',
+      value: 3,
+    },
+    {
+      id: 24,
+      label: 'Куклин Илья Эдуардович',
+      group: 'curator',
+      value: 9,
+    },
+    {
+      id: 25,
+      label: 'Лимановская Оксана Викторовна',
+      group: 'curator',
+      value: 15,
+    },
+    {
+      id: 26,
+      label: 'Протасов Денис Николаевич',
+      group: 'curator',
+      value: 5,
+    },
+    {
+      id: 27,
+      label: 'Сальников Виктор Борисович',
+      group: 'curator',
+      value: 2,
+    },
+    {
+      id: 28,
+      label: 'Стародубцев Илья Сергеевич',
+      group: 'curator',
+      value: 4,
+    },
+    {
+      id: 29,
+      label: 'Ушенин Константин Сергеевич',
+      group: 'curator',
+      value: 5,
+    },
+    {
+      id: 30,
+      label: 'Хлебников Николай Александрович',
+      group: 'curator',
+      value: 3,
+    },
+    {
+      id: 31,
+      label: 'Чикова Ольга Анатольевна',
+      group: 'curator',
+      value: 3,
+    },
+    {
+      id: 32,
+      label: 'Шадрин Денис Борисович',
+      group: 'curator',
+      value: 8,
+    },
+    {
+      id: 33,
+      label: 'Шестеров Михаил Андреевич',
+      group: 'curator',
+      value: 24,
+    },
+    {
+      id: 34,
+      label: 'Шибаев Вячеслав Алексеевич',
+      group: 'curator',
+      value: 2,
+    },
   ],
   edges: [
-    { from: 16, to: 9, value: 4 },
-    { from: 17, to: 5, value: 1 },
-    { from: 17, to: 11, value: 1 },
-    { from: 18, to: 15, value: 1 },
-    { from: 18, to: 10, value: 1 },
-    { from: 18, to: 5, value: 3 },
-    { from: 18, to: 11, value: 4 },
-    { from: 18, to: 4, value: 5 },
-    { from: 19, to: 11, value: 2 },
-    { from: 20, to: 4, value: 2 },
-    { from: 20, to: 14, value: 2 },
-    { from: 21, to: 6, value: 1 },
-    { from: 21, to: 8, value: 1 },
-    { from: 22, to: 5, value: 1 },
-    { from: 22, to: 11, value: 1 },
-    { from: 23, to: 5, value: 2 },
-    { from: 23, to: 2, value: 1 },
-    { from: 24, to: 6, value: 1 },
-    { from: 24, to: 15, value: 1 },
-    { from: 24, to: 10, value: 1 },
-    { from: 24, to: 9, value: 2 },
-    { from: 24, to: 5, value: 1 },
-    { from: 24, to: 11, value: 2 },
-    { from: 24, to: 4, value: 1 },
-    { from: 25, to: 6, value: 1 },
-    { from: 25, to: 10, value: 4 },
-    { from: 25, to: 9, value: 1 },
-    { from: 25, to: 11, value: 6 },
-    { from: 25, to: 4, value: 1 },
-    { from: 25, to: 1, value: 2 },
-    { from: 26, to: 5, value: 4 },
-    { from: 26, to: 1, value: 1 },
-    { from: 27, to: 11, value: 2 },
-    { from: 28, to: 10, value: 1 },
-    { from: 28, to: 3, value: 1 },
-    { from: 28, to: 11, value: 1 },
-    { from: 28, to: 4, value: 1 },
-    { from: 29, to: 10, value: 1 },
-    { from: 29, to: 5, value: 2 },
-    { from: 29, to: 11, value: 1 },
-    { from: 29, to: 7, value: 1 },
-    { from: 30, to: 10, value: 1 },
-    { from: 30, to: 11, value: 1 },
-    { from: 30, to: 8, value: 1 },
-    { from: 31, to: 3, value: 1 },
-    { from: 31, to: 11, value: 2 },
-    { from: 32, to: 9, value: 2 },
-    { from: 32, to: 11, value: 2 },
-    { from: 32, to: 4, value: 3 },
-    { from: 32, to: 7, value: 1 },
-    { from: 33, to: 6, value: 8 },
-    { from: 33, to: 10, value: 2 },
-    { from: 33, to: 9, value: 2 },
-    { from: 33, to: 4, value: 4 },
-    { from: 33, to: 1, value: 1 },
-    { from: 33, to: 2, value: 3 },
-    { from: 33, to: 8, value: 4 },
-    { from: 34, to: 5, value: 2 },
+    {
+      from: 16,
+      to: 9,
+      value: 4,
+    },
+    {
+      from: 17,
+      to: 5,
+      value: 1,
+    },
+    {
+      from: 17,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 18,
+      to: 15,
+      value: 1,
+    },
+    {
+      from: 18,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 18,
+      to: 5,
+      value: 3,
+    },
+    {
+      from: 18,
+      to: 11,
+      value: 4,
+    },
+    {
+      from: 18,
+      to: 4,
+      value: 5,
+    },
+    {
+      from: 19,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 20,
+      to: 4,
+      value: 2,
+    },
+    {
+      from: 20,
+      to: 14,
+      value: 2,
+    },
+    {
+      from: 21,
+      to: 6,
+      value: 1,
+    },
+    {
+      from: 21,
+      to: 8,
+      value: 1,
+    },
+    {
+      from: 22,
+      to: 5,
+      value: 1,
+    },
+    {
+      from: 22,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 23,
+      to: 5,
+      value: 2,
+    },
+    {
+      from: 23,
+      to: 2,
+      value: 1,
+    },
+    {
+      from: 24,
+      to: 6,
+      value: 1,
+    },
+    {
+      from: 24,
+      to: 15,
+      value: 1,
+    },
+    {
+      from: 24,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 24,
+      to: 9,
+      value: 2,
+    },
+    {
+      from: 24,
+      to: 5,
+      value: 1,
+    },
+    {
+      from: 24,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 24,
+      to: 4,
+      value: 1,
+    },
+    {
+      from: 25,
+      to: 6,
+      value: 1,
+    },
+    {
+      from: 25,
+      to: 10,
+      value: 4,
+    },
+    {
+      from: 25,
+      to: 9,
+      value: 1,
+    },
+    {
+      from: 25,
+      to: 11,
+      value: 6,
+    },
+    {
+      from: 25,
+      to: 4,
+      value: 1,
+    },
+    {
+      from: 25,
+      to: 1,
+      value: 2,
+    },
+    {
+      from: 26,
+      to: 5,
+      value: 4,
+    },
+    {
+      from: 26,
+      to: 1,
+      value: 1,
+    },
+    {
+      from: 27,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 28,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 28,
+      to: 3,
+      value: 1,
+    },
+    {
+      from: 28,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 28,
+      to: 4,
+      value: 1,
+    },
+    {
+      from: 29,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 29,
+      to: 5,
+      value: 2,
+    },
+    {
+      from: 29,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 29,
+      to: 7,
+      value: 1,
+    },
+    {
+      from: 30,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 30,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 30,
+      to: 8,
+      value: 1,
+    },
+    {
+      from: 31,
+      to: 3,
+      value: 1,
+    },
+    {
+      from: 31,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 32,
+      to: 9,
+      value: 2,
+    },
+    {
+      from: 32,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 32,
+      to: 4,
+      value: 3,
+    },
+    {
+      from: 32,
+      to: 7,
+      value: 1,
+    },
+    {
+      from: 33,
+      to: 6,
+      value: 8,
+    },
+    {
+      from: 33,
+      to: 10,
+      value: 2,
+    },
+    {
+      from: 33,
+      to: 9,
+      value: 2,
+    },
+    {
+      from: 33,
+      to: 4,
+      value: 4,
+    },
+    {
+      from: 33,
+      to: 1,
+      value: 1,
+    },
+    {
+      from: 33,
+      to: 2,
+      value: 3,
+    },
+    {
+      from: 33,
+      to: 8,
+      value: 4,
+    },
+    {
+      from: 34,
+      to: 5,
+      value: 2,
+    },
   ],
 }
 
 export const fakeKeyTechnologyConsumersStatistic : GraphModel = {
   nodes: [
-    { id: 1, label: '3D-моделирование', group: 'keyTech', value: 6 },
-    { id: 2, label: 'Application', group: 'keyTech', value: 6 },
-    { id: 3, label: 'AR/VR', group: 'keyTech', value: 3 },
-    { id: 4, label: 'GameDev', group: 'keyTech', value: 19 },
-    { id: 5, label: 'Machine Learning', group: 'keyTech', value: 20 },
-    { id: 6, label: 'Mobile', group: 'keyTech', value: 11 },
-    { id: 7, label: 'SMM', group: 'keyTech', value: 2 },
-    { id: 8, label: 'Web/SMM', group: 'keyTech', value: 8 },
-    { id: 9, label: 'Web-разработка', group: 'keyTech', value: 14 },
-    { id: 10, label: 'Информационные системы', group: 'keyTech', value: 13 },
-    { id: 11, label: 'Математическое моделирование', group: 'keyTech', value: 25 },
-    { id: 14, label: 'Робототехника', group: 'keyTech', value: 2 },
-    { id: 15, label: 'Чат-бот', group: 'keyTech', value: 2 },
+    {
+      id: 1,
+      label: '3D-моделирование',
+      group: 'keyTech',
+      value: 6,
+    },
+    {
+      id: 2,
+      label: 'Application',
+      group: 'keyTech',
+      value: 6,
+    },
+    {
+      id: 3,
+      label: 'AR/VR',
+      group: 'keyTech',
+      value: 3,
+    },
+    {
+      id: 4,
+      label: 'GameDev',
+      group: 'keyTech',
+      value: 19,
+    },
+    {
+      id: 5,
+      label: 'Machine Learning',
+      group: 'keyTech',
+      value: 20,
+    },
+    {
+      id: 6,
+      label: 'Mobile',
+      group: 'keyTech',
+      value: 11,
+    },
+    {
+      id: 7,
+      label: 'SMM',
+      group: 'keyTech',
+      value: 2,
+    },
+    {
+      id: 8,
+      label: 'Web/SMM',
+      group: 'keyTech',
+      value: 8,
+    },
+    {
+      id: 9,
+      label: 'Web-разработка',
+      group: 'keyTech',
+      value: 14,
+    },
+    {
+      id: 10,
+      label: 'Информационные системы',
+      group: 'keyTech',
+      value: 13,
+    },
+    {
+      id: 11,
+      label: 'Математическое моделирование',
+      group: 'keyTech',
+      value: 25,
+    },
+    {
+      id: 14,
+      label: 'Робототехника',
+      group: 'keyTech',
+      value: 2,
+    },
+    {
+      id: 15,
+      label: 'Чат-бот',
+      group: 'keyTech',
+      value: 2,
+    },
 
-    { id: 16, label: 'PXL PRO (ООО «Финист-АйТи»', group: 'consumer', value: 2 },
-    { id: 17, label: 'АО «Альфа-Банк»', group: 'consumer', value: 8 },
-    { id: 18, label: 'АО «Научно-производственное объединение автоматики имени академика Н. А. Семихатова»', group: 'consumer', value: 5 },
-    { id: 19, label: 'ЗАО «Морские компьютерные системы»', group: 'consumer', value: 2 },
-    { id: 20, label: 'Институт иммунологии и физиологии УрО РАН', group: 'consumer', value: 2 },
-    { id: 21, label: 'Институт проектирования, архитектуры и дизайна (ИнПАД)', group: 'consumer', value: 2 },
-    { id: 22, label: 'ИРИТ-РТФ', group: 'consumer', value: 8 },
-    { id: 23, label: 'каф. ТФ, ФТИ', group: 'consumer', value: 4 },
-    { id: 24, label: 'Научно-Производственное Объединение КАРАТ', group: 'consumer', value: 2 },
-    { id: 25, label: 'Образовательная платформа «Юрайт»', group: 'consumer', value: 3 },
-    { id: 26, label: 'Общество с ограниченной ответственностью «66 Бит»', group: 'consumer', value: 2 },
-    { id: 27, label: 'ООО «КОПТИС»', group: 'consumer', value: 2 },
-    { id: 28, label: 'ООО «УЦСБ»', group: 'consumer', value: 5 },
-    { id: 29, label: 'ООО Лаборатория кода, город Пермь', group: 'consumer', value: 2 },
-    { id: 30, label: 'ПАО «МегаФон»', group: 'consumer', value: 4 },
-    { id: 31, label: 'СКБ-ЛАБ', group: 'consumer', value: 4 },
-    { id: 32, label: 'Уральский государственный педагогический университет', group: 'consumer', value: 3 },
-    { id: 33, label: 'Уральский федеральный университет', group: 'consumer', value: 3 },
-    { id: 34, label: 'УрФУ', group: 'consumer', value: 27 },
-    { id: 35, label: 'УрФУ Институт Фундаментального образования', group: 'consumer', value: 5 },
-    { id: 36, label: 'УрФУ, департамент психологии; Институт математики и механики УрО РАН', group: 'consumer', value: 3 },
-    { id: 37, label: 'ФГБОУ ВО УГМУ «Уральский государственный медицинский университет» Минздрава России, кафедра терапевтической стоматологии и пропедевтики стоматологических заболеваний', group: 'consumer', value: 2 },
-    { id: 38, label: 'ФГБОУ ВО Уральский государственный медицинский университет Минздрава России', group: 'consumer', value: 2 },
-    { id: 39, label: 'ФГБОУ ВО УГМУ Минздрава России', group: 'consumer', value: 2 },
-    { id: 40, label: 'ФГБОУ ВО Уральский государственный медицинский университет минздрава России.', group: 'consumer', value: 4 },
+    {
+      id: 16,
+      label: 'PXL PRO (ООО «Финист-АйТи»',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 17,
+      label: 'АО «Альфа-Банк»',
+      group: 'consumer',
+      value: 8,
+    },
+    {
+      id: 18,
+      label: 'АО «Научно-производственное объединение автоматики имени академика Н. А. Семихатова»',
+      group: 'consumer',
+      value: 5,
+    },
+    {
+      id: 19,
+      label: 'ЗАО «Морские компьютерные системы»',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 20,
+      label: 'Институт иммунологии и физиологии УрО РАН',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 21,
+      label: 'Институт проектирования, архитектуры и дизайна (ИнПАД)',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 22,
+      label: 'ИРИТ-РТФ',
+      group: 'consumer',
+      value: 8,
+    },
+    {
+      id: 23,
+      label: 'каф. ТФ, ФТИ',
+      group: 'consumer',
+      value: 4,
+    },
+    {
+      id: 24,
+      label: 'Научно-Производственное Объединение КАРАТ',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 25,
+      label: 'Образовательная платформа «Юрайт»',
+      group: 'consumer',
+      value: 3,
+    },
+    {
+      id: 26,
+      label: 'Общество с ограниченной ответственностью «66 Бит»',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 27,
+      label: 'ООО «КОПТИС»',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 28,
+      label: 'ООО «УЦСБ»',
+      group: 'consumer',
+      value: 5,
+    },
+    {
+      id: 29,
+      label: 'ООО Лаборатория кода, город Пермь',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 30,
+      label: 'ПАО «МегаФон»',
+      group: 'consumer',
+      value: 4,
+    },
+    {
+      id: 31,
+      label: 'СКБ-ЛАБ',
+      group: 'consumer',
+      value: 4,
+    },
+    {
+      id: 32,
+      label: 'Уральский государственный педагогический университет',
+      group: 'consumer',
+      value: 3,
+    },
+    {
+      id: 33,
+      label: 'Уральский федеральный университет',
+      group: 'consumer',
+      value: 3,
+    },
+    {
+      id: 34,
+      label: 'УрФУ',
+      group: 'consumer',
+      value: 27,
+    },
+    {
+      id: 35,
+      label: 'УрФУ Институт Фундаментального образования',
+      group: 'consumer',
+      value: 5,
+    },
+    {
+      id: 36,
+      label: 'УрФУ, департамент психологии; Институт математики и механики УрО РАН',
+      group: 'consumer',
+      value: 3,
+    },
+    {
+      id: 37,
+      label: 'ФГБОУ ВО УГМУ «Уральский государственный медицинский университет» Минздрава России, кафедра терапевтической стоматологии и пропедевтики стоматологических заболеваний',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 38,
+      label: 'ФГБОУ ВО Уральский государственный медицинский университет Минздрава России',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 39,
+      label: 'ФГБОУ ВО УГМУ Минздрава России',
+      group: 'consumer',
+      value: 2,
+    },
+    {
+      id: 40,
+      label: 'ФГБОУ ВО Уральский государственный медицинский университет минздрава России.',
+      group: 'consumer',
+      value: 4,
+    },
   ],
   edges: [
-    { from: 16, to: 6, value: 1 },
-    { from: 16, to: 9, value: 1 },
-    { from: 17, to: 6, value: 6 },
-    { from: 17, to: 10, value: 1 },
-    { from: 17, to: 9, value: 1 },
-    { from: 18, to: 5, value: 4 },
-    { from: 18, to: 1, value: 1 },
-    { from: 19, to: 11, value: 2 },
-    { from: 20, to: 10, value: 1 },
-    { from: 20, to: 11, value: 1 },
-    { from: 21, to: 11, value: 2 },
-    { from: 22, to: 9, value: 2 },
-    { from: 22, to: 11, value: 2 },
-    { from: 22, to: 4, value: 3 },
-    { from: 22, to: 7, value: 1 },
-    { from: 23, to: 4, value: 2 },
-    { from: 23, to: 14, value: 2 },
-    { from: 24, to: 6, value: 1 },
-    { from: 24, to: 8, value: 1 },
-    { from: 25, to: 10, value: 1 },
-    { from: 25, to: 11, value: 1 },
-    { from: 25, to: 8, value: 1 },
-    { from: 26, to: 9, value: 1 },
-    { from: 26, to: 5, value: 1 },
-    { from: 27, to: 5, value: 1 },
-    { from: 27, to: 11, value: 1 },
-    { from: 28, to: 10, value: 2 },
-    { from: 28, to: 5, value: 2 },
-    { from: 28, to: 11, value: 1 },
-    { from: 29, to: 5, value: 2 },
-    { from: 30, to: 15, value: 1 },
-    { from: 30, to: 10, value: 1 },
-    { from: 30, to: 5, value: 1 },
-    { from: 30, to: 11, value: 1 },
-    { from: 31, to: 9, value: 4 },
-    { from: 32, to: 3, value: 1 },
-    { from: 32, to: 11, value: 2 },
-    { from: 33, to: 9, value: 1 },
-    { from: 33, to: 11, value: 1 },
-    { from: 33, to: 7, value: 1 },
-    { from: 34, to: 10, value: 1 },
-    { from: 34, to: 9, value: 1 },
-    { from: 34, to: 5, value: 5 },
-    { from: 34, to: 11, value: 4 },
-    { from: 34, to: 4, value: 5 },
-    { from: 34, to: 2, value: 1 },
-    { from: 35, to: 2, value: 1 },
-    { from: 35, to: 8, value: 4 },
-    { from: 36, to: 10, value: 1 },
-    { from: 36, to: 3, value: 2 },
-    { from: 37, to: 9, value: 1 },
-    { from: 37, to: 4, value: 1 },
-    { from: 38, to: 11, value: 1 },
-    { from: 38, to: 1, value: 1 },
-    { from: 39, to: 11, value: 1 },
-    { from: 39, to: 1, value: 1 },
-    { from: 40, to: 6, value: 1 },
-    { from: 40, to: 10, value: 2 },
-    { from: 40, to: 11, value: 1 },
+    {
+      from: 16,
+      to: 6,
+      value: 1,
+    },
+    {
+      from: 16,
+      to: 9,
+      value: 1,
+    },
+    {
+      from: 17,
+      to: 6,
+      value: 6,
+    },
+    {
+      from: 17,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 17,
+      to: 9,
+      value: 1,
+    },
+    {
+      from: 18,
+      to: 5,
+      value: 4,
+    },
+    {
+      from: 18,
+      to: 1,
+      value: 1,
+    },
+    {
+      from: 19,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 20,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 20,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 21,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 22,
+      to: 9,
+      value: 2,
+    },
+    {
+      from: 22,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 22,
+      to: 4,
+      value: 3,
+    },
+    {
+      from: 22,
+      to: 7,
+      value: 1,
+    },
+    {
+      from: 23,
+      to: 4,
+      value: 2,
+    },
+    {
+      from: 23,
+      to: 14,
+      value: 2,
+    },
+    {
+      from: 24,
+      to: 6,
+      value: 1,
+    },
+    {
+      from: 24,
+      to: 8,
+      value: 1,
+    },
+    {
+      from: 25,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 25,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 25,
+      to: 8,
+      value: 1,
+    },
+    {
+      from: 26,
+      to: 9,
+      value: 1,
+    },
+    {
+      from: 26,
+      to: 5,
+      value: 1,
+    },
+    {
+      from: 27,
+      to: 5,
+      value: 1,
+    },
+    {
+      from: 27,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 28,
+      to: 10,
+      value: 2,
+    },
+    {
+      from: 28,
+      to: 5,
+      value: 2,
+    },
+    {
+      from: 28,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 29,
+      to: 5,
+      value: 2,
+    },
+    {
+      from: 30,
+      to: 15,
+      value: 1,
+    },
+    {
+      from: 30,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 30,
+      to: 5,
+      value: 1,
+    },
+    {
+      from: 30,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 31,
+      to: 9,
+      value: 4,
+    },
+    {
+      from: 32,
+      to: 3,
+      value: 1,
+    },
+    {
+      from: 32,
+      to: 11,
+      value: 2,
+    },
+    {
+      from: 33,
+      to: 9,
+      value: 1,
+    },
+    {
+      from: 33,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 33,
+      to: 7,
+      value: 1,
+    },
+    {
+      from: 34,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 34,
+      to: 9,
+      value: 1,
+    },
+    {
+      from: 34,
+      to: 5,
+      value: 5,
+    },
+    {
+      from: 34,
+      to: 11,
+      value: 4,
+    },
+    {
+      from: 34,
+      to: 4,
+      value: 5,
+    },
+    {
+      from: 34,
+      to: 2,
+      value: 1,
+    },
+    {
+      from: 35,
+      to: 2,
+      value: 1,
+    },
+    {
+      from: 35,
+      to: 8,
+      value: 4,
+    },
+    {
+      from: 36,
+      to: 10,
+      value: 1,
+    },
+    {
+      from: 36,
+      to: 3,
+      value: 2,
+    },
+    {
+      from: 37,
+      to: 9,
+      value: 1,
+    },
+    {
+      from: 37,
+      to: 4,
+      value: 1,
+    },
+    {
+      from: 38,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 38,
+      to: 1,
+      value: 1,
+    },
+    {
+      from: 39,
+      to: 11,
+      value: 1,
+    },
+    {
+      from: 39,
+      to: 1,
+      value: 1,
+    },
+    {
+      from: 40,
+      to: 6,
+      value: 1,
+    },
+    {
+      from: 40,
+      to: 10,
+      value: 2,
+    },
+    {
+      from: 40,
+      to: 11,
+      value: 1,
+    },
   ],
 }
 
@@ -3803,1063 +4621,1063 @@ export const fakeTopCustomersStatistic : TopCustomerModel[] = [
 
 export const fakeTeamsCountOnCompetenciesStatistic = [
   {
-    "competency": "unity",
-    "value": 34
+    'competency': 'unity',
+    'value': 34,
   },
   {
-    "competency": "c#",
-    "value": 47
+    'competency': 'c#',
+    'value': 47,
   },
   {
-    "competency": "adobe illustrator",
-    "value": 28
+    'competency': 'adobe illustrator',
+    'value': 28,
   },
   {
-    "competency": "компас 3d",
-    "value": 26
+    'competency': 'компас 3d',
+    'value': 26,
   },
   {
-    "competency": "photoshop",
-    "value": 26
+    'competency': 'photoshop',
+    'value': 26,
   },
   {
-    "competency": "математическая статистика",
-    "value": 16
+    'competency': 'математическая статистика',
+    'value': 16,
   },
   {
-    "competency": "node js",
-    "value": 2
+    'competency': 'node js',
+    'value': 2,
   },
   {
-    "competency": "figma",
-    "value": 38
+    'competency': 'figma',
+    'value': 38,
   },
   {
-    "competency": "ef core",
-    "value": 1
+    'competency': 'ef core',
+    'value': 1,
   },
   {
-    "competency": "дизайн",
-    "value": 10
+    'competency': 'дизайн',
+    'value': 10,
   },
   {
-    "competency": "работа с базами данных",
-    "value": 1
+    'competency': 'работа с базами данных',
+    'value': 1,
   },
   {
-    "competency": "typescript",
-    "value": 7
+    'competency': 'typescript',
+    'value': 7,
   },
   {
-    "competency": "ux/ui",
-    "value": 3
+    'competency': 'ux/ui',
+    'value': 3,
   },
   {
-    "competency": "react-like frameworks",
-    "value": 1
+    'competency': 'react-like frameworks',
+    'value': 1,
   },
   {
-    "competency": "python",
-    "value": 61
+    'competency': 'python',
+    'value': 61,
   },
   {
-    "competency": "базовые знания в машинном обучении",
-    "value": 1
+    'competency': 'базовые знания в машинном обучении',
+    'value': 1,
   },
   {
-    "competency": "английский язык",
-    "value": 1
+    'competency': 'английский язык',
+    'value': 1,
   },
   {
-    "competency": "c++",
-    "value": 11
+    'competency': 'c++',
+    'value': 11,
   },
   {
-    "competency": "gimp",
-    "value": 3
+    'competency': 'gimp',
+    'value': 3,
   },
   {
-    "competency": "inkscape",
-    "value": 3
+    'competency': 'inkscape',
+    'value': 3,
   },
   {
-    "competency": "синтез игровых механик",
-    "value": 3
+    'competency': 'синтез игровых механик',
+    'value': 3,
   },
   {
-    "competency": "статистика",
-    "value": 3
+    'competency': 'статистика',
+    'value': 3,
   },
   {
-    "competency": "анализ данных",
-    "value": 13
+    'competency': 'анализ данных',
+    'value': 13,
   },
   {
-    "competency": "шумометрия",
-    "value": 2
+    'competency': 'шумометрия',
+    'value': 2,
   },
   {
-    "competency": "r",
-    "value": 2
+    'competency': 'r',
+    'value': 2,
   },
   {
-    "competency": "c",
-    "value": 4
+    'competency': 'c',
+    'value': 4,
   },
   {
-    "competency": "микроконтроллеры",
-    "value": 2
+    'competency': 'микроконтроллеры',
+    'value': 2,
   },
   {
-    "competency": "нейронные сети",
-    "value": 8
+    'competency': 'нейронные сети',
+    'value': 8,
   },
   {
-    "competency": "tinyml",
-    "value": 2
+    'competency': 'tinyml',
+    'value': 2,
   },
   {
-    "competency": "глубокое обучение",
-    "value": 2
+    'competency': 'глубокое обучение',
+    'value': 2,
   },
   {
-    "competency": "физика процессов",
-    "value": 2
+    'competency': 'физика процессов',
+    'value': 2,
   },
   {
-    "competency": "написание документации",
-    "value": 10
+    'competency': 'написание документации',
+    'value': 10,
   },
   {
-    "competency": "ios",
-    "value": 9
+    'competency': 'ios',
+    'value': 9,
   },
   {
-    "competency": "android",
-    "value": 9
+    'competency': 'android',
+    'value': 9,
   },
   {
-    "competency": "тестирование",
-    "value": 20
+    'competency': 'тестирование',
+    'value': 20,
   },
   {
-    "competency": "мобильная разработка",
-    "value": 8
+    'competency': 'мобильная разработка',
+    'value': 8,
   },
   {
-    "competency": "backend-разработка",
-    "value": 15
+    'competency': 'backend-разработка',
+    'value': 15,
   },
   {
-    "competency": "бизнес анализ",
-    "value": 8
+    'competency': 'бизнес анализ',
+    'value': 8,
   },
   {
-    "competency": "системный анализ",
-    "value": 8
+    'competency': 'системный анализ',
+    'value': 8,
   },
   {
-    "competency": "frontend-разработка",
-    "value": 12
+    'competency': 'frontend-разработка',
+    'value': 12,
   },
   {
-    "competency": "эцп",
-    "value": 1
+    'competency': 'эцп',
+    'value': 1,
   },
   {
-    "competency": "nfc",
-    "value": 2
+    'competency': 'nfc',
+    'value': 2,
   },
   {
-    "competency": "скуд",
-    "value": 1
+    'competency': 'скуд',
+    'value': 1,
   },
   {
-    "competency": "когнитивные технологии",
-    "value": 1
+    'competency': 'когнитивные технологии',
+    'value': 1,
   },
   {
-    "competency": "vk",
-    "value": 2
+    'competency': 'vk',
+    'value': 2,
   },
   {
-    "competency": "facebook",
-    "value": 2
+    'competency': 'facebook',
+    'value': 2,
   },
   {
-    "competency": "instagram",
-    "value": 2
+    'competency': 'instagram',
+    'value': 2,
   },
   {
-    "competency": "gitlab",
-    "value": 3
+    'competency': 'gitlab',
+    'value': 3,
   },
   {
-    "competency": "github",
-    "value": 9
+    'competency': 'github',
+    'value': 9,
   },
   {
-    "competency": "сбор информации",
-    "value": 4
+    'competency': 'сбор информации',
+    'value': 4,
   },
   {
-    "competency": "баг-трекинг",
-    "value": 3
+    'competency': 'баг-трекинг',
+    'value': 3,
   },
   {
-    "competency": "ui",
-    "value": 3
+    'competency': 'ui',
+    'value': 3,
   },
   {
-    "competency": "pytest",
-    "value": 1
+    'competency': 'pytest',
+    'value': 1,
   },
   {
-    "competency": "tensorflow",
-    "value": 8
+    'competency': 'tensorflow',
+    'value': 8,
   },
   {
-    "competency": "pytorch",
-    "value": 10
+    'competency': 'pytorch',
+    'value': 10,
   },
   {
-    "competency": "react native",
-    "value": 3
+    'competency': 'react native',
+    'value': 3,
   },
   {
-    "competency": "javasctipt",
-    "value": 1
+    'competency': 'javasctipt',
+    'value': 1,
   },
   {
-    "competency": "ux-исследования",
-    "value": 1
+    'competency': 'ux-исследования',
+    'value': 1,
   },
   {
-    "competency": "ux-аналитика",
-    "value": 1
+    'competency': 'ux-аналитика',
+    'value': 1,
   },
   {
-    "competency": "анимация интерфейсов",
-    "value": 1
+    'competency': 'анимация интерфейсов',
+    'value': 1,
   },
   {
-    "competency": "html",
-    "value": 23
+    'competency': 'html',
+    'value': 23,
   },
   {
-    "competency": "css",
-    "value": 21
+    'competency': 'css',
+    'value': 21,
   },
   {
-    "competency": "js",
-    "value": 34
+    'competency': 'js',
+    'value': 34,
   },
   {
-    "competency": "python web",
-    "value": 8
+    'competency': 'python web',
+    'value': 8,
   },
   {
-    "competency": "web-верстка",
-    "value": 24
+    'competency': 'web-верстка',
+    'value': 24,
   },
   {
-    "competency": "stm32",
-    "value": 2
+    'competency': 'stm32',
+    'value': 2,
   },
   {
-    "competency": "arduino",
-    "value": 2
+    'competency': 'arduino',
+    'value': 2,
   },
   {
-    "competency": "с++",
-    "value": 1
+    'competency': 'с++',
+    'value': 1,
   },
   {
-    "competency": "c++/qt",
-    "value": 1
+    'competency': 'c++/qt',
+    'value': 1,
   },
   {
-    "competency": "cad системы",
-    "value": 2
+    'competency': 'cad системы',
+    'value': 2,
   },
   {
-    "competency": "электротехника",
-    "value": 1
+    'competency': 'электротехника',
+    'value': 1,
   },
   {
-    "competency": "навык пайки",
-    "value": 2
+    'competency': 'навык пайки',
+    'value': 2,
   },
   {
-    "competency": "печатные платы",
-    "value": 1
+    'competency': 'печатные платы',
+    'value': 1,
   },
   {
-    "competency": "avr",
-    "value": 1
+    'competency': 'avr',
+    'value': 1,
   },
   {
-    "competency": "простая механика",
-    "value": 1
+    'competency': 'простая механика',
+    'value': 1,
   },
   {
-    "competency": "проектирование плат",
-    "value": 1
+    'competency': 'проектирование плат',
+    'value': 1,
   },
   {
-    "competency": "основы электроники",
-    "value": 1
+    'competency': 'основы электроники',
+    'value': 1,
   },
   {
-    "competency": "ответственный за выполнение задач проекта в срок",
-    "value": 1
+    'competency': 'ответственный за выполнение задач проекта в срок',
+    'value': 1,
   },
   {
-    "competency": "ps",
-    "value": 1
+    'competency': 'ps',
+    'value': 1,
   },
   {
-    "competency": "координация действий команды",
-    "value": 3
+    'competency': 'координация действий команды',
+    'value': 3,
   },
   {
-    "competency": "js web",
-    "value": 2
+    'competency': 'js web',
+    'value': 2,
   },
   {
-    "competency": "adobe photoshop",
-    "value": 5
+    'competency': 'adobe photoshop',
+    'value': 5,
   },
   {
-    "competency": "работа с документами",
-    "value": 2
+    'competency': 'работа с документами',
+    'value': 2,
   },
   {
-    "competency": "node",
-    "value": 4
+    'competency': 'node',
+    'value': 4,
   },
   {
-    "competency": "nosql бд",
-    "value": 2
+    'competency': 'nosql бд',
+    'value': 2,
   },
   {
-    "competency": "ведение документации",
-    "value": 3
+    'competency': 'ведение документации',
+    'value': 3,
   },
   {
-    "competency": "организация работы команды",
-    "value": 2
+    'competency': 'организация работы команды',
+    'value': 2,
   },
   {
-    "competency": "renpy",
-    "value": 2
+    'competency': 'renpy',
+    'value': 2,
   },
   {
-    "competency": "отрисовка фонов",
-    "value": 2
+    'competency': 'отрисовка фонов',
+    'value': 2,
   },
   {
-    "competency": "анализ",
-    "value": 3
+    'competency': 'анализ',
+    'value': 3,
   },
   {
-    "competency": "разработка дизайна",
-    "value": 3
+    'competency': 'разработка дизайна',
+    'value': 3,
   },
   {
-    "competency": "разработка мероприятий",
-    "value": 2
+    'competency': 'разработка мероприятий',
+    'value': 2,
   },
   {
-    "competency": "организация командного процесса",
-    "value": 2
+    'competency': 'организация командного процесса',
+    'value': 2,
   },
   {
-    "competency": "проверка выполнения поставленных задач",
-    "value": 2
+    'competency': 'проверка выполнения поставленных задач',
+    'value': 2,
   },
   {
-    "competency": "взаимодействие с куратором",
-    "value": 2
+    'competency': 'взаимодействие с куратором',
+    'value': 2,
   },
   {
-    "competency": "распределение задач между командой",
-    "value": 2
+    'competency': 'распределение задач между командой',
+    'value': 2,
   },
   {
-    "competency": "разработка сервиса",
-    "value": 6
+    'competency': 'разработка сервиса',
+    'value': 6,
   },
   {
-    "competency": "разработка интерфейсов",
-    "value": 6
+    'competency': 'разработка интерфейсов',
+    'value': 6,
   },
   {
-    "competency": "дизайн системы; анализ данных",
-    "value": 3
+    'competency': 'дизайн системы; анализ данных',
+    'value': 3,
   },
   {
-    "competency": "дизайн системы",
-    "value": 3
+    'competency': 'дизайн системы',
+    'value': 3,
   },
   {
-    "competency": "laravel 5",
-    "value": 2
+    'competency': 'laravel 5',
+    'value': 2,
   },
   {
-    "competency": "mongodb",
-    "value": 2
+    'competency': 'mongodb',
+    'value': 2,
   },
   {
-    "competency": "vue или svelte",
-    "value": 2
+    'competency': 'vue или svelte',
+    'value': 2,
   },
   {
-    "competency": "php 7",
-    "value": 2
+    'competency': 'php 7',
+    'value': 2,
   },
   {
-    "competency": "opencv",
-    "value": 11
+    'competency': 'opencv',
+    'value': 11,
   },
   {
-    "competency": "dlib",
-    "value": 10
+    'competency': 'dlib',
+    'value': 10,
   },
   {
-    "competency": "keras",
-    "value": 11
+    'competency': 'keras',
+    'value': 11,
   },
   {
-    "competency": "знание английского языка",
-    "value": 7
+    'competency': 'знание английского языка',
+    'value': 7,
   },
   {
-    "competency": "умение читать техническую документацию и научные статьи",
-    "value": 7
+    'competency': 'умение читать техническую документацию и научные статьи',
+    'value': 7,
   },
   {
-    "competency": "гис",
-    "value": 2
+    'competency': 'гис',
+    'value': 2,
   },
   {
-    "competency": "ml",
-    "value": 4
+    'competency': 'ml',
+    'value': 4,
   },
   {
-    "competency": "контроль за графиком реализации проекта",
-    "value": 1
+    'competency': 'контроль за графиком реализации проекта',
+    'value': 1,
   },
   {
-    "competency": "умение представлять результат исследования",
-    "value": 4
+    'competency': 'умение представлять результат исследования',
+    'value': 4,
   },
   {
-    "competency": "навык научного обобщения и обсуждения результатов\nзнание англ",
-    "value": 4
+    'competency': 'навык научного обобщения и обсуждения результатов\nзнание англ',
+    'value': 4,
   },
   {
-    "competency": "тестирование google",
-    "value": 2
+    'competency': 'тестирование google',
+    'value': 2,
   },
   {
-    "competency": "spss",
-    "value": 4
+    'competency': 'spss',
+    'value': 4,
   },
   {
-    "competency": "amos",
-    "value": 4
+    'competency': 'amos',
+    'value': 4,
   },
   {
-    "competency": "тестология",
-    "value": 2
+    'competency': 'тестология',
+    'value': 2,
   },
   {
-    "competency": "sem",
-    "value": 2
+    'competency': 'sem',
+    'value': 2,
   },
   {
-    "competency": "фронтенд-фреймворки",
-    "value": 4
+    'competency': 'фронтенд-фреймворки',
+    'value': 4,
   },
   {
-    "competency": "nlp",
-    "value": 4
+    'competency': 'nlp',
+    'value': 4,
   },
   {
-    "competency": "level design",
-    "value": 1
+    'competency': 'level design',
+    'value': 1,
   },
   {
-    "competency": "творческое мышление",
-    "value": 1
+    'competency': 'творческое мышление',
+    'value': 1,
   },
   {
-    "competency": "умение прогнозировать проблемы",
-    "value": 1
+    'competency': 'умение прогнозировать проблемы',
+    'value': 1,
   },
   {
-    "competency": "теория графов",
-    "value": 2
+    'competency': 'теория графов',
+    'value': 2,
   },
   {
-    "competency": "machine learning",
-    "value": 3
+    'competency': 'machine learning',
+    'value': 3,
   },
   {
-    "competency": "навык обобщения и обсуждения результатов\nзнание англ",
-    "value": 2
+    'competency': 'навык обобщения и обсуждения результатов\nзнание англ',
+    'value': 2,
   },
   {
-    "competency": "smm",
-    "value": 1
+    'competency': 'smm',
+    'value': 1,
   },
   {
-    "competency": "отвечать за качество результата",
-    "value": 1
+    'competency': 'отвечать за качество результата',
+    'value': 1,
   },
   {
-    "competency": "поддержка vk",
-    "value": 1
+    'competency': 'поддержка vk',
+    'value': 1,
   },
   {
-    "competency": "instagram и youtube",
-    "value": 1
+    'competency': 'instagram и youtube',
+    'value': 1,
   },
   {
-    "competency": "анализ экспрессии генов",
-    "value": 2
+    'competency': 'анализ экспрессии генов',
+    'value': 2,
   },
   {
-    "competency": "continuous integration",
-    "value": 3
+    'competency': 'continuous integration',
+    'value': 3,
   },
   {
-    "competency": "blender",
-    "value": 7
+    'competency': 'blender',
+    'value': 7,
   },
   {
-    "competency": "компьютерная 3d-графика",
-    "value": 2
+    'competency': 'компьютерная 3d-графика',
+    'value': 2,
   },
   {
-    "competency": "линейная алгебра",
-    "value": 2
+    'competency': 'линейная алгебра',
+    'value': 2,
   },
   {
-    "competency": "школьная математика",
-    "value": 2
+    'competency': 'школьная математика',
+    'value': 2,
   },
   {
-    "competency": "sql",
-    "value": 10
+    'competency': 'sql',
+    'value': 10,
   },
   {
-    "competency": "angular",
-    "value": 2
+    'competency': 'angular',
+    'value': 2,
   },
   {
-    "competency": "react",
-    "value": 10
+    'competency': 'react',
+    'value': 10,
   },
   {
-    "competency": "json",
-    "value": 2
+    'competency': 'json',
+    'value': 2,
   },
   {
-    "competency": "шейп-графика",
-    "value": 2
+    'competency': 'шейп-графика',
+    'value': 2,
   },
   {
-    "competency": "шейп-анимация",
-    "value": 2
+    'competency': 'шейп-анимация',
+    'value': 2,
   },
   {
-    "competency": "adobe after effects",
-    "value": 2
+    'competency': 'adobe after effects',
+    'value': 2,
   },
   {
-    "competency": "vue",
-    "value": 3
+    'competency': 'vue',
+    'value': 3,
   },
   {
-    "competency": "detectron2",
-    "value": 1
+    'competency': 'detectron2',
+    'value': 1,
   },
   {
-    "competency": "анализ данных continuous integration",
-    "value": 1
+    'competency': 'анализ данных continuous integration',
+    'value': 1,
   },
   {
-    "competency": "semantic web",
-    "value": 2
+    'competency': 'semantic web',
+    'value': 2,
   },
   {
-    "competency": "linked data",
-    "value": 2
+    'competency': 'linked data',
+    'value': 2,
   },
   {
-    "competency": "rdf",
-    "value": 2
+    'competency': 'rdf',
+    'value': 2,
   },
   {
-    "competency": "rdfs",
-    "value": 2
+    'competency': 'rdfs',
+    'value': 2,
   },
   {
-    "competency": "owl",
-    "value": 2
+    'competency': 'owl',
+    'value': 2,
   },
   {
-    "competency": "sparql",
-    "value": 2
+    'competency': 'sparql',
+    'value': 2,
   },
   {
-    "competency": "big data архитектуры",
-    "value": 2
+    'competency': 'big data архитектуры',
+    'value': 2,
   },
   {
-    "competency": "apache spark",
-    "value": 2
+    'competency': 'apache spark',
+    'value': 2,
   },
   {
-    "competency": "apache kafka",
-    "value": 2
+    'competency': 'apache kafka',
+    'value': 2,
   },
   {
-    "competency": "elk",
-    "value": 2
+    'competency': 'elk',
+    'value': 2,
   },
   {
-    "competency": "influxdb",
-    "value": 2
+    'competency': 'influxdb',
+    'value': 2,
   },
   {
-    "competency": "clickhouse",
-    "value": 2
+    'competency': 'clickhouse',
+    'value': 2,
   },
   {
-    "competency": "конвейеровы ci/cd",
-    "value": 2
+    'competency': 'конвейеровы ci/cd',
+    'value': 2,
   },
   {
-    "competency": "kubernates",
-    "value": 2
+    'competency': 'kubernates',
+    'value': 2,
   },
   {
-    "competency": "docker swarm",
-    "value": 2
+    'competency': 'docker swarm',
+    'value': 2,
   },
   {
-    "competency": "linux",
-    "value": 2
+    'competency': 'linux',
+    'value': 2,
   },
   {
-    "competency": "ddd",
-    "value": 2
+    'competency': 'ddd',
+    'value': 2,
   },
   {
-    "competency": "bpmn",
-    "value": 2
+    'competency': 'bpmn',
+    'value': 2,
   },
   {
-    "competency": "usecase",
-    "value": 2
+    'competency': 'usecase',
+    'value': 2,
   },
   {
-    "competency": "uml",
-    "value": 2
+    'competency': 'uml',
+    'value': 2,
   },
   {
-    "competency": "php",
-    "value": 11
+    'competency': 'php',
+    'value': 11,
   },
   {
-    "competency": "javascript",
-    "value": 14
+    'competency': 'javascript',
+    'value': 14,
   },
   {
-    "competency": "уточнение требований",
-    "value": 5
+    'competency': 'уточнение требований',
+    'value': 5,
   },
   {
-    "competency": "распределение ролей",
-    "value": 5
+    'competency': 'распределение ролей',
+    'value': 5,
   },
   {
-    "competency": "постановка и контроль выполнения задач по графику",
-    "value": 5
+    'competency': 'постановка и контроль выполнения задач по графику',
+    'value': 5,
   },
   {
-    "competency": "организация процесса разработки",
-    "value": 5
+    'competency': 'организация процесса разработки',
+    'value': 5,
   },
   {
-    "competency": "manual testing",
-    "value": 5
+    'competency': 'manual testing',
+    'value': 5,
   },
   {
-    "competency": "субд",
-    "value": 1
+    'competency': 'субд',
+    'value': 1,
   },
   {
-    "competency": "qt",
-    "value": 1
+    'competency': 'qt',
+    'value': 1,
   },
   {
-    "competency": "ms",
-    "value": 1
+    'competency': 'ms',
+    'value': 1,
   },
   {
-    "competency": "postgress",
-    "value": 1
+    'competency': 'postgress',
+    'value': 1,
   },
   {
-    "competency": "webgl",
-    "value": 2
+    'competency': 'webgl',
+    'value': 2,
   },
   {
-    "competency": "unity3d",
-    "value": 2
+    'competency': 'unity3d',
+    'value': 2,
   },
   {
-    "competency": "тестирование webgl-сборок",
-    "value": 2
+    'competency': 'тестирование webgl-сборок',
+    'value': 2,
   },
   {
-    "competency": "netpdl",
-    "value": 2
+    'competency': 'netpdl',
+    'value': 2,
   },
   {
-    "competency": "java",
-    "value": 10
+    'competency': 'java',
+    'value': 10,
   },
   {
-    "competency": "novelty search",
-    "value": 2
+    'competency': 'novelty search',
+    'value': 2,
   },
   {
-    "competency": "flutter",
-    "value": 2
+    'competency': 'flutter',
+    'value': 2,
   },
   {
-    "competency": "ionic",
-    "value": 2
+    'competency': 'ionic',
+    'value': 2,
   },
   {
-    "competency": "построение гипотез",
-    "value": 2
+    'competency': 'построение гипотез',
+    'value': 2,
   },
   {
-    "competency": "работа с даннымми",
-    "value": 2
+    'competency': 'работа с даннымми',
+    'value': 2,
   },
   {
-    "competency": "feature engineering",
-    "value": 2
+    'competency': 'feature engineering',
+    'value': 2,
   },
   {
-    "competency": "общение с заказчиком",
-    "value": 9
+    'competency': 'общение с заказчиком',
+    'value': 9,
   },
   {
-    "competency": "выявление проблем и способы их решения",
-    "value": 5
+    'competency': 'выявление проблем и способы их решения',
+    'value': 5,
   },
   {
-    "competency": "составление документации",
-    "value": 5
+    'competency': 'составление документации',
+    'value': 5,
   },
   {
-    "competency": "описание тест-кейсов",
-    "value": 5
+    'competency': 'описание тест-кейсов',
+    'value': 5,
   },
   {
-    "competency": "умение анализировать и структурировать данные\nнавыки коммуникации",
-    "value": 2
+    'competency': 'умение анализировать и структурировать данные\nнавыки коммуникации',
+    'value': 2,
   },
   {
-    "competency": "умение организовать процесс командной разработки",
-    "value": 6
+    'competency': 'умение организовать процесс командной разработки',
+    'value': 6,
   },
   {
-    "competency": "figm",
-    "value": 2
+    'competency': 'figm',
+    'value': 2,
   },
   {
-    "competency": "теория вероятности",
-    "value": 6
+    'competency': 'теория вероятности',
+    'value': 6,
   },
   {
-    "competency": "tensoflow",
-    "value": 4
+    'competency': 'tensoflow',
+    'value': 4,
   },
   {
-    "competency": "mysql",
-    "value": 3
+    'competency': 'mysql',
+    'value': 3,
   },
   {
-    "competency": "postgresql",
-    "value": 2
+    'competency': 'postgresql',
+    'value': 2,
   },
   {
-    "competency": "с навыками программирования и организационными способностями",
-    "value": 1
+    'competency': 'с навыками программирования и организационными способностями',
+    'value': 1,
   },
   {
-    "competency": "знание английского языка (разговорный уровень)\nнавыки управления проектами: постановка промежуточных задач",
-    "value": 1
+    'competency': 'знание английского языка (разговорный уровень)\nнавыки управления проектами: постановка промежуточных задач',
+    'value': 1,
   },
   {
-    "competency": "отслеживание выполнения задач во времени",
-    "value": 1
+    'competency': 'отслеживание выполнения задач во времени',
+    'value': 1,
   },
   {
-    "competency": "корректировка проекта",
-    "value": 1
+    'competency': 'корректировка проекта',
+    'value': 1,
   },
   {
-    "competency": "коммуникативная",
-    "value": 1
+    'competency': 'коммуникативная',
+    'value': 1,
   },
   {
-    "competency": "3d",
-    "value": 1
+    'competency': '3d',
+    'value': 1,
   },
   {
-    "competency": "базы данных",
-    "value": 7
+    'competency': 'базы данных',
+    'value': 7,
   },
   {
-    "competency": "git",
-    "value": 6
+    'competency': 'git',
+    'value': 6,
   },
   {
-    "competency": "sketch",
-    "value": 6
+    'competency': 'sketch',
+    'value': 6,
   },
   {
-    "competency": "ms sql",
-    "value": 2
+    'competency': 'ms sql',
+    'value': 2,
   },
   {
-    "competency": "entityframework",
-    "value": 2
+    'competency': 'entityframework',
+    'value': 2,
   },
   {
-    "competency": "illustrator",
-    "value": 7
+    'competency': 'illustrator',
+    'value': 7,
   },
   {
-    "competency": "scss",
-    "value": 6
+    'competency': 'scss',
+    'value': 6,
   },
   {
-    "competency": "gitflow",
-    "value": 6
+    'competency': 'gitflow',
+    'value': 6,
   },
   {
-    "competency": "прототипирование",
-    "value": 4
+    'competency': 'прототипирование',
+    'value': 4,
   },
   {
-    "competency": "asp",
-    "value": 4
+    'competency': 'asp',
+    'value': 4,
   },
   {
-    "competency": "net core",
-    "value": 4
+    'competency': 'net core',
+    'value': 4,
   },
   {
-    "competency": "ms word",
-    "value": 1
+    'competency': 'ms word',
+    'value': 1,
   },
   {
-    "competency": "bitbucket",
-    "value": 1
+    'competency': 'bitbucket',
+    'value': 1,
   },
   {
-    "competency": "pycharm",
-    "value": 2
+    'competency': 'pycharm',
+    'value': 2,
   },
   {
-    "competency": "flask",
-    "value": 1
+    'competency': 'flask',
+    'value': 1,
   },
   {
-    "competency": "составление отчета",
-    "value": 1
+    'competency': 'составление отчета',
+    'value': 1,
   },
   {
-    "competency": "навыки презентации",
-    "value": 1
+    'competency': 'навыки презентации',
+    'value': 1,
   },
   {
-    "competency": "управление командой",
-    "value": 1
+    'competency': 'управление командой',
+    'value': 1,
   },
   {
-    "competency": "web-программирование",
-    "value": 1
+    'competency': 'web-программирование',
+    'value': 1,
   },
   {
-    "competency": "balsamiq mockups",
-    "value": 1
+    'competency': 'balsamiq mockups',
+    'value': 1,
   },
   {
-    "competency": "отрисовка персонажей",
-    "value": 1
+    'competency': 'отрисовка персонажей',
+    'value': 1,
   },
   {
-    "competency": "матричные преобразования",
-    "value": 2
+    'competency': 'матричные преобразования',
+    'value': 2,
   },
   {
-    "competency": "базы даных",
-    "value": 1
+    'competency': 'базы даных',
+    'value': 1,
   },
   {
-    "competency": "знание геометрии",
-    "value": 1
+    'competency': 'знание геометрии',
+    'value': 1,
   },
   {
-    "competency": "математическое моделирование",
-    "value": 1
+    'competency': 'математическое моделирование',
+    'value': 1,
   },
   {
-    "competency": "backend",
-    "value": 2
+    'competency': 'backend',
+    'value': 2,
   },
   {
-    "competency": "аналитика данных",
-    "value": 1
+    'competency': 'аналитика данных',
+    'value': 1,
   },
   {
-    "competency": "радиоэлектроника",
-    "value": 1
+    'competency': 'радиоэлектроника',
+    'value': 1,
   },
   {
-    "competency": "pandas",
-    "value": 3
+    'competency': 'pandas',
+    'value': 3,
   },
   {
-    "competency": "geopandas",
-    "value": 1
+    'competency': 'geopandas',
+    'value': 1,
   },
   {
-    "competency": "matplotlib",
-    "value": 1
+    'competency': 'matplotlib',
+    'value': 1,
   },
   {
-    "competency": "работа с растровой графикой",
-    "value": 1
+    'competency': 'работа с растровой графикой',
+    'value': 1,
   },
   {
-    "competency": "loraserver api",
-    "value": 2
+    'competency': 'loraserver api',
+    'value': 2,
   },
   {
-    "competency": "протокол mqtt",
-    "value": 2
+    'competency': 'протокол mqtt',
+    'value': 2,
   },
   {
-    "competency": "java-script",
-    "value": 2
+    'competency': 'java-script',
+    'value': 2,
   },
   {
-    "competency": "node-red",
-    "value": 2
+    'competency': 'node-red',
+    'value': 2,
   },
   {
-    "competency": "base64",
-    "value": 2
+    'competency': 'base64',
+    'value': 2,
   },
   {
-    "competency": "adobe animate",
-    "value": 1
+    'competency': 'adobe animate',
+    'value': 1,
   },
   {
-    "competency": "computer science",
-    "value": 1
+    'competency': 'computer science',
+    'value': 1,
   },
   {
-    "competency": "telegram api",
-    "value": 1
+    'competency': 'telegram api',
+    'value': 1,
   },
   {
-    "competency": "dialogflow",
-    "value": 1
+    'competency': 'dialogflow',
+    'value': 1,
   },
   {
-    "competency": "frontend",
-    "value": 1
+    'competency': 'frontend',
+    'value': 1,
   },
   {
-    "competency": "ruby",
-    "value": 1
+    'competency': 'ruby',
+    'value': 1,
   },
   {
-    "competency": "rails",
-    "value": 1
+    'competency': 'rails',
+    'value': 1,
   },
   {
-    "competency": "проектирование анимации",
-    "value": 1
+    'competency': 'проектирование анимации',
+    'value': 1,
   },
   {
-    "competency": "3d моделирование",
-    "value": 1
+    'competency': '3d моделирование',
+    'value': 1,
   },
   {
-    "competency": "копирайт",
-    "value": 1
+    'competency': 'копирайт',
+    'value': 1,
   },
   {
-    "competency": "запись скринкастов",
-    "value": 1
+    'competency': 'запись скринкастов',
+    'value': 1,
   },
   {
-    "competency": "создание визуальных материалов",
-    "value": 1
+    'competency': 'создание визуальных материалов',
+    'value': 1,
   },
   {
-    "competency": "wpf",
-    "value": 2
+    'competency': 'wpf',
+    'value': 2,
   },
   {
-    "competency": "net framework",
-    "value": 2
+    'competency': 'net framework',
+    'value': 2,
   },
   {
-    "competency": "windows forms (",
-    "value": 2
+    'competency': 'windows forms (',
+    'value': 2,
   },
   {
-    "competency": "net framework)",
-    "value": 2
+    'competency': 'net framework)',
+    'value': 2,
   },
   {
-    "competency": "t-sql",
-    "value": 5
+    'competency': 't-sql',
+    'value': 5,
   },
   {
-    "competency": "web",
-    "value": 5
+    'competency': 'web',
+    'value': 5,
   },
   {
-    "competency": "навыки коммуникации",
-    "value": 4
+    'competency': 'навыки коммуникации',
+    'value': 4,
   },
   {
-    "competency": "знание методик управления разработкой по",
-    "value": 4
+    'competency': 'знание методик управления разработкой по',
+    'value': 4,
   },
   {
-    "competency": "scikit-leran",
-    "value": 2
+    'competency': 'scikit-leran',
+    'value': 2,
   },
   {
-    "competency": "основы алгоритмизации",
-    "value": 2
-  }
+    'competency': 'основы алгоритмизации',
+    'value': 2,
+  },
 ]

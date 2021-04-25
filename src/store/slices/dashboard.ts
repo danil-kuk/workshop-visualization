@@ -6,15 +6,15 @@ import { RootState } from '../store'
 
 export const fetchKeyStatistic = createAsyncThunk(
   'dashboard/fetchKeyStatistic',
-  dashboardAPI.getKeyStatistic,
+  (eventId: number) => dashboardAPI.getKeyStatistic(eventId),
 )
 
 
-interface TestState {
+interface DashboardState {
   keyStatistic: KeyStatisticModel | null
 }
 
-const initialState: TestState = { keyStatistic: null }
+const initialState: DashboardState = { keyStatistic: null }
 
 export const dashboardSlice = createSlice({
   name: 'dashboard',

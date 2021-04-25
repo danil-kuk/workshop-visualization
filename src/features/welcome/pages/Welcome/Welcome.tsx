@@ -1,33 +1,38 @@
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from 'src/store'
+import { fetchEventsList, selectEventsList } from 'src/store/slices/events'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
-import logo from 'src/assets/images/logo-for-light.svg'
-
-import { KeyStatistic } from '../../components/KeyStatistic'
 
 import styles from './style.module.scss'
 
-export const Welcome: React.FC = () => (
-  <div>
-    <h1>Welcome page</h1>
-    <KeyStatistic />
-    <div className={styles.block}>
+export const Welcome: React.FC = () => {
+  const dispatch = useAppDispatch()
+  const eventsList = useAppSelector(selectEventsList)
+
+  useEffect(() => {
+    if (!eventsList.length) {
+      dispatch(fetchEventsList())
+    }
+  })
+
+  const eventsLinks = eventsList.map(item => (
+    <div key={item.id}>
       <NavLink
-        to={publicUrlPath('/welcome/counter')}
+        to={publicUrlPath(`/welcome/event/${item.id}`)}
         activeClassName={styles.activeLink}
+        end
       >
-        Counter
+        {item.name}
       </NavLink>
     </div>
+  ))
+
+  return (
     <div>
-      <Link to={publicUrlPath('/empty')}>Link to empty url</Link>
+      <h1>Welcome page</h1>
+      {eventsLinks}
+      <Outlet />
     </div>
-    <div className={styles.logoWrapper}>
-      <img
-        src={logo}
-        alt="logo"
-      />
-    </div>
-    <h3>Router Outlet</h3>
-    <Outlet />
-  </div>
-)
+  )
+}

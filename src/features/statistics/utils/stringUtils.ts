@@ -14,7 +14,7 @@ export function getWordForm(number: number, oneForm: string, twoForm: string, fi
     return twoForm
   }
 
-  if (lastDigit == 1) {
+  if (lastDigit === 1) {
     return oneForm
   }
 

@@ -1,6 +1,4 @@
-import { MonitoringModel } from 'src/features/statistics/models/MonitoringModel'
-
-export const fakeMonitoring: MonitoringModel[] = [
+export const fakeMonitoring = [
   {
     lifeScenario: {
       id: 370,

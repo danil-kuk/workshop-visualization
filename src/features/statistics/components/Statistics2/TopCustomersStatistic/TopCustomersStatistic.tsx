@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppLoadingSpinner } from 'src/features/statistics/components/AppLoadingSpinner'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 import { useTopCostumersStatistic } from 'src/features/statistics/components/Statistics2/hooks'
 
 import styles from '../style.module.scss'

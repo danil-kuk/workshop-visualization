@@ -2,9 +2,6 @@ import * as fakeProvider from './fake-provider'
 import * as apiProvider from './api-provider'
 
 export interface Provider {
-  admin: {
-    getStatistics(): Promise<any>
-  },
   statistic: {
     getProjectCompetenciesStatistic(eventId: number): Promise<any>
     getStudentCompetenciesStatistic(eventId: number): Promise<any>
@@ -21,6 +18,11 @@ export interface Provider {
 
 let provider: Provider
 
-if (process.env.ENABLE_FAKES == 'true') { provider = fakeProvider } else { provider = apiProvider }
+if (process.env.ENABLE_FAKES === 'true') {
+  provider = fakeProvider
+}
+else {
+  provider = apiProvider
+}
 
-export const { admin, statistic } = provider
+export const { statistic } = provider

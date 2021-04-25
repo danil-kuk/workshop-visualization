@@ -1,1 +1,1 @@
-export * from './KeyStatistic'
+export { KeyStatistic as default } from './KeyStatistic'
