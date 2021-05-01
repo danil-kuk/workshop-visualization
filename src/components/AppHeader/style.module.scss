@@ -4,10 +4,6 @@ header {
   background-color: var(--bg-secondary);
   align-items: center;
   border-bottom: 1px solid var(--bg-main);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
 
   h3 {
@@ -47,7 +43,7 @@ header {
 @media only screen and (max-width: 768px) {
   .logo {
     max-width: 50px;
-    background-image: url("/assets/images/logo-small.svg");
+    background-image: url('../../assets/images/logo-small.svg');
     background-size: 50%;
   }
 }

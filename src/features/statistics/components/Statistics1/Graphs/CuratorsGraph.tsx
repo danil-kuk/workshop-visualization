@@ -3,7 +3,7 @@ import Graph from 'react-graph-vis'
 import useDarkMode from 'use-dark-mode'
 import { useKeyTechnologyCuratorsStatistic } from 'src/features/statistics/components/Statistics1/hooks'
 import { GraphModel } from 'src/features/statistics/models'
-import { truncate } from 'src/features/statistics/utils/stringUtils'
+import { truncate } from 'src/utils/stringUtils'
 import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
 import { HEIGHT } from '../ChartConstants'

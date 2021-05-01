@@ -1,5 +1,5 @@
 import React from 'react'
-import { getWordForm } from 'src/features/statistics/utils/stringUtils'
+import { getWordForm } from 'src/utils/stringUtils'
 import { useKeyStatistic } from 'src/features/statistics/components/Statistics2/hooks'
 import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 

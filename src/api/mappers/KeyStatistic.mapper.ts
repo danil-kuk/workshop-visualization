@@ -1,15 +1,15 @@
 import { KeyStatisticModel } from 'src/models'
 
-import { KeyStatisticDto } from '../dtos/KeyStatisticDto'
+import { DashboardDto } from '../dtos/DashboardDto'
 
 import { DtoToModelMapper } from './Mappers'
 
-export const keyStatisticMapper: DtoToModelMapper<KeyStatisticModel, KeyStatisticDto> = {
+export const keyStatisticMapper: DtoToModelMapper<KeyStatisticModel, DashboardDto> = {
   fromDto: (dto) => ({
-    studentsCount: dto.students_count,
-    projectsCount: dto.projects_count,
-    teamsCount: dto.teams_count,
-    curatorsCount: dto.curators_count,
-    customersCount: dto.customers_count,
+    studentsCount: dto.key_statistic.students_count,
+    projectsCount: dto.key_statistic.projects_count,
+    teamsCount: dto.key_statistic.teams_count,
+    curatorsCount: dto.key_statistic.curators_count,
+    customersCount: dto.key_statistic.customers_count,
   }),
 }

@@ -1,13 +1,15 @@
-import { KeyStatisticDto } from '../dtos/KeyStatisticDto'
 import { keyStatisticMapper } from '../mappers/KeyStatistic.mapper'
+import { DashboardDto } from '../dtos/DashboardDto'
+import { customersTopMapper } from '../mappers/CustomersTop.mapper'
 
 import { database } from './DatabaseService'
 
-const DB_NAME = 'dashboard'
-const KEY_STAT_COLLECTION = 'keyStatistic'
+const DB_NAME = 'statistics'
+const COLLECTION = 'dashboard'
 
 async function getKeyStatistic(eventId: number) {
-  const item = await database.getItemByEventId<KeyStatisticDto>(DB_NAME, KEY_STAT_COLLECTION, eventId)
+  const item = await database
+    .getItemByEventId<DashboardDto>(DB_NAME, COLLECTION, eventId)
 
   if (!item) {
     return null
@@ -16,4 +18,18 @@ async function getKeyStatistic(eventId: number) {
   return keyStatisticMapper.fromDto(item)
 }
 
-export const dashboardAPI = { getKeyStatistic }
+async function getCustomersTop(eventId: number) {
+  const item = await database
+    .getItemByEventId<DashboardDto>(DB_NAME, COLLECTION, eventId)
+
+  if (!item) {
+    return null
+  }
+
+  return customersTopMapper.fromDto(item)
+}
+
+export const dashboardAPI = {
+  getKeyStatistic,
+  getCustomersTop,
+}

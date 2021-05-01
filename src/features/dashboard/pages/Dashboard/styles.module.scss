@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 5rem;
+  font-size: .875rem;
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin: 0 0 2rem;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -1rem;
+      left: -2rem;
+      width: calc(100% + 4rem);
+      height: 1px;
+      background-color: var(--grey-2);
+      margin-top: 1rem;
+    }
+  }
+}
+
+.flashlight {
+  display: none;
+  width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.row {
+  display: flex;
+}
+
+.col6 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 66.66%;
+}
+
+.col3 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 33.33%;
+}

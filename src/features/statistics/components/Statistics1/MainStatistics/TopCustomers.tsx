@@ -1,7 +1,7 @@
 import React from 'react'
-import { getWordForm } from 'src/features/statistics/utils/stringUtils'
-
+import { getWordForm } from 'src/utils/stringUtils'
 import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
+
 import { useTopCostumersStatistic } from '../hooks'
 import style from '../style.module.scss'
 
