@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'src/store'
 import { fetchEventsList, selectEventsList } from 'src/store/slices/events'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
@@ -26,7 +26,6 @@ export const Welcome: React.FC = () => {
     <div>
       <h1>Welcome page</h1>
       {eventsLinks}
-      <Outlet />
     </div>
   )
 }

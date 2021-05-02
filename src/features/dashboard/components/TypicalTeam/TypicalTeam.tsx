@@ -14,6 +14,7 @@ export const TypicalTeam: React.FC = () => {
 
   const listItems = data.map((item, index) => (
     <div
+      className={styles.underlineList}
       key={index}
     >
       <h4>1x</h4>

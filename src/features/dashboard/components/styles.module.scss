@@ -6,7 +6,7 @@
     flex: 0 1 33.333%;
 
     p {
-      margin: 0 0 .2rem 0;
+      margin-bottom: .2rem;
     }
 
     h3 {
@@ -17,35 +17,38 @@
   }
 }
 
+.underlineList {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.2rem;
+
+  &:after {
+    content: '';
+    display: block;
+    bottom: -0.6rem;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+  }
+
+  &:nth-last-child(1):after {
+    display: none;
+  }
+}
+
 .topCustomerWrapper {
   display: block;
   margin: 0 0 .4rem;
   padding: 0;
 
   div {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin-bottom: 1.2rem;
-
-    &:after {
-      content: '';
-      display: block;
-      bottom: -0.6rem;
-      width: 100%;
-      height: 1px;
-      background-color: #000;
-      position: absolute;
-    }
-
-    &:nth-last-child(1):after {
-      display: none;
-    }
 
     li {
       flex: 0 1 66.666%;
-      margin: 0 0 0 1rem;
+      margin-left: 1rem;
     }
 
     h3 {
@@ -59,20 +62,7 @@
 .typicalTeamWrapper {
 
   div {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin: 0 0 1.2rem 0;
 
-    &:after {
-      content: '';
-      display: block;
-      bottom: -0.6rem;
-      width: 100%;
-      height: 1px;
-      background-color: #000;
-      position: absolute;
-    }
 
     h4 {
       font-weight: bold;
@@ -89,15 +79,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1 1 100%;
+  flex: 1;
   flex-wrap: wrap;
 
   div {
     flex: 1 1 50%;
-    margin: 0 0 1rem 0;
+    margin-bottom: 1rem;
 
     p {
-      margin: 0 0 .5rem 0;
+      margin-bottom: 1rem;
     }
 
     h3 {

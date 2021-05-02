@@ -1,25 +1,12 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from 'src/store'
-import { fetchKeyStatistic, selectKeyStatistic } from 'src/store/slices/dashboard'
-import { selectEventsList } from 'src/store/slices/events'
+import React from 'react'
+import { useAppSelector } from 'src/store'
+import { selectKeyStatistic } from 'src/store/slices/dashboard'
 
 import styles from '../styles.module.scss'
 import { getWordForm } from '../../../../utils/stringUtils'
 
 export const KeyStatistic: React.FC = () => {
-  const { id } = useParams()
-  const dispatch = useAppDispatch()
   const keyStatistic = useAppSelector(selectKeyStatistic)
-  const events = useAppSelector(selectEventsList)
-
-  useEffect(() => {
-    const eventId = Number(id)
-
-    if (events.find(item => item.id === eventId)) {
-      dispatch(fetchKeyStatistic(eventId))
-    }
-  }, [id])
 
   return keyStatistic && (
     <div className={styles.keyStatsWrapper}>
