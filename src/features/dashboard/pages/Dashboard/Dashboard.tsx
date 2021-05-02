@@ -6,7 +6,7 @@ import StudentCompetencies from '../../components/StudentCompetencies'
 import KeyStatistic from '../../components/KeyStatistic'
 import CustomersTop from '../../components/CustomersTop'
 import TypicalTeam from '../../components/TypicalTeam'
-import { fetchCustomersTop, fetchKeyStatistic } from '../../../../store/slices/dashboard'
+import { fetchDashboard } from '../../../../store/slices/dashboard'
 import { useAppDispatch, useAppSelector } from '../../../../store'
 import { selectEventsList } from '../../../../store/slices/events'
 
@@ -22,8 +22,7 @@ export const Dashboard: React.FC = () => {
     const eventId = Number(id)
 
     if (events.find(item => item.id === eventId)) {
-      dispatch(fetchKeyStatistic(eventId))
-      dispatch(fetchCustomersTop(eventId))
+      dispatch(fetchDashboard(eventId))
     }
   }, [id])
   return (
