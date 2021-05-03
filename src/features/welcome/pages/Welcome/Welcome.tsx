@@ -4,6 +4,8 @@ import { useAppDispatch, useAppSelector } from 'src/store'
 import { fetchEventsList, selectEventsList } from 'src/store/slices/events'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
 
+import styles from './style.module.scss'
+
 export const Welcome: React.FC = () => {
   const dispatch = useAppDispatch()
   const eventsList = useAppSelector(selectEventsList)
@@ -23,7 +25,7 @@ export const Welcome: React.FC = () => {
   ))
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Welcome page</h1>
       {eventsLinks}
     </div>

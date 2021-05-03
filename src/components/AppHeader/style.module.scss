@@ -4,6 +4,10 @@ header {
   background-color: var(--bg-secondary);
   align-items: center;
   border-bottom: 1px solid var(--bg-main);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
 
   h3 {

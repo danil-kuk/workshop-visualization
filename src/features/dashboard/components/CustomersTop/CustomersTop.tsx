@@ -6,14 +6,14 @@ import { useAppSelector } from '../../../../store'
 import { selectCustomersTop } from '../../../../store/slices/dashboard'
 
 export const CustomersTop: React.FC = () => {
-  const CustomersTop = useAppSelector(selectCustomersTop)
+  const customersTop = useAppSelector(selectCustomersTop)
 
-  return CustomersTop && (
+  return customersTop && (
     <ol className={styles.topCustomerWrapper}>
       {
-        CustomersTop.map((item, index) => (
+        customersTop.map((item, index) => (
           <div
-            className={styles.underlineList}
+            className={styles.underlineListItem}
             key={index}
           >
             <li>{item.name}</li>

@@ -6,9 +6,12 @@ import StudentCompetencies from '../../components/StudentCompetencies'
 import KeyStatistic from '../../components/KeyStatistic'
 import CustomersTop from '../../components/CustomersTop'
 import TypicalTeam from '../../components/TypicalTeam'
-import { fetchDashboard } from '../../../../store/slices/dashboard'
+import { fetchDashboard, selectLoading } from '../../../../store/slices/dashboard'
 import { useAppDispatch, useAppSelector } from '../../../../store'
 import { selectEventsList } from '../../../../store/slices/events'
+import { AppLoadingSpinner } from '../../../../components/AppLoadingSpinner'
+import KeyTechnologyStudents from '../../components/KeyTechnologyStudents'
+import { CustomersByActivity, CustomersByArea, StudentsByCourse } from '../../components/PieDiagram'
 
 import styles from './styles.module.scss'
 
@@ -17,14 +20,18 @@ export const Dashboard: React.FC = () => {
   const { id } = useParams()
   const dispatch = useAppDispatch()
   const events = useAppSelector(selectEventsList)
+  const loading = useAppSelector(selectLoading)
 
   useEffect(() => {
+
     const eventId = Number(id)
 
     if (events.find(item => item.id === eventId)) {
       dispatch(fetchDashboard(eventId))
     }
   }, [id])
+
+  if (loading) return <AppLoadingSpinner />
   return (
     <>
       <div className={styles.container}>
@@ -33,6 +40,7 @@ export const Dashboard: React.FC = () => {
         <div className={styles.row}>
           <div className={styles.col6}>
             <h2>Распределение&nbsp;студентов&nbsp;по&nbsp;направлениям</h2>
+            <KeyTechnologyStudents />
           </div>
 
           <div className={styles.col3}>
@@ -52,17 +60,20 @@ export const Dashboard: React.FC = () => {
 
           <div className={styles.col3}>
             <h2>Желаемые&nbsp;компетенции&nbsp;участников</h2>
-            <StudentCompetencies />
+            <StudentCompetencies  desired />
           </div>
 
           <div className={styles.col3}>
             <h2>Заказчики&nbsp;по&nbsp;сфере&nbsp;деятельности</h2>
+            <CustomersByActivity />
+            <CustomersByArea />
           </div>
         </div>
 
         <div className={styles.row}>
           <div className={styles.col6}>
             <h2>Распределение&nbsp;студентов&nbsp;по&nbsp;курсам</h2>
+            <StudentsByCourse />
           </div>
 
           <div className={styles.col3}>

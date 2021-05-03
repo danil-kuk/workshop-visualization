@@ -21,5 +21,29 @@ export const dashboardMapper: DtoToModelMapper<DashboardModel, DashboardDto> = {
       role: item.role,
       studentsCount: item.students_count,
     })),
+    studentCompetencies: dto.student_competencies.map((item) => ({
+      competence: item.competence,
+      value: item.value,
+    })),
+    desiredStudentCompetencies: dto.desired_student_competencies.map((item) => ({
+      competence: item.competence,
+      value: item.value,
+    })),
+    keyTechnologyStudents: dto.key_technology_students.map((item) => ({
+      keyTechnology: item.key_technology,
+      value: item.value,
+    })),
+    studentsByCourse: dto.students_by_course.map((item) => ({
+      course: item.course,
+      count: item.count,
+    })),
+    customersByActivity: dto.customers_by_activity.map((item) => ({
+      activity: item.activity,
+      count: item.count,
+    })),
+    customersByArea: dto.customers_by_area.map((item) => ({
+      area: item.area,
+      count: item.count,
+    })),
   }),
 }

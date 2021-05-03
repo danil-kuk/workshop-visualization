@@ -19,7 +19,11 @@ export const App: React.FC = () => {
   }, [])
 
   if (!auth) {
-    return <AppLoadingSpinner fullHeight />
+    return (
+      <>
+        <AppHeader />
+        <AppLoadingSpinner fullHeight />
+      </>)
   }
 
   return (

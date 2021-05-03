@@ -12,7 +12,7 @@ export const TypicalTeam: React.FC = () => {
       {
         TypicalTeam.map((item, index) => (
           <div
-            className={styles.underlineList}
+            className={styles.underlineListItem}
             key={index}
           >
             <h4>{item.studentsCount}x</h4>
