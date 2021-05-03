@@ -9,22 +9,14 @@ import { database } from './DatabaseService'
 const DB_NAME = 'statistics'
 const COLLECTION = 'dashboard'
 
-function timeout(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
 async function getDashboard(eventID: number) {
-  await timeout(1000)
   const item = await database
     .getItemByEventId<DashboardDto>(DB_NAME, COLLECTION, eventID)
 
   if (!item) {
     return null
   }
-  const d = dashboardMapper.fromDto(item)
-
-  console.log(d)
-  return d
+  return  dashboardMapper.fromDto(item)
 }
 
 // async function getKeyStatistic(eventId: number) {
