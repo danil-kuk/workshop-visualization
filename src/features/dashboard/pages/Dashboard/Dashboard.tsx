@@ -30,7 +30,7 @@ export const Dashboard: React.FC = () => {
     }
   }, [id])
 
-  if (loading) return <AppLoadingSpinner />
+  if (loading) return <AppLoadingSpinner fullHeight/>
   return (
     <>
       <div className={styles.container}>
