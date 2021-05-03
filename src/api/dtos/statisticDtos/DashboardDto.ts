@@ -1,4 +1,5 @@
-import { DatabaseItemBase } from './DatabaseItemBase'
+import { DatabaseItemBase } from '../DatabaseItemBase'
+
 import { CustomersTopDto } from './CustomersTopDto'
 import { KeyStatisticDto } from './KeyStatisticDto'
 import { TypicalTeamDto } from './TypicalTeamDto'

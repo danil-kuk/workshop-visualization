@@ -1,10 +1,9 @@
 import React from 'react'
 import { useAppSelector } from 'src/store'
 import { selectKeyStatistic } from 'src/store/slices/dashboard'
+import { getWordForm } from 'src/utils/stringUtils'
 
 import styles from '../styles.module.scss'
-import { getWordForm } from '../../../../utils/stringUtils'
-
 export const KeyStatistic: React.FC = () => {
   const keyStatistic = useAppSelector(selectKeyStatistic)
 
@@ -28,10 +27,10 @@ export const KeyStatistic: React.FC = () => {
       </div>
       <div>
         <p>
-          {getWordForm(keyStatistic.teamsCount, 'Команда', 'Команды', 'Команд')}
+          {getWordForm(keyStatistic.customersCount, 'Заказчик', 'Заказчика', 'Заказчиков')}
         </p>
         <h3>
-          {keyStatistic.teamsCount}
+          {keyStatistic.customersCount}
         </h3>
       </div>
       <div>
@@ -44,10 +43,10 @@ export const KeyStatistic: React.FC = () => {
       </div>
       <div>
         <p>
-          {getWordForm(keyStatistic.customersCount, 'Заказчик', 'Заказчика', 'Заказчиков')}
+          {getWordForm(keyStatistic.teamsCount, 'Команда', 'Команды', 'Команд')}
         </p>
         <h3>
-          {keyStatistic.customersCount}
+          {keyStatistic.teamsCount}
         </h3>
       </div>
     </div>

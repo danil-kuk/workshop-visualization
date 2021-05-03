@@ -1,9 +1,9 @@
 import React from 'react'
 import { ResponsiveBar } from '@nivo/bar'
+import { useAppSelector } from 'src/store'
+import { selectKeyTechnologyStudents } from 'src/store/slices/dashboard'
 
 import styles from '../styles.module.scss'
-import { useAppSelector } from '../../../../store'
-import { selectKeyTechnologyStudents } from '../../../../store/slices/dashboard'
 
 const BarTheme = {
   fontFamily: 'var(--content-font-family)',
@@ -24,16 +24,13 @@ export const KeyTechnologyStudents: React.FC = () => {
         margin={{
           top: 0,
           right: 50,
-          bottom: 105,
+          bottom: 30,
           left: 40,
         }}
         padding={0.6}
         colors={['#177ddc']}
         axisLeft={{ tickSize: 0 }}
-        axisBottom={{
-          tickSize: 0,
-          tickRotation: 30,
-        }}
+        axisBottom={{ tickSize: 0 }}
         labelTextColor="#ffffff"
         animate={false}
         isInteractive={false}

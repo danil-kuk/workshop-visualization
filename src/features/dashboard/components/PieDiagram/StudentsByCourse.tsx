@@ -1,10 +1,9 @@
 import React from 'react'
 import { ResponsivePie } from '@nivo/pie'
-
+import { useAppSelector } from 'src/store'
+import { selectStudentsByCourse } from 'src/store/slices/dashboard'
 
 import styles from '../styles.module.scss'
-import { useAppSelector } from '../../../../store'
-import { selectStudentsByCourse } from '../../../../store/slices/dashboard'
 
 import { config } from './PieConfig'
 

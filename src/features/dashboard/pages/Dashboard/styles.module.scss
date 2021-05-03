@@ -1,23 +1,29 @@
 .container {
   font-size: .875rem;
-  min-width: 1440px;
+  width: 1440px;
+  margin: 0 auto;
 
   h2 {
     font-weight: bold;
     font-size: 1.25rem;
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
     position: relative;
+  }
 
-    &:after {
+  .underlineTitle {
+    &:after, &_s:after {
       content: '';
       display: block;
       position: absolute;
-      bottom: -1rem;
-      left: -2rem;
-      width: calc(100% + 4rem);
+      bottom: -0.5rem;
+      left: 0;
+      width: 1440px;
       height: 1px;
       background-color: var(--grey-2);
       margin-top: 1rem;
+    }
+    &_s:after {
+      width: 100%;
     }
   }
 }
@@ -35,6 +41,7 @@
 .row {
   display: flex;
   margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .col6 {
@@ -46,6 +53,6 @@
 .col3 {
   display: flex;
   flex-direction: column;
-  flex: 1 1 33.33%;
+  flex: 0 0 33.33%;
   position: relative;
 }

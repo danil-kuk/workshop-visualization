@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { dashboardAPI } from 'src/api/services/DashboardService'
 import {
-  CustomersByActivityModel, CustomersByAreaModel,
+  CustomersByActivityModel,
+  CustomersByAreaModel,
   CustomersTopModel,
   KeyStatisticModel,
   KeyTechnologyStudentsModel,
-  StudentCompetenciesModel, StudentsByCourseModel,
+  StudentCompetenciesModel,
+  StudentsByCourseModel,
   TypicalTeamModel,
 } from 'src/models'
 
@@ -16,17 +18,6 @@ export const fetchDashboard = createAsyncThunk(
   'dashboard/fetchDashboard',
   (eventId: number) => dashboardAPI.getDashboard(eventId),
 )
-
-// export const fetchKeyStatistic = createAsyncThunk(
-//   'dashboard/fetchKeyStatistic',
-//   (eventId: number) => dashboardAPI.getKeyStatistic(eventId),
-// )
-//
-// export const fetchCustomersTop = createAsyncThunk(
-//   'dashboard/fetchCustomersTop',
-//   (eventId: number) => dashboardAPI.getCustomersTop(eventId),
-// )
-
 
 interface DashboardState {
   loading: boolean
@@ -54,7 +45,7 @@ const initialState: DashboardState = {
   customersByArea: null,
 }
 
-export const dashboardSlice = createSlice({
+const dashboardSlice = createSlice({
   name: 'dashboard',
   initialState,
   reducers: {},
@@ -63,26 +54,40 @@ export const dashboardSlice = createSlice({
       state.loading = true
     })
     .addCase(fetchDashboard.fulfilled, (state, action) => {
-      state.keyStatistic = action.payload?.keyStatistic === undefined ? null : action.payload.keyStatistic
-      state.customersTop = action.payload?.customersTop === undefined ? null : action.payload.customersTop
-      state.typicalTeam = action.payload?.typicalTeam === undefined ? null : action.payload.typicalTeam
-      state.studentCompetencies = action.payload?.studentCompetencies === undefined ? null : action.payload.studentCompetencies
-      state.desiredStudentCompetencies = action.payload?.desiredStudentCompetencies === undefined ? null : action.payload.desiredStudentCompetencies
-      state.keyTechnologyStudents = action.payload?.keyTechnologyStudents === undefined ? null : action.payload.keyTechnologyStudents
-      state.studentsByCourse = action.payload?.studentsByCourse === undefined ? null : action.payload.studentsByCourse
-      state.customersByActivity = action.payload?.customersByActivity === undefined ? null : action.payload.customersByActivity
-      state.customersByArea = action.payload?.customersByArea === undefined ? null : action.payload.customersByArea
+      state.keyStatistic = action.payload?.keyStatistic ?? null
+      state.customersTop = action.payload?.customersTop ?? null
+      state.typicalTeam = action.payload?.typicalTeam ?? null
+      state.studentCompetencies = action.payload?.studentCompetencies ?? null
+      state.desiredStudentCompetencies = action.payload?.desiredStudentCompetencies ?? null
+      state.keyTechnologyStudents = action.payload?.keyTechnologyStudents ?? null
+      state.studentsByCourse = action.payload?.studentsByCourse ?? null
+      state.customersByActivity = action.payload?.customersByActivity ?? null
+      state.customersByArea = action.payload?.customersByArea ?? null
       state.loading = false
     }),
 })
 
-export const selectLoading = (state: RootState) => state.dashboard.loading
-export const selectKeyStatistic = (state: RootState) => state.dashboard.keyStatistic
-export const selectCustomersTop = (state: RootState) => state.dashboard.customersTop
-export const selectTypicalTeam = (state: RootState) => state.dashboard.typicalTeam
-export const selectStudentCompetencies = (state: RootState) => state.dashboard.studentCompetencies
-export const selectDesiredStudentCompetencies = (state: RootState) => state.dashboard.desiredStudentCompetencies
-export const selectKeyTechnologyStudents = (state: RootState) => state.dashboard.keyTechnologyStudents
-export const selectStudentsByCourse = (state: RootState) => state.dashboard.studentsByCourse
-export const selectCustomersByActivity = (state: RootState) => state.dashboard.customersByActivity
-export const selectCustomersByArea = (state: RootState) => state.dashboard.customersByArea
+const selectLoading = (state: RootState) => state.dashboard.loading
+const selectKeyStatistic = (state: RootState) => state.dashboard.keyStatistic
+const selectCustomersTop = (state: RootState) => state.dashboard.customersTop
+const selectTypicalTeam = (state: RootState) => state.dashboard.typicalTeam
+const selectStudentCompetencies = (state: RootState) => state.dashboard.studentCompetencies
+const selectDesiredStudentCompetencies = (state: RootState) => state.dashboard.desiredStudentCompetencies
+const selectKeyTechnologyStudents = (state: RootState) => state.dashboard.keyTechnologyStudents
+const selectStudentsByCourse = (state: RootState) => state.dashboard.studentsByCourse
+const selectCustomersByActivity = (state: RootState) => state.dashboard.customersByActivity
+const selectCustomersByArea = (state: RootState) => state.dashboard.customersByArea
+
+export {
+  dashboardSlice,
+  selectLoading,
+  selectKeyStatistic,
+  selectCustomersTop,
+  selectTypicalTeam,
+  selectStudentCompetencies,
+  selectDesiredStudentCompetencies,
+  selectKeyTechnologyStudents,
+  selectStudentsByCourse,
+  selectCustomersByActivity,
+  selectCustomersByArea,
+}

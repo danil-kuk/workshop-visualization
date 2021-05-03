@@ -1,4 +1,4 @@
-import { DatabaseItemBase } from './DatabaseItemBase'
+import { DatabaseItemBase } from '../DatabaseItemBase'
 
 export interface TypicalTeamDto extends DatabaseItemBase {
   role: string

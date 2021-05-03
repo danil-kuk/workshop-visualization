@@ -1,10 +1,9 @@
 import React from 'react'
+import { getWordForm } from 'src/utils/stringUtils'
+import { useAppSelector } from 'src/store'
+import { selectCustomersTop } from 'src/store/slices/dashboard'
 
 import styles from '../styles.module.scss'
-import { getWordForm } from '../../../../utils/stringUtils'
-import { useAppSelector } from '../../../../store'
-import { selectCustomersTop } from '../../../../store/slices/dashboard'
-
 export const CustomersTop: React.FC = () => {
   const customersTop = useAppSelector(selectCustomersTop)
 

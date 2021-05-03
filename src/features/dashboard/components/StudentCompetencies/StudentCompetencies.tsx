@@ -1,8 +1,8 @@
 import React from 'react'
+import { useAppSelector } from 'src/store'
+import { selectDesiredStudentCompetencies, selectStudentCompetencies } from 'src/store/slices/dashboard'
 
 import styles from '../styles.module.scss'
-import { useAppSelector } from '../../../../store'
-import { selectDesiredStudentCompetencies, selectStudentCompetencies } from '../../../../store/slices/dashboard'
 
 interface Props {
   desired?: boolean

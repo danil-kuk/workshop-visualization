@@ -40,7 +40,7 @@
 
 .topCustomerWrapper {
   display: block;
-  margin: 0 0 .4rem;
+  margin: 0;
   padding: 0;
 
   div {
@@ -62,14 +62,17 @@
 .typicalTeamWrapper {
 
   div {
-
+    display: flex;
+    align-items: center;
 
     h4 {
       font-weight: bold;
-      margin: 0 1rem 0 0;
+      margin: 0;
+      flex: 0 1 5%;
     }
 
     p {
+      flex: 2;
       margin: 0;
     }
   }
@@ -97,19 +100,20 @@
 }
 
 .barChartWrapper {
-  height: 500px;
+  height: 450px;
 }
 
 .pieDiagramWrapper {
-  width: 480px;
   height: 250px;
+  width: 600px;
   margin-bottom: 1rem;
+  position: relative;
 
   &_s {
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
     left: 0;
-    width: 110px;
-    height: 200px;
+    width: 150px;
+    height: 250px;
   }
 }

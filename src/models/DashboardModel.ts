@@ -5,7 +5,7 @@ import {
   StudentCompetenciesModel,
   KeyTechnologyStudentsModel,
   StudentsByCourseModel, CustomersByActivityModel, CustomersByAreaModel,
-} from '../models'
+} from './statisctic'
 
 export interface DashboardModel {
   keyStatistic: KeyStatisticModel

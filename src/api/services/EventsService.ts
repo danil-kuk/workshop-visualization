@@ -1,5 +1,5 @@
 import { EventDto } from '../dtos/EventDto'
-import { eventMapper } from '../mappers/EventMapper'
+import { eventMapper } from '../mappers/Event.mapper'
 
 import { database } from './DatabaseService'
 

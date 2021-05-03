@@ -1,4 +1,4 @@
-import { DatabaseItemBase } from './DatabaseItemBase'
+import { DatabaseItemBase } from '../DatabaseItemBase'
 
 export interface KeyTechnologyStudentsDto extends DatabaseItemBase {
   key_technology: string

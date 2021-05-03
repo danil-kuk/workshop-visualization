@@ -1,8 +1,8 @@
 import React from 'react'
+import { useAppSelector } from 'src/store'
+import { selectTypicalTeam } from 'src/store/slices/dashboard'
 
 import styles from '../styles.module.scss'
-import { useAppSelector } from '../../../../store'
-import { selectTypicalTeam } from '../../../../store/slices/dashboard'
 
 export const TypicalTeam: React.FC = () => {
   const TypicalTeam = useAppSelector(selectTypicalTeam)
