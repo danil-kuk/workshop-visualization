@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useRoutes } from 'react-router-dom'
 
 import { database } from './api/services/DatabaseService'
-import { AppHeader } from './components/AppHeader'
 import { AppLoadingSpinner } from './components/AppLoadingSpinner'
 import { RootRouter } from './routes'
 import { AppBaseLayout } from './components/AppBaseLayout'
@@ -27,19 +26,12 @@ export const App: React.FC = () => {
   }, [])
 
   if (!auth) {
-    return (
-      <>
-        <AppHeader />
-        <AppLoadingSpinner fullHeight />
-      </>)
+    return <AppLoadingSpinner fullHeight />
   }
 
   return (
-    <>
-      <AppHeader />
-      <AppBaseLayout>
-        {routes}
-      </AppBaseLayout>
-    </>
+    <AppBaseLayout>
+      {routes}
+    </AppBaseLayout>
   )
 }
