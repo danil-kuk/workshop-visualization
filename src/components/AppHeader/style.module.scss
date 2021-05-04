@@ -47,7 +47,7 @@ header {
 @media only screen and (max-width: 768px) {
   .logo {
     max-width: 50px;
-    background-image: url("/assets/images/logo-small.svg");
+    background-image: url('../../assets/images/logo-small.svg');
     background-size: 50%;
   }
 }

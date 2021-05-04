@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'src/store'
 import { fetchEventsList, selectEventsList } from 'src/store/slices/events'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
@@ -18,21 +18,16 @@ export const Welcome: React.FC = () => {
 
   const eventsLinks = eventsList.map(item => (
     <div key={item.id}>
-      <NavLink
-        to={publicUrlPath(`/welcome/event/${item.id}`)}
-        activeClassName={styles.activeLink}
-        end
-      >
+      <Link to={publicUrlPath(`/dashboard/event/${item.id}`)}>
         {item.name}
-      </NavLink>
+      </Link>
     </div>
   ))
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Welcome page</h1>
       {eventsLinks}
-      <Outlet />
     </div>
   )
 }

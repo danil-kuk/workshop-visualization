@@ -1,2 +1,2 @@
-export * from './KeyStatisticModel'
 export * from './EventModel'
+export * from './statisctic'

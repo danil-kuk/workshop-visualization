@@ -1,4 +1,4 @@
-import { DatabaseItemBase } from './DatabaseItemBase'
+import { DatabaseItemBase } from '../DatabaseItemBase'
 
 export interface KeyStatisticDto extends DatabaseItemBase {
   students_count: number
