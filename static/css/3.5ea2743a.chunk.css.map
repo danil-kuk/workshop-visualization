@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/features/welcome/components/KeyStatistic/styles.module.scss"],"names":[],"mappings":"AAAA,uBAEI,cAAgB","file":"3.5ea2743a.chunk.css","sourcesContent":[".stats {\n  p {\n    margin: 0.2rem 0;\n  }\n}"]}

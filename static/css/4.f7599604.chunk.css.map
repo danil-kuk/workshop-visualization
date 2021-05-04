@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/features/welcome/pages/Welcome/style.module.scss"],"names":[],"mappings":"AAAA,yBACE,mBAAoB","file":"4.f7599604.chunk.css","sourcesContent":[".activeLink {\n  color: var(--accent);\n}\n\n"]}
