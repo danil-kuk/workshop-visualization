@@ -12,12 +12,12 @@ export const CustomersTop: React.FC<Props> = ({ data }) => (
   <ol className={styles.topCustomerWrapper}>
     {data.map((item, index) => (
       <div
-        className={styles.underlineListItem}
         key={index}
+        className={styles.underlineListItem}
       >
         <li>{item.name}</li>
         <h3>
-          {item.projectsCount}
+          {item.projectsCount}{' '}
           {getWordForm(item.projectsCount, 'проект', 'проекта', 'проектов')}
         </h3>
       </div>
