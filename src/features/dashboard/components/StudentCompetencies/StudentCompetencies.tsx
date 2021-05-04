@@ -1,28 +1,18 @@
-import React from 'react'
-import { useAppSelector } from 'src/store'
-import { selectDesiredStudentCompetencies, selectStudentCompetencies } from 'src/store/slices/dashboard'
+import { StudentCompetenciesModel } from 'src/models'
 
 import styles from '../styles.module.scss'
 
 interface Props {
-  desired?: boolean
+  data: StudentCompetenciesModel[]
 }
 
-export const StudentCompetencies: React.FC<Props> = (props) => {
-  const StudentCompetencies = useAppSelector(props.desired ? selectStudentCompetencies : selectDesiredStudentCompetencies)
-
-  return StudentCompetencies && (
-    <div className={styles.competenciesWrapper}>
-      {
-        StudentCompetencies.map((item, index) => (
-          <div
-            key={index}
-          >
-            <p>{item.competence}</p>
-            <h3>{item.value}%</h3>
-          </div>
-        ))
-      }
-    </div>
-  )
-}
+export const StudentCompetencies: React.FC<Props> = ({ data }) => (
+  <div className={styles.competenciesWrapper}>
+    {data.map((item, index) => (
+      <div key={index}>
+        <p>{item.competence}</p>
+        <h3>{item.value}%</h3>
+      </div>
+    ))}
+  </div>
+)

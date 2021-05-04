@@ -21,7 +21,7 @@ export const TopCustomers : React.FC<Props> = ({ eventId }) => {
     >
       <p>{customer.name}</p>
       <p>
-        <strong>{customer.projectsCount}&nbsp;{getWordForm(customer.projectsCount, 'проект', 'проекта', 'проектов')}</strong>
+        <strong>{customer.projectsCount} {getWordForm(customer.projectsCount, 'проект', 'проекта', 'проектов')}</strong>
       </p>
     </div>
   ))

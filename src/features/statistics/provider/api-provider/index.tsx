@@ -1,1 +1,0 @@
-export { statistic } from './statistic'

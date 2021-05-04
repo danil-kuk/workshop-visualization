@@ -1,1 +1,1 @@
-export { CustomersTop as default } from './CustomersTop'
+export * from './CustomersTop'

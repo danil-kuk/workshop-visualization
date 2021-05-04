@@ -1,1 +1,1 @@
-export { KeyTechnologyStudents as default } from './KeyTechnologyStudents'
+export * from './KeyTechnologyStudents'

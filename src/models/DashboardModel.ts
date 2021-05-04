@@ -4,7 +4,9 @@ import {
   TypicalTeamModel,
   StudentCompetenciesModel,
   KeyTechnologyStudentsModel,
-  StudentsByCourseModel, CustomersByActivityModel, CustomersByAreaModel,
+  StudentsByCourseModel,
+  CustomersByActivityModel,
+  CustomersByAreaModel,
 } from './statisctic'
 
 export interface DashboardModel {

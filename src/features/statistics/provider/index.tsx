@@ -1,5 +1,4 @@
 import * as fakeProvider from './fake-provider'
-import * as apiProvider from './api-provider'
 
 export interface Provider {
   statistic: {
@@ -16,13 +15,4 @@ export interface Provider {
   }
 }
 
-let provider: Provider
-
-if (process.env.ENABLE_FAKES === 'true') {
-  provider = fakeProvider
-}
-else {
-  provider = apiProvider
-}
-
-export const { statistic } = provider
+export const { statistic } = fakeProvider

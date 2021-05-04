@@ -13,7 +13,7 @@ async function getDashboard(eventID: number) {
   if (!item) {
     return null
   }
-  return  dashboardMapper.fromDto(item)
+  return dashboardMapper.fromDto(item)
 }
 
 export const dashboardAPI = { getDashboard }
