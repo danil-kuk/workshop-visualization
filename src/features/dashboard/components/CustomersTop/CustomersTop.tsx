@@ -17,7 +17,7 @@ export const CustomersTop: React.FC<Props> = ({ data }) => (
       >
         <li>{item.name}</li>
         <h3>
-          {item.projectsCount}&nbsp;
+          {item.projectsCount}
           {getWordForm(item.projectsCount, 'проект', 'проекта', 'проектов')}
         </h3>
       </div>

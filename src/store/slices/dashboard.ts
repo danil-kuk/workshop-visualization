@@ -4,7 +4,6 @@ import { DashboardModel } from 'src/models'
 
 import { RootState } from '../store'
 
-
 export const fetchDashboard = createAsyncThunk(
   'dashboard/fetch',
   async (eventId: number) => {

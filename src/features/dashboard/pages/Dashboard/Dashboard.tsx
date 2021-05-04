@@ -33,35 +33,35 @@ export const Dashboard: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Проектный&nbsp;практикум&nbsp;Весна&nbsp;2021&nbsp;ИРИТ-РТФ</h1>
+      <h1 className={styles.title}>Проектный практикум Весна 2021 ИРИТ-РТФ</h1>
 
       <div className={styles.row}>
         <div className={styles.col6}>
-          <h2 className={styles.underlineTitle}>Распределение&nbsp;студентов&nbsp;по&nbsp;направлениям</h2>
+          <h2 className={styles.underlineTitle}>Распределение студентов по направлениям</h2>
           {data.keyTechnologyStudents && <KeyTechnologyStudents data={data.keyTechnologyStudents} />}
         </div>
 
         <div className={styles.col3}>
-          <h2>Ключевые&nbsp;показатели</h2>
+          <h2>Ключевые показатели</h2>
           {data.keyStatistic && <KeyStatistic data={data.keyStatistic} />}
-          <h2 className={styles.underlineTitle_s}>Топ&nbsp;заказчиков</h2>
+          <h2 className={styles.underlineTitle_s}>Топ заказчиков</h2>
           {data.customersTop && <CustomersTop data={data.customersTop} />}
         </div>
       </div>
 
       <div className={styles.row}>
         <div className={styles.col3}>
-          <h2 className={styles.underlineTitle}>Компетенции&nbsp;участников</h2>
+          <h2 className={styles.underlineTitle}>Компетенции участников</h2>
           {data.studentCompetencies && <StudentCompetencies data={data.studentCompetencies} />}
         </div>
 
         <div className={styles.col3}>
-          <h2>Желаемые&nbsp;компетенции&nbsp;участников</h2>
+          <h2>Желаемые компетенции участников</h2>
           {data.desiredStudentCompetencies && <StudentCompetencies data={data.desiredStudentCompetencies} />}
         </div>
 
         <div className={styles.col3}>
-          <h2>Заказчики&nbsp;по&nbsp;сфере&nbsp;деятельности</h2>
+          <h2>Заказчики по сфере деятельности</h2>
           {data.customersByActivity && <CustomersByActivity data={data.customersByActivity} />}
           {data.customersByArea && <CustomersByArea data={data.customersByArea} />}
         </div>
@@ -69,12 +69,12 @@ export const Dashboard: React.FC = () => {
 
       <div className={styles.row}>
         <div className={styles.col6}>
-          <h2 className={styles.underlineTitle}>Распределение&nbsp;студентов&nbsp;по&nbsp;курсам</h2>
+          <h2 className={styles.underlineTitle}>Распределение студентов по курсам</h2>
           {data.studentsByCourse && <StudentsByCourse data={data.studentsByCourse} />}
         </div>
 
         <div className={styles.col3}>
-          <h2>Типовая&nbsp;команда</h2>
+          <h2>Типовая команда</h2>
           {data.typicalTeam && <TypicalTeam data={data.typicalTeam} />}
         </div>
       </div>
