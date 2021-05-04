@@ -22,7 +22,6 @@ export const Dashboard: React.FC = () => {
   const loading = useAppSelector(selectLoading)
 
   useEffect(() => {
-
     const eventId = Number(id)
 
     if (events.find(item => item.id === eventId)) {
