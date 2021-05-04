@@ -1,4 +1,3 @@
-export * from '../DashboardModel'
 export * from './CustomersByActivityModel'
 export * from './CustomersTopModel'
 export * from './TypicalTeamModel'

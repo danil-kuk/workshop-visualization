@@ -1,1 +1,1 @@
-export { TypicalTeam as default } from './TypicalTeam'
+export * from './TypicalTeam'

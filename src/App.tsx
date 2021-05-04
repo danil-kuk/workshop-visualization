@@ -6,6 +6,8 @@ import { AppHeader } from './components/AppHeader'
 import { AppLoadingSpinner } from './components/AppLoadingSpinner'
 import { RootRouter } from './routes'
 import { AppBaseLayout } from './components/AppBaseLayout'
+import { useAppDispatch } from './store'
+import { fetchEventsList } from './store/slices/events'
 
 export const App: React.FC = () => {
   const routes = useRoutes(RootRouter, process.env.PUBLIC_URL)
@@ -16,6 +18,12 @@ export const App: React.FC = () => {
     database.login()
       .then(() => setAuth(true))
       .catch((error) => console.error('Database connection error', error))
+  }, [])
+
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchEventsList())
   }, [])
 
   if (!auth) {

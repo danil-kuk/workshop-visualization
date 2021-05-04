@@ -1,1 +1,1 @@
-export { StudentCompetencies as default } from './StudentCompetencies'
+export * from './StudentCompetencies'
