@@ -4,9 +4,9 @@ import { useRoutes } from 'react-router-dom'
 import { database } from './api/services/DatabaseService'
 import { AppLoadingSpinner } from './components/AppLoadingSpinner'
 import { RootRouter } from './routes'
-import { AppBaseLayout } from './components/AppBaseLayout'
 import { useAppDispatch } from './store'
 import { fetchEventsList } from './store/slices/events'
+import { AppHeader } from './components/AppHeader'
 
 export const App: React.FC = () => {
   const routes = useRoutes(RootRouter, process.env.PUBLIC_URL)
@@ -30,8 +30,9 @@ export const App: React.FC = () => {
   }
 
   return (
-    <AppBaseLayout>
+    <>
+      <AppHeader />
       {routes}
-    </AppBaseLayout>
+    </>
   )
 }

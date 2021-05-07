@@ -17,9 +17,31 @@ export const Welcome: React.FC = () => {
   ))
 
   return (
-    <div className={styles.container}>
-      <h1>Welcome page</h1>
-      {eventsLinks}
-    </div>
+    <>
+      <div className={styles.main}>
+        <div className={styles.col6}>
+          <h1>Визуализации</h1>
+          <div>
+            <h2>С точностью до промилле.</h2>
+            <span />
+            <p>
+              Узнайте информацию об участниках, заказчиках, компетенциях и командах по каждому сезону.
+            </p>
+          </div>
+        </div>
+        <div className={styles.col3}>
+          <div>
+            <h2>Статичные и гибкие.</h2>
+            <span />
+            <p>
+              Сводная статистика для краткого обзора, интерактивные визуализации для полного погружения.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.container}>
+        {eventsLinks}
+      </div>
+    </>
   )
 }

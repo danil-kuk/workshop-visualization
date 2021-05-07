@@ -66,12 +66,19 @@
 
   /* Fonts */
   --header-font-family: "Montserrat-Bold";
-  --content-font-family: "OpenSans-Regular";
+  --content-font-family: "Montserrat-Regular";
 }
 
 @font-face {
   font-family: "OpenSans-Regular";
   src: url(../assets/fonts/OpenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(../assets/fonts/Montserrat-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
