@@ -3,21 +3,25 @@ import { useAppSelector } from 'src/store'
 import { selectEventsList } from 'src/store/slices/events'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
 
+import { EventCard } from '../../components/EventCard'
+
 import styles from './style.module.scss'
 
 export const Welcome: React.FC = () => {
   const eventsList = useAppSelector(selectEventsList)
 
   const eventsLinks = eventsList.map(item => (
-    <div key={item.id}>
-      <Link to={publicUrlPath(`/dashboard/event/${item.id}`)}>
-        {item.name}
-      </Link>
-    </div>
+    <Link
+      to={publicUrlPath(`/dashboard/event/${item.id}`)}
+      key={item.id}
+      className={styles.eventLink}
+    >
+      <EventCard eventsList={item} />
+    </Link>
   ))
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.main}>
         <div className={styles.col6}>
           <h1>Визуализации</h1>
@@ -42,6 +46,6 @@ export const Welcome: React.FC = () => {
       <div className={styles.container}>
         {eventsLinks}
       </div>
-    </>
+    </div>
   )
 }

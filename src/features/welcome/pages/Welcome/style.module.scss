@@ -1,15 +1,27 @@
+.wrapper {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin: 0 auto;
+  background: #fff;
+  padding: 1rem 0;
+  font-family: "Montserrat-Regular", var(--content-font-family);
 }
 
 .main {
   display: flex;
   height: 100vh;
+  font-family: "Montserrat-Regular", var(--content-font-family);
+  position: relative;
 
   .col6, .col3 {
     padding-top: 4rem;
-    justify-content: center;
 
     div {
       width: 25rem;
@@ -44,7 +56,7 @@
   h2 {
     font-size: 3rem;
     line-height: 1;
-    margin: 0 0 0 1rem;
+    margin: 40vh 0 0 1rem;
   }
 
   p{
@@ -71,4 +83,158 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.eventLink {
+  display: block;
+  width: calc(100% - 4rem);
+  text-decoration: none;
+  color: #000;
+  transition: .2s ease-out;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    transform: scale(1.005);
+  }
+
+  &:active {
+    transform: scale(0.995);
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.eventCol {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 33.333%;
+  h2{
+    margin: 0;
+  }
+}
+
+.eventImage {
+  border-radius: 8px 0 0 8px;
+}
+
+.eventDescription {
+  background: var(--grey-1);
+  padding: .75rem;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.eventDate {
+  background: var(--blue-6);
+  color: #fff;
+  padding-top: 1rem;
+  border-radius: 0 8px 8px 0;
+
+  h2 {
+    font-size: 9rem;
+    line-height: 0.9;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 4rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .col6 {
+    flex: 1;
+  }
+
+  .main {
+    .col6, .col3 {
+      padding-top: 1rem;
+
+      div {
+        width: 50vw;
+      }
+    }
+
+    .col3, .col6 {
+      & span {
+        width: 100%;
+        height: 0.2rem;
+        margin: .5rem 0;
+      }
+    }
+
+    h1 {
+      top: 4rem;
+      left: .2rem;
+      font-size: 1.45rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 35vh 0 0 .5rem;
+    }
+
+    p{
+      font-size: .75rem;
+      margin: 0 0 0 .5rem;
+    }
+  }
+
+  .container {
+    padding: .5rem 0;
+  }
+
+  .eventLink {
+    width: calc(100% - 1rem);
+    margin-bottom: .5rem;
+  }
+
+  .eventCol {
+    flex: 0 0 50%;
+
+    &:first-child {
+      display: none;
+    }
+  }
+
+  .eventDescription {
+    padding: 0.5rem 0;
+    border-radius: 8px 0 0 8px;
+    h2 {
+      font-size: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    p {
+      font-size: .5rem;
+      padding: 0 0.5rem;
+
+    }
+  }
+
+  .eventDate {
+    padding-top: 1rem;
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
 }
