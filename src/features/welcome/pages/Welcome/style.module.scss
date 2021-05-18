@@ -20,17 +20,18 @@
   font-family: "Montserrat-Regular", var(--content-font-family);
   position: relative;
 
-  .col6, .col3 {
+  .col6,
+  .col3 {
     padding-top: 4rem;
 
-    div {
-      width: 25rem;
+    .mainContainer {
+      max-width: 25rem;
     }
   }
 
   .col6 {
     align-items: flex-end;
-    background: linear-gradient(180deg, #15395B 0%, #112A45 100%), #112A45;
+    background: linear-gradient(180deg, #15395b 0%, #112a45 100%);
     color: #fff;
   }
 
@@ -50,25 +51,26 @@
     top: 5rem;
     left: 2.5rem;
     font-size: 6rem;
-    color: var( --blue-2);
+    color: var(--blue-2);
   }
 
   h2 {
+    max-width: 500px;
     font-size: 3rem;
     line-height: 1;
     margin: 40vh 0 0 1rem;
   }
 
-  p{
+  p {
     font-size: 1.5rem;
-    margin: 0 0 0 1rem;
+    margin-left: 1rem;
   }
 
   span {
     display: block;
     width: 100%;
     height: 0.5rem;
-    background: #3C9AE8;
+    background: #3c9ae8;
     margin: 2.25rem 0;
   }
 }
@@ -90,7 +92,7 @@
   width: calc(100% - 4rem);
   text-decoration: none;
   color: #000;
-  transition: .2s ease-out;
+  transition: 0.2s ease-out;
   margin-bottom: 1rem;
 
   &:last-child {
@@ -115,18 +117,18 @@
   display: flex;
   flex-direction: column;
   flex: 0 0 33.333%;
-  h2{
+  h2 {
     margin: 0;
   }
 }
 
 .eventImage {
-  border-radius: 8px 0 0 8px;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
 .eventDescription {
   background: var(--grey-1);
-  padding: .75rem;
+  padding: 0.75rem;
 
   h2 {
     font-size: 2rem;
@@ -141,7 +143,7 @@
   background: var(--blue-6);
   color: #fff;
   padding-top: 1rem;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
 
   h2 {
     font-size: 9rem;
@@ -155,52 +157,33 @@
   }
 }
 
-@media (max-width: 500px) {
-  .col6 {
-    flex: 1;
-  }
-
+@media (max-width: 1400px) {
   .main {
-    .col6, .col3 {
-      padding-top: 1rem;
-
-      div {
-        width: 50vw;
-      }
-    }
-
-    .col3, .col6 {
-      & span {
-        width: 100%;
-        height: 0.2rem;
-        margin: .5rem 0;
-      }
+    .col6 {
+      flex: 1;
     }
 
     h1 {
-      top: 4rem;
-      left: .2rem;
-      font-size: 1.45rem;
+      font-size: 3rem;
     }
 
-    h2 {
-      font-size: 1.4rem;
-      margin: 35vh 0 0 .5rem;
-    }
-
-    p{
-      font-size: .75rem;
-      margin: 0 0 0 .5rem;
+    .col3,
+    .col6 {
+      & span {
+        width: 100%;
+      }
+      .mainContainer {
+        max-width: 50vw;
+      }
     }
   }
 
   .container {
-    padding: .5rem 0;
+    padding: 1rem 0;
   }
 
   .eventLink {
-    width: calc(100% - 1rem);
-    margin-bottom: .5rem;
+    width: calc(100% - 2rem);
   }
 
   .eventCol {
@@ -212,17 +195,72 @@
   }
 
   .eventDescription {
+    padding: 1rem 0;
+
+    h2 {
+      padding: 0 1rem;
+    }
+
+    p {
+      padding: 0 1rem;
+    }
+  }
+
+  .eventDate {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    .col6,
+    .col3 {
+      padding-top: 1rem;
+
+      & span {
+        height: 0.2rem;
+        margin: 0.5rem 0;
+      }
+    }
+
+    h1 {
+      top: 4rem;
+      left: 0.2rem;
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      max-width: 250px;
+      font-size: 1.4rem;
+      margin: 35vh 0 0 0.5rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .container {
     padding: 0.5rem 0;
-    border-radius: 8px 0 0 8px;
+  }
+
+  .eventLink {
+    width: calc(100% - 1rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .eventDescription {
+    padding: 0.5rem 0;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
     h2 {
       font-size: 1rem;
       padding: 0 0.5rem;
     }
 
     p {
-      font-size: .5rem;
+      font-size: 0.5rem;
       padding: 0 0.5rem;
-
     }
   }
 
