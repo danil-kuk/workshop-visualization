@@ -24,8 +24,10 @@ export const EventCard: React.FC<Props> = ({ eventsList }) => (
       <p>{eventsList.description}</p>
     </div>
     <div className={cls([styles.eventCol, styles.eventDate])}>
-      <h2>{eventsList.date.slice(0, 4)}</h2>
-      <h3>{eventsList.date.slice(5)}</h3>
+      <div className={styles.eventDateContent}>
+        <h2>{eventsList.date.slice(0, 4)}</h2>
+        <h3>{eventsList.date.slice(5)}</h3>
+      </div>
     </div>
   </div>
 )

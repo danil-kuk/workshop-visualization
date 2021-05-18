@@ -12,8 +12,8 @@ export const Welcome: React.FC = () => {
 
   const eventsLinks = eventsList.map((item) => (
     <Link
-      to={publicUrlPath(`/dashboard/event/${item.id}`)}
       key={item.id}
+      to={publicUrlPath(`/dashboard/event/${item.id}`)}
       className={styles.eventLink}
     >
       <EventCard eventsList={item} />
@@ -21,13 +21,13 @@ export const Welcome: React.FC = () => {
   ))
 
   return (
-    <div className={styles.wrapper}>
+    <>
       <div className={styles.main}>
         <div className={styles.col6}>
           <h1>Визуализации</h1>
           <div className={styles.mainContainer}>
             <h2>С точностью до промилле.</h2>
-            <span />
+            <hr />
             <p>
               Узнайте информацию об участниках, заказчиках, компетенциях и
               командах по каждому сезону.
@@ -37,7 +37,7 @@ export const Welcome: React.FC = () => {
         <div className={styles.col3}>
           <div className={styles.mainContainer}>
             <h2>Статичные и гибкие.</h2>
-            <span />
+            <hr />
             <p>
               Сводная статистика для краткого обзора, интерактивные визуализации
               для полного погружения.
@@ -46,6 +46,6 @@ export const Welcome: React.FC = () => {
         </div>
       </div>
       <div className={styles.container}>{eventsLinks}</div>
-    </div>
+    </>
   )
 }
