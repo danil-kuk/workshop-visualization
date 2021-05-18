@@ -1,19 +1,20 @@
-import { PartialRouteObject } from 'react-router'
-import { Navigate } from 'react-router-dom'
+import { Outlet, PartialRouteObject } from 'react-router'
 import { welcomeRoutes } from 'src/features/welcome/routes'
 import { dashboardRoutes } from 'src/features/dashboard/routes'
+import { Navigate } from 'react-router-dom'
 import { publicUrlPath } from 'src/utils/publicUrlPath'
 
-
 export const RootRouter: PartialRouteObject[] = [
-  ...welcomeRoutes,
-  ...dashboardRoutes,
   {
     path: '/',
-    element: <Navigate to={publicUrlPath('/welcome')} />,
+    children: [
+      ...welcomeRoutes,
+      ...dashboardRoutes,
+    ],
+    element: <Outlet />,
   },
   {
     path: '*',
-    element: <div>404 page</div>,
+    element: <Navigate to={publicUrlPath('/')} />,
   },
 ]

@@ -5,7 +5,7 @@ const Welcome = lazy(() => import('./pages/Welcome'))
 
 export const welcomeRoutes: PartialRouteObject[] = [
   {
-    path: 'welcome',
+    path: '',
     element: <Welcome />,
   },
 ]

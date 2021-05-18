@@ -6,7 +6,6 @@ import { AppLoadingSpinner } from './components/AppLoadingSpinner'
 import { RootRouter } from './routes'
 import { useAppDispatch } from './store'
 import { fetchEventsList } from './store/slices/events'
-import { AppHeader } from './components/AppHeader'
 
 export const App: React.FC = () => {
   const routes = useRoutes(RootRouter, process.env.PUBLIC_URL)
@@ -31,7 +30,6 @@ export const App: React.FC = () => {
 
   return (
     <>
-      <AppHeader />
       {routes}
     </>
   )
