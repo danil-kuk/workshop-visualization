@@ -1,8 +1,7 @@
 .container {
-  font-size: .875rem;
+  font-size: 0.875rem;
   width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
 
   h2 {
     font-weight: bold;
@@ -12,8 +11,9 @@
   }
 
   .underlineTitle {
-    &:after, &_s:after {
-      content: '';
+    &:after,
+    &_s:after {
+      content: "";
       display: block;
       position: absolute;
       bottom: -0.5rem;

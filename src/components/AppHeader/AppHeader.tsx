@@ -9,9 +9,6 @@ import style from './style.module.scss'
 export const AppHeader: React.FC = () => (
   <header>
     <Logo />
-    <h3>
-      Визуализации
-    </h3>
   </header>
 )
 

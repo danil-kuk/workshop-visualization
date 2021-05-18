@@ -8,5 +8,7 @@ export const eventMapper: DtoToModelMapper<EventModel, EventDto> = {
   fromDto: (dto) => ({
     id: dto.id,
     name: dto.name,
+    description: dto.description,
+    date: dto.date,
   }),
 }
