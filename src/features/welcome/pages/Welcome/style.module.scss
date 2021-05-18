@@ -7,6 +7,7 @@
   .mainContainer {
     margin: 25vw 0 10vw 0;
     height: 100%;
+    width: 100%;
 
     h2,
     p {
@@ -29,6 +30,11 @@
     background: #fff;
     color: #000;
     overflow-x: hidden;
+
+    h2,
+    p {
+      max-width: 25rem;
+    }
   }
 
   h1 {
@@ -193,7 +199,7 @@
 
   .eventDescription {
     h2 {
-      font-size: 3vw;
+      font-size: 3.5vw;
       margin-bottom: 0.5rem;
     }
 
