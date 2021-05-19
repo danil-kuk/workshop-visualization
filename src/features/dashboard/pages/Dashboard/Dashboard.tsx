@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { exportComponentAsPNG } from 'react-component-export-image'
 import { fetchDashboard, selectLoading, selectDashboardData } from 'src/store/slices/dashboard'
 import { useAppDispatch, useAppSelector } from 'src/store'
 import { selectEventsList } from 'src/store/slices/events'
@@ -13,16 +14,19 @@ import { KeyTechnologyStudents } from '../../components/KeyTechnologyStudents'
 import { CustomersByActivity, CustomersByArea, StudentsByCourse } from '../../components/PieDiagram'
 import { AppBaseLayout } from '../../../../components/AppBaseLayout'
 
+import icon from './export.svg'
 import styles from './styles.module.scss'
 
 export const Dashboard: React.FC = () => {
   const { id } = useParams()
   const eventId = Number(id)
   const dispatch = useAppDispatch()
+  const componentRef = useRef(null)
 
   const events = useAppSelector(selectEventsList)
   const data = useAppSelector(selectDashboardData(eventId))
   const loading = useAppSelector(selectLoading)
+  const [showExport, setShowExport] = useState(true)
 
   useEffect(() => {
     if (!data && events.find(item => item.id === eventId)) {
@@ -34,7 +38,10 @@ export const Dashboard: React.FC = () => {
 
   return (
     <AppBaseLayout>
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        ref={componentRef}
+      >
         <h1 className={styles.title}>Проектный практикум Весна 2021 ИРИТ-РТФ</h1>
 
         <div className={styles.row}>
@@ -70,9 +77,30 @@ export const Dashboard: React.FC = () => {
         </div>
 
         <div className={styles.row}>
-          <div className={styles.col6}>
+          <div className={styles.col3}>
             <h2 className={styles.underlineTitle}>Распределение студентов по курсам</h2>
             {data.studentsByCourse && <StudentsByCourse data={data.studentsByCourse} />}
+          </div>
+
+          <div
+            className={styles.col3}
+            style={showExport ? {} : { visibility: 'hidden' }}
+          >
+            <h2 className={styles.underlineTitle}>Экспорт диаграмм</h2>
+            <button
+              className={styles.exportBtn}
+              onClick={async function() {
+                await setShowExport(false)
+                exportComponentAsPNG(componentRef, { fileName: `dashboard_${eventId}` }).then()
+                setShowExport(true)
+              }}
+            >
+              <img
+                src={icon}
+                alt='icon'
+              />
+              Экспорт как PNG
+            </button>
           </div>
 
           <div className={styles.col3}>

@@ -57,3 +57,25 @@
   flex: 0 0 33.33%;
   position: relative;
 }
+
+.exportBtn {
+  display: flex;
+  align-items: center;
+  width: 210px;
+  height: 40px;
+  border: 1px solid #000000;
+  border-radius: var(--border-radius);
+  font-family: "OpenSans-Regular", var(--content-font-family);
+  font-size: 14px;
+  padding: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  img {
+    margin-right: 12px;
+  }
+
+  &:hover {
+    background: var(--blue-1);
+  }
+}
