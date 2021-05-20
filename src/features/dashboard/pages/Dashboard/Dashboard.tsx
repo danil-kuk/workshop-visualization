@@ -5,6 +5,8 @@ import { fetchDashboard, selectLoading, selectDashboardData } from 'src/store/sl
 import { useAppDispatch, useAppSelector } from 'src/store'
 import { selectEventsList } from 'src/store/slices/events'
 import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
+import { AppButton } from 'src/components/AppButton'
+import { DeveloperBoardRounded } from '@material-ui/icons'
 
 import { StudentCompetencies } from '../../components/StudentCompetencies'
 import { KeyStatistic } from '../../components/KeyStatistic'
@@ -14,7 +16,6 @@ import { KeyTechnologyStudents } from '../../components/KeyTechnologyStudents'
 import { CustomersByActivity, CustomersByArea, StudentsByCourse } from '../../components/PieDiagram'
 import { AppBaseLayout } from '../../../../components/AppBaseLayout'
 
-import icon from './export.svg'
 import styles from './styles.module.scss'
 
 export const Dashboard: React.FC = () => {
@@ -33,6 +34,19 @@ export const Dashboard: React.FC = () => {
       dispatch(fetchDashboard(eventId))
     }
   }, [eventId, data])
+
+  useEffect(() => {
+    if (!showExport) {
+      exportComponentAsPNG(
+        componentRef,
+        { fileName: `dashboard_${eventId}` },
+      ).then(() => setShowExport(true))
+    }
+  }, [showExport])
+
+  const exportDashboard = () => {
+    setShowExport(false)
+  }
 
   if (loading || !data) return <AppLoadingSpinner fullHeight />
 
@@ -82,27 +96,19 @@ export const Dashboard: React.FC = () => {
             {data.studentsByCourse && <StudentsByCourse data={data.studentsByCourse} />}
           </div>
 
-          <div
-            className={styles.col3}
-            style={showExport ? {} : { visibility: 'hidden' }}
-          >
-            <h2 className={styles.underlineTitle}>Экспорт диаграмм</h2>
-            <button
-              className={styles.exportBtn}
-              onClick={
-                async function() {
-                  await setShowExport(false)
-                  exportComponentAsPNG(componentRef, { fileName: `dashboard_${eventId}` }).then()
-                  setShowExport(true)
-                }}
-            >
-              <img
-                src={icon}
-                alt='icon'
-              />
-              Экспорт как PNG
-            </button>
-          </div>
+          {showExport &&
+            <div className={styles.col3}>
+              <h2 className={styles.underlineTitle}>Экспорт диаграмм</h2>
+              <AppButton
+                className={styles.exportBtn}
+                onClick={exportDashboard}
+                buttonType="secondary"
+                icon={<DeveloperBoardRounded />}
+              >
+                Экспорт как PNG
+              </AppButton>
+            </div>
+          }
 
           <div className={styles.col3}>
             <h2>Типовая команда</h2>
