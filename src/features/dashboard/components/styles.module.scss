@@ -100,6 +100,10 @@
   margin-bottom: 1rem;
   position: relative;
 
+  &:last-child {
+    width: 400px;
+  }
+
   &_s {
     position: absolute;
     bottom: 0;
