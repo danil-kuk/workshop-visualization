@@ -89,11 +89,12 @@ export const Dashboard: React.FC = () => {
             <h2 className={styles.underlineTitle}>Экспорт диаграмм</h2>
             <button
               className={styles.exportBtn}
-              onClick={async function() {
-                await setShowExport(false)
-                exportComponentAsPNG(componentRef, { fileName: `dashboard_${eventId}` }).then()
-                setShowExport(true)
-              }}
+              onClick={
+                async function() {
+                  await setShowExport(false)
+                  exportComponentAsPNG(componentRef, { fileName: `dashboard_${eventId}` }).then()
+                  setShowExport(true)
+                }}
             >
               <img
                 src={icon}
