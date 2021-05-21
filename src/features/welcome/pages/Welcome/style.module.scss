@@ -163,6 +163,15 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .main {
+    h1 {
+      top: 5rem;
+      font-size: 6vw;
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .main {
     .mainContainer {
@@ -175,7 +184,8 @@
 
     h1 {
       top: 5rem;
-      font-size: 10vw;
+      left: 2vw;
+      font-size: 5vw;
     }
 
     h2 {

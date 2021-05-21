@@ -9,6 +9,13 @@ export const eventMapper: DtoToModelMapper<EventModel, EventDto> = {
     id: dto.id,
     name: dto.name,
     description: dto.description,
-    date: dto.date,
+    startDate: dto.start_date.toLocaleString('ru-RU', {
+      year: 'numeric',
+      month: 'long',
+    }),
+    endDate: dto.end_date.toLocaleString('ru-RU', {
+      year: 'numeric',
+      month: 'long',
+    }),
   }),
 }
