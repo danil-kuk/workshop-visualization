@@ -4,5 +4,6 @@ export interface EventDto extends DatabaseItemBase {
   id: number
   name: string
   description?: string
-  date: string
+  start_date: Date
+  end_date: Date
 }

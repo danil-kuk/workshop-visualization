@@ -10,24 +10,25 @@ interface Props {
   eventsList: EventModel
 }
 
-export const EventCard: React.FC<Props> = ({ eventsList }) => (
-  <div className={styles.cardWrapper}>
-    <div className={styles.eventCol}>
-      <img
-        className={styles.eventImage}
-        src={image}
-        alt="event"
-      />
-    </div>
-    <div className={cls([styles.eventCol, styles.eventDescription])}>
-      <h2>{eventsList.name}</h2>
-      <p>{eventsList.description}</p>
-    </div>
-    <div className={cls([styles.eventCol, styles.eventDate])}>
-      <div className={styles.eventDateContent}>
-        <h2>{eventsList.date.slice(0, 4)}</h2>
-        <h3>{eventsList.date.slice(5)}</h3>
+export const EventCard: React.FC<Props> = ({ eventsList }) =>
+  (
+    <div className={styles.cardWrapper}>
+      <div className={styles.eventCol}>
+        <img
+          className={styles.eventImage}
+          src={image}
+          alt="event"
+        />
+      </div>
+      <div className={cls([styles.eventCol, styles.eventDescription])}>
+        <h2>{eventsList.name}</h2>
+        <p>{eventsList.description}</p>
+      </div>
+      <div className={cls([styles.eventCol, styles.eventDate])}>
+        <div className={styles.eventDateContent}>
+          <h2>{eventsList.startDate.slice(-7, -3)}</h2>
+          <h3>{eventsList.startDate.slice(0, -8)}</h3>
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
