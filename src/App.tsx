@@ -21,8 +21,10 @@ export const App: React.FC = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(fetchEventsList())
-  }, [])
+    if (auth) {
+      dispatch(fetchEventsList())
+    }
+  }, [auth])
 
   if (!auth) {
     return <AppLoadingSpinner fullHeight />
