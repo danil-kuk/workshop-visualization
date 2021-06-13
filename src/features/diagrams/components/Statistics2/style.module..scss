@@ -1,0 +1,65 @@
+.keyWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  div {
+    text-align: center;
+    
+    h2 {
+      font-size: 5rem;
+    }
+  }
+}
+
+.rolesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto 0;
+}
+
+.role {
+  flex: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+}
+
+.customer {
+  position: relative;
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    min-width: 60px;
+  }
+
+  p {
+    font-size: 2rem;
+    flex: 1;
+  }
+}
+
+.tooltipWrapper {
+  display: flex;
+  align-items: center;
+
+  span:first-child {
+    display: block;
+    width: 7px;
+    height: 7px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,27 @@
+.lineTabs__tabs {
+  display: flex;
+  border-bottom: 1px solid var(--bg-main);
+
+  .lineTabs__tab {
+    margin-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    border-bottom: 0 solid var(--bg-main);
+
+    &:hover {
+      border-bottom: 2px solid var(--bg-primary);
+    }
+  }
+
+  .lineTabs__tab_active {
+    border-bottom: 2px solid var(--primary);
+
+    &:hover {
+      border-bottom: 2px solid var(--primary);
+    }
+  }
+}
+
+.lineTabs__content {
+  margin-top: 1rem;
+}

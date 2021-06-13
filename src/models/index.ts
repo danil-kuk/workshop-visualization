@@ -1,3 +1,5 @@
 export * from './EventModel'
 export * from './DashboardModel'
-export * from './statisctic'
+export * from './dashboard'
+export * from './DiagramsModel'
+export * from './diagrams'

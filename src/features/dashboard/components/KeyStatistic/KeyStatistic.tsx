@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeyStatisticModel } from 'src/features/statistics/models'
+import { KeyStatisticModel } from 'src/features/diagrams/models'
 import { getWordForm } from 'src/utils/stringUtils'
 
 import styles from '../styles.module.scss'
