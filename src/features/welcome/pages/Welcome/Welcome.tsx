@@ -13,7 +13,7 @@ export const Welcome: React.FC = () => {
   const eventsLinks = eventsList.map((item) => (
     <Link
       key={item.id}
-      to={publicUrlPath(`/dashboard/event/${item.id}`)}
+      to={publicUrlPath(`/event/${item.id}/dashboard`)}
       className={styles.eventLink}
     >
       <EventCard eventsList={item} />

@@ -1,0 +1,15 @@
+div.vis-tooltip {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 5;
+  background-color: var(--bg-main);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  padding: 5px 9px;
+  box-shadow: rgb(174, 174, 174) 0 0 10px;
+}
+
+div.vis-network {
+  outline: none;
+}

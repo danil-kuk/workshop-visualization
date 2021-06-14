@@ -14,7 +14,6 @@ import { CustomersTop } from '../../components/CustomersTop'
 import { TypicalTeam } from '../../components/TypicalTeam'
 import { KeyTechnologyStudents } from '../../components/KeyTechnologyStudents'
 import { CustomersByActivity, CustomersByArea, StudentsByCourse } from '../../components/PieDiagram'
-import { AppBaseLayout } from '../../../../components/AppBaseLayout'
 
 import styles from './styles.module.scss'
 
@@ -23,80 +22,78 @@ export const Dashboard: React.FC = () => {
   const eventId = Number(id)
   const dispatch = useAppDispatch()
   const componentRef = useRef(null)
-
   const events = useAppSelector(selectEventsList)
-  const data = useAppSelector(selectDashboardData(eventId))
+  const event = events.find(item => item.id === eventId)
+  const dashboardData = useAppSelector(selectDashboardData(eventId))
   const loading = useAppSelector(selectLoading)
-  const [showExport, setShowExport] = useState(true)
+  const [exportVisibility, setExportVisibility] = useState(true)
 
   useEffect(() => {
-    if (!data && events.find(item => item.id === eventId)) {
+    if (!dashboardData && event) {
       dispatch(fetchDashboard(eventId))
     }
-  }, [eventId, data])
+  }, [eventId, dashboardData])
 
   useEffect(() => {
-    if (!showExport) {
+    if (!exportVisibility) {
       exportComponentAsPNG(
         componentRef,
         { fileName: `dashboard_${eventId}` },
-      ).then(() => setShowExport(true))
+      ).then(() => setExportVisibility(true))
     }
-  }, [showExport])
+  }, [exportVisibility])
 
   const exportDashboard = () => {
-    setShowExport(false)
+    setExportVisibility(false)
   }
 
-  if (loading || !data) return <AppLoadingSpinner fullHeight />
+  if (loading || !dashboardData) return <AppLoadingSpinner fullHeight />
 
   return (
-    <AppBaseLayout>
-      <div
-        className={styles.container}
-        ref={componentRef}
-      >
-        <h1 className={styles.title}>Проектный практикум Весна 2021 ИРИТ-РТФ</h1>
-
-        <div className={styles.row}>
-          <div className={styles.col6}>
-            <h2 className={styles.underlineTitle}>Распределение студентов по направлениям</h2>
-            {data.keyTechnologyStudents && <KeyTechnologyStudents data={data.keyTechnologyStudents} />}
-          </div>
-
-          <div className={styles.col3}>
-            <h2>Ключевые показатели</h2>
-            {data.keyStatistic && <KeyStatistic data={data.keyStatistic} />}
-            <h2 className={styles.underlineTitle_s}>Топ заказчиков</h2>
-            {data.customersTop && <CustomersTop data={data.customersTop} />}
-          </div>
+    <div
+      className={styles.container}
+      ref={componentRef}
+    >
+      {!exportVisibility && <h1 className={styles.title}>{event === undefined ? '' : event.name}</h1>}
+      <div className={styles.row}>
+        <div className={styles.col6}>
+          <h2 className={styles.underlineTitle}>Распределение студентов по направлениям</h2>
+          {dashboardData.keyTechnologyStudents && <KeyTechnologyStudents data={dashboardData.keyTechnologyStudents} />}
         </div>
 
-        <div className={styles.row}>
-          <div className={styles.col3}>
-            <h2 className={styles.underlineTitle}>Компетенции участников</h2>
-            {data.studentCompetencies && <StudentCompetencies data={data.studentCompetencies} />}
-          </div>
+        <div className={styles.col3}>
+          <h2>Ключевые показатели</h2>
+          {dashboardData.keyStatistic && <KeyStatistic data={dashboardData.keyStatistic} />}
+          <h2 className={styles.underlineTitle_s}>Топ заказчиков</h2>
+          {dashboardData.customersTop && <CustomersTop data={dashboardData.customersTop} />}
+        </div>
+      </div>
 
-          <div className={styles.col3}>
-            <h2>Желаемые компетенции участников</h2>
-            {data.desiredStudentCompetencies && <StudentCompetencies data={data.desiredStudentCompetencies} />}
-          </div>
-
-          <div className={styles.col3}>
-            <h2>Заказчики по сфере деятельности</h2>
-            {data.customersByActivity && <CustomersByActivity data={data.customersByActivity} />}
-            {data.customersByArea && <CustomersByArea data={data.customersByArea} />}
-          </div>
+      <div className={styles.row}>
+        <div className={styles.col3}>
+          <h2 className={styles.underlineTitle}>Компетенции участников</h2>
+          {dashboardData.studentCompetencies && <StudentCompetencies data={dashboardData.studentCompetencies} />}
         </div>
 
-        <div className={styles.row}>
-          <div className={styles.col3}>
-            <h2 className={styles.underlineTitle}>Распределение студентов по курсам</h2>
-            {data.studentsByCourse && <StudentsByCourse data={data.studentsByCourse} />}
-          </div>
+        <div className={styles.col3}>
+          <h2>Желаемые компетенции участников</h2>
+          {dashboardData.desiredStudentCompetencies && <StudentCompetencies data={dashboardData.desiredStudentCompetencies} />}
+        </div>
 
-          {showExport &&
+        <div className={styles.col3}>
+          <h2>Заказчики по сфере деятельности</h2>
+          {dashboardData.customersByActivity && <CustomersByActivity data={dashboardData.customersByActivity} />}
+          {dashboardData.customersByArea && <CustomersByArea data={dashboardData.customersByArea} />}
+        </div>
+      </div>
+
+      <div className={styles.row}>
+        <div className={styles.col3}>
+          <h2 className={styles.underlineTitle}>Распределение студентов по курсам</h2>
+          {dashboardData.studentsByCourse && <StudentsByCourse data={dashboardData.studentsByCourse} />}
+        </div>
+
+        {exportVisibility &&
             <div className={styles.col3}>
               <h2 className={styles.underlineTitle}>Экспорт диаграмм</h2>
               <AppButton
@@ -108,14 +105,13 @@ export const Dashboard: React.FC = () => {
                 Экспорт как PNG
               </AppButton>
             </div>
-          }
+        }
 
-          <div className={styles.col3}>
-            <h2>Типовая команда</h2>
-            {data.typicalTeam && <TypicalTeam data={data.typicalTeam} />}
-          </div>
+        <div className={styles.col3}>
+          <h2>Типовая команда</h2>
+          {dashboardData.typicalTeam && <TypicalTeam data={dashboardData.typicalTeam} />}
         </div>
       </div>
-    </AppBaseLayout>
+    </div>
   )
 }

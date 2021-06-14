@@ -7,7 +7,7 @@ import {
   StudentsByCourseModel,
   CustomersByActivityModel,
   CustomersByAreaModel,
-} from './statisctic'
+} from './dashboard'
 
 export interface DashboardModel {
   keyStatistic: KeyStatisticModel

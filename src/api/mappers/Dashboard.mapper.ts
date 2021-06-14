@@ -1,6 +1,6 @@
 import { DashboardModel, KeyStatisticModel, CustomersTopModel, TypicalTeamModel, StudentCompetenciesModel, KeyTechnologyStudentsModel,StudentsByCourseModel, CustomersByActivityModel, CustomersByAreaModel } from 'src/models'
 
-import { DashboardDto } from '../dtos/statisticDtos/DashboardDto'
+import { DashboardDto } from '../dtos/dashboardDtos/DashboardDto'
 
 import { DtoToModelMapper } from './Mappers'
 

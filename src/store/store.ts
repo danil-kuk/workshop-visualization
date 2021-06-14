@@ -3,10 +3,12 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 import { dashboardSlice } from './slices/dashboard'
 import { eventsSlice } from './slices/events'
+import { diagramsSlice } from './slices/diagrams'
 
 export const store = configureStore({
   reducer: {
     dashboard: dashboardSlice.reducer,
+    diagrams: diagramsSlice.reducer,
     events: eventsSlice.reducer,
   },
 })

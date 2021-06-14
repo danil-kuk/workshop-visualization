@@ -1,4 +1,4 @@
-import { DashboardDto } from '../dtos/statisticDtos/DashboardDto'
+import { DashboardDto } from '../dtos/dashboardDtos/DashboardDto'
 import { dashboardMapper } from '../mappers/Dashboard.mapper'
 
 import { database } from './DatabaseService'
