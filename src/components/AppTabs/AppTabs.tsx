@@ -10,7 +10,7 @@ interface Props {
 
 interface TabInfo {
   name: string,
-  component: any,
+  component: React.ReactNode,
   tabClassName?: string,
 }
 
