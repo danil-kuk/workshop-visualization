@@ -3,16 +3,11 @@ div.vis-tooltip {
   visibility: hidden;
   pointer-events: none;
   z-index: 5;
-  background-color: white;
+  background-color: var(--bg-main);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  padding: 5px 9px;
   box-shadow: rgb(174, 174, 174) 0 0 10px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  color: rgb(89, 89, 89);
-  font-size: 12px;
-  line-height: 12px;
-  padding: 12px;
-  opacity: 0.95;
 }
 
 div.vis-network {

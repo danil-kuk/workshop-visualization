@@ -17,7 +17,7 @@ export const KeyTechnologyGraph : React.FC<Props> = ({ data }) => {
       ({
         id: node.id,
         label: truncate(node.label, 40),
-        title: `${node.label}, Проектов: ${node.value}`,
+        title: `${node.label}: ${node.value}`,
         group: node.group,
         value: node.value,
       })),
@@ -34,7 +34,10 @@ export const KeyTechnologyGraph : React.FC<Props> = ({ data }) => {
     <Graph
       graph={prepare}
       options={GetGraphConfig()}
-      style={{ height: 700 }}
+      style={{
+        flex: 2,
+        height: 700,
+      }}
     />
   )
 }

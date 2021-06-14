@@ -1,7 +1,8 @@
 import React from 'react'
 import { ResponsiveBar } from '@nivo/bar'
-import { BAR_HEIGHT, BAR_COLORS } from 'src/features/diagrams/components/ChartConstants'
 import { LifeScenarioModel } from 'src/models'
+
+import { BAR_HEIGHT, BAR_COLORS } from '../ChartConstants'
 
 import { BarTheme, GetTooltip } from './BarConfig'
 
@@ -18,7 +19,7 @@ export const BarChart: React.FC<Props> = ({ data, tooltip }) => (
       indexBy='keyTechnology'
       margin={{
         top: 0,
-        right: 0,
+        right: 10,
         bottom: 20,
         left: 130,
       }}

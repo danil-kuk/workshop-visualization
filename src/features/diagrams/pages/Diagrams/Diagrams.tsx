@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppTabs } from 'src/components/AppTabs'
+import { useAppDispatch, useAppSelector } from 'src/store'
+import { selectEventsList } from 'src/store/slices/events'
+import { fetchDiagrams, selectDiagramsData, selectLoading } from 'src/store/slices/diagrams'
+import { AppLoadingSpinner } from 'src/components/AppLoadingSpinner'
 
 import { BarChart } from '../../components/BarChart'
-import { useAppDispatch, useAppSelector } from '../../../../store'
-import { selectEventsList } from '../../../../store/slices/events'
-import { fetchDiagrams, selectDiagramsData, selectLoading } from '../../../../store/slices/diagrams'
-import { AppLoadingSpinner } from '../../../../components/AppLoadingSpinner'
+import dashes from '../../images/dashes.svg'
+import dotes from '../../images/dotes.svg'
 import { Cloud } from '../../components/Cloud'
 import { KeyTechnologyGraph } from '../../components/Graph'
 
@@ -71,26 +73,65 @@ export const Diagrams = () => {
         tabClassName: styles.tabs,
       }]}
       />
-
       <AppTabs tabs={[{
         name: 'Граф заказчиков и ключевых технологий',
         component: (
-          <>
+          <div className={styles.row}>
             {diagramsData.keyTechnologyCustomers && <KeyTechnologyGraph
               data={ diagramsData.keyTechnologyCustomers}
               key={1}
             />}
-          </>),
+            <div className={styles.graphDescription}>
+              <p>
+                Граф отображает к каким ключевым технологиям относятся проекты заказчиков. Круглые вершины соответствуют заказчикам, прямоугольные – ключевым технологиям проектов. Чем крупнее вершина и шире ребро графа, тем больше у заказчика проектов.
+              </p>
+              <div className={styles.graphLegend}>
+                <img
+                  src={dotes}
+                  alt="dotes"
+                />
+                <p>Заказчики (от малых к крупным)</p>
+              </div>
+              <div className={styles.graphLegend}>
+                <img
+                  src={dashes}
+                  alt="dashes"
+                />
+                <p>Кол-во проектов заказчика (от малых к крупным)</p>
+              </div>
+            </div>
+          </div>),
         tabClassName: styles.tabs,
-      },{
+      },
+      {
         name: 'Граф кураторов и ключевых технологий',
         component: (
-          <>{
-            diagramsData.keyTechnologyCurators && <KeyTechnologyGraph
+          <div className={styles.row}>
+            {diagramsData.keyTechnologyCurators && <KeyTechnologyGraph
               data={ diagramsData.keyTechnologyCurators}
               key={2}
             />}
-          </>),
+            <div className={styles.graphDescription}>
+              <p>
+                  Граф отображает к каким кураторам относятся проекты. Круглые вершины соответствуют кураторам, прямоугольные – ключевым технологиям заказчика. Чем крупнее вершина и шире ребро графа, тем больше у куратора проектов.
+              </p>
+              <div className={styles.graphLegend}>
+                <img
+                  src={dotes}
+                  alt="dotes"
+                />
+                <p>Кураторы (от малых к крупным)</p>
+              </div>
+              <div className={styles.graphLegend}>
+                <img
+                  src={dashes}
+                  alt="dashes"
+                />
+                <p>Кол-во проектов куратора (от малых к крупным)</p>
+              </div>
+            </div>
+          </div>
+        ),
         tabClassName: styles.tabs,
       }]}
       />

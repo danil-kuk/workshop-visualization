@@ -78,3 +78,25 @@
   font-size: 1.25rem;
   min-width: 460px;
 }
+
+.graphDescription {
+  flex: 1;
+
+  & p {
+    margin: 0 0 24px;
+  }
+}
+
+.graphLegend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  & img {
+    margin-right: 20px;
+  }
+
+  & p {
+    margin: 0;
+  }
+}

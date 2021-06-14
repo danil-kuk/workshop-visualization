@@ -30,7 +30,7 @@ const GetGraphConfig = () => ({
     hover: true,
     zoomView: true,
     dragView: true,
-    tooltipDelay: 100,
+    tooltipDelay: 0,
   },
 
   nodes: {
