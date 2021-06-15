@@ -19,6 +19,7 @@ const GetGraphConfig = () => ({
       opacity: 0.5,
     },
     chosen: {
+      // eslint-disable-next-line  @typescript-eslint/no-explicit-any
       edge: function(values : any) {
         values.opacity = 1
         values.width += 3
@@ -43,6 +44,7 @@ const GetGraphConfig = () => ({
     },
     borderWidth: 0,
     chosen: {
+      // eslint-disable-next-line  @typescript-eslint/no-explicit-any
       node: function(values: any) {
         values.borderColor = values.color
         values.borderWidth = 5
