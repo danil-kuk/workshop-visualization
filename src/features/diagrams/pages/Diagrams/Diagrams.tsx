@@ -27,7 +27,7 @@ export const Diagrams = () => {
     if (!diagramsData && event) {
       dispatch(fetchDiagrams(eventId))
     }
-  }, [eventId, diagramsData])
+  }, [eventId, diagramsData, event])
 
   if (loading || !diagramsData) return <AppLoadingSpinner fullHeight />
 

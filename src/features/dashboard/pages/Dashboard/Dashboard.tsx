@@ -32,7 +32,7 @@ export const Dashboard: React.FC = () => {
     if (!dashboardData && event) {
       dispatch(fetchDashboard(eventId))
     }
-  }, [eventId, dashboardData])
+  }, [eventId, dashboardData, event])
 
   useEffect(() => {
     if (!exportVisibility) {

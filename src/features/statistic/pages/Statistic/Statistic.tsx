@@ -14,7 +14,7 @@ export const Statistic = () => {
   const events = useAppSelector(selectEventsList)
   const event = events.find(item => item.id === eventId)
 
-  return(
+  return (
     <AppBaseLayout>
       <div className={styles.container}>
         <h1 className={styles.title}>{event === undefined ? '' : event.name}</h1>
@@ -22,15 +22,18 @@ export const Statistic = () => {
           <NavLink
             to={publicUrlPath(`/event/${id}/dashboard`)}
             activeClassName={styles.active}
-          >Кратко
+          >
+            Кратко
           </NavLink>
           <NavLink
             to={publicUrlPath(`/event/${id}/diagrams`)}
             activeClassName={styles.active}
-          >Подробно
+          >
+            Подробно
           </NavLink>
         </div>
       </div>
-      <Outlet/>
+      <Outlet />
     </AppBaseLayout>
-  )}
+  )
+}
