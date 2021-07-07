@@ -64,7 +64,7 @@ export const Dashboard: React.FC = () => {
         <div className={styles.col3}>
           <h2>Ключевые показатели</h2>
           {dashboardData.keyStatistic && <KeyStatistic data={dashboardData.keyStatistic} />}
-          <h2 className={styles.underlineTitle_s}>Топ заказчиков</h2>
+          <h2 className={styles.underlineTitle_s}>Топ внешних заказчиков</h2>
           {dashboardData.customersTop && <CustomersTop data={dashboardData.customersTop} />}
         </div>
       </div>
